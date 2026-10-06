@@ -1,0 +1,19 @@
+--- before.py
++++ nanovllm/layers/quantized_attention.py
+@@ -86,10 +86,12 @@
+         else:
+             # 双 scale：前后半个 head_dim 分别使用各自的缩放系数。
+             scale_offset = slot * KV_HEADS * SCALE_GROUPS + kv_head * SCALE_GROUPS
+-            k_first = tl.load(ks_ptr + scale_offset, valid_k, other=0)
+-            k_second = tl.load(ks_ptr + scale_offset + 1, valid_k, other=0)
+-            v_first = tl.load(vs_ptr + scale_offset, valid_k, other=0)
+-            v_second = tl.load(vs_ptr + scale_offset + 1, valid_k, other=0)
++            # [BN, 2]：每行同时读取该 token/head 前后半维的两个 scale。
++            pair_offsets = scale_offset[:, None] + tl.arange(0, 2)[None, :]
++            k_pair = tl.load(ks_ptr + pair_offsets, valid_k[:, None], other=0)
++            v_pair = tl.load(vs_ptr + pair_offsets, valid_k[:, None], other=0)
++            k_first, k_second = tl.split(k_pair)
++            v_first, v_second = tl.split(v_pair)
+             k_scale = tl.where(dims[None, :] < HEAD_DIM // 2,
+                                k_first[:, None], k_second[:, None])
+             v_scale = tl.where(dims[None, :] < HEAD_DIM // 2,

@@ -1,0 +1,751 @@
+[
+  {
+    "index": 0,
+    "name": "_int8_paged_attention_kernel",
+    "total_samples": 67636,
+    "instructions": [
+      {
+        "pc": "0x7f2922a654f0",
+        "sass": "      HMMA.16816.F32.BF16 R36, R52, R58, R36 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 112,
+        "samples": 28769
+      },
+      {
+        "pc": "0x7f2922a62b80",
+        "sass": "      SEL R82, R82, RZ, P0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 84,
+        "samples": 20951
+      },
+      {
+        "pc": "0x7f2922a63250",
+        "sass": "      I2F.S8 R55, R60.B2 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 104,
+        "samples": 9125
+      },
+      {
+        "pc": "0x7f2922a61e70",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 2254
+      },
+      {
+        "pc": "0x7f2922a62e10",
+        "sass": "      SEL R86, R86, RZ, P1 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 84,
+        "samples": 1849
+      },
+      {
+        "pc": "0x7f2922a62a80",
+        "sass": "      I2F.S8 R57, R44.B2 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 85,
+        "samples": 1557
+      },
+      {
+        "pc": "0x7f2922a62f10",
+        "sass": "      FMUL R48, R86, R133 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "samples": 878
+      },
+      {
+        "pc": "0x7f2922a615e0",
+        "sass": "      R2UR UR10, R8 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 33,
+        "samples": 685
+      },
+      {
+        "pc": "0x7f2922a618f0",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 528
+      },
+      {
+        "pc": "0x7f2922a650c0",
+        "sass": "      IADD3 R130, P0, R121, c[0x0][0x168], RZ ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 315
+      },
+      {
+        "pc": "0x7f2922a61680",
+        "sass": "      SEL R8, R4, RZ, !P2 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 240
+      },
+      {
+        "pc": "0x7f2922a65260",
+        "sass": "      SEL R123, RZ, 0x4, P2 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 147
+      },
+      {
+        "pc": "0x7f2922a64f70",
+        "sass": "      IADD3 R130, P5, R134, c[0x0][0x168], RZ ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 120
+      },
+      {
+        "pc": "0x7f2922a61b90",
+        "sass": "      IMAD.U32 R5, RZ, RZ, UR7 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 58
+      },
+      {
+        "pc": "0x7f2922a61d90",
+        "sass": "      LOP3.LUT R3, R0, 0x1f, RZ, 0xc0, !PT ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 25,
+        "samples": 48
+      },
+      {
+        "pc": "0x7f2922a61870",
+        "sass": "      SEL R3, R20, RZ, !P0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 40
+      },
+      {
+        "pc": "0x7f2922a629f0",
+        "sass": "      IMAD.WIDE R48, R92, R83, c[0x0][0x178] ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 84,
+        "samples": 37
+      },
+      {
+        "pc": "0x7f2922a61e40",
+        "sass": "      LOP3.LUT R4, R0, 0xf, RZ, 0xc0, !PT ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 35
+      }
+    ],
+    "lines": [
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 112,
+        "samples": 28769
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 84,
+        "samples": 22837
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 104,
+        "samples": 9125
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 2729
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 85,
+        "samples": 1557
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "samples": 878
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 733
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 33,
+        "samples": 685
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 275
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 25,
+        "samples": 48
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "name": "_int8_paged_attention_kernel",
+    "total_samples": 111750,
+    "instructions": [
+      {
+        "pc": "0x7f2922a6aa20",
+        "sass": "      IMAD.U32 R45, RZ, RZ, UR17 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 72,
+        "samples": 38527
+      },
+      {
+        "pc": "0x7f2922a67df0",
+        "sass": "      SEL R60, R44, RZ, P0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 89,
+        "samples": 32191
+      },
+      {
+        "pc": "0x7f2922a67f30",
+        "sass": "      SEL R62, R50, RZ, P1 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 89,
+        "samples": 18851
+      },
+      {
+        "pc": "0x7f2922a683d0",
+        "sass": "      SEL R54, R54, RZ, P3 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 89,
+        "samples": 11505
+      },
+      {
+        "pc": "0x7f2922a67270",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 2995
+      },
+      {
+        "pc": "0x7f2922a67e00",
+        "sass": "      SEL R85, R50, RZ, P0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "samples": 2969
+      },
+      {
+        "pc": "0x7f2922a67ea0",
+        "sass": "      SEL R84, R52, RZ, P1 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "samples": 1358
+      },
+      {
+        "pc": "0x7f2922a66cf0",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 693
+      },
+      {
+        "pc": "0x7f2922a669e0",
+        "sass": "      R2UR UR11, R8 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 33,
+        "samples": 681
+      },
+      {
+        "pc": "0x7f2922a6a530",
+        "sass": "      LEA R95, R92, UR9, 0xa ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 80,
+        "samples": 521
+      },
+      {
+        "pc": "0x7f2922a67db0",
+        "sass": "      IMAD.MOV.U32 R48, RZ, RZ, RZ ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 92,
+        "samples": 403
+      },
+      {
+        "pc": "0x7f2922a6a800",
+        "sass": "      SEL R94, RZ, 0x4, P2 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 396
+      },
+      {
+        "pc": "0x7f2922a67e10",
+        "sass": "      SEL R64, R51, RZ, P0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 92,
+        "samples": 202
+      },
+      {
+        "pc": "0x7f2922a67dc0",
+        "sass": "      IMAD.WIDE R46, R87, R129, c[0x0][0x180] ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "samples": 191
+      },
+      {
+        "pc": "0x7f2922a66a60",
+        "sass": "      SEL R8, R4, RZ, !P2 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 94
+      },
+      {
+        "pc": "0x7f2922a66f90",
+        "sass": "      IMAD.U32 R5, RZ, RZ, UR7 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 52
+      },
+      {
+        "pc": "0x7f2922a67190",
+        "sass": "      LOP3.LUT R3, R0, 0x1f, RZ, 0xc0, !PT ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 25,
+        "samples": 48
+      },
+      {
+        "pc": "0x7f2922a66c70",
+        "sass": "      SEL R3, R20, RZ, !P0 ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 36
+      },
+      {
+        "pc": "0x7f2922a67240",
+        "sass": "      LOP3.LUT R4, R0, 0xf, RZ, 0xc0, !PT ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 30
+      },
+      {
+        "pc": "0x7f2922a67fc0",
+        "sass": "      IMAD.WIDE R48, R58, R129, c[0x0][0x180] ",
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "samples": 7
+      }
+    ],
+    "lines": [
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 89,
+        "samples": 62547
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 72,
+        "samples": 38527
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "samples": 4525
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 98,
+        "samples": 3031
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 1141
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 33,
+        "samples": 681
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 92,
+        "samples": 605
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 80,
+        "samples": 521
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 124
+      },
+      {
+        "source": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 25,
+        "samples": 48
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "_attention_dual_load_average",
+    "total_samples": 52148,
+    "instructions": [
+      {
+        "pc": "0x7f2922a70130",
+        "sass": "      HMMA.16816.F32.BF16 R28, R32, R38, R28 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 110,
+        "samples": 21423
+      },
+      {
+        "pc": "0x7f2922a6d630",
+        "sass": "      SEL R21, R21, RZ, P0 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 89,
+        "samples": 13075
+      },
+      {
+        "pc": "0x7f2922a6d670",
+        "sass": "      SEL R90, R90, RZ, P1 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 89,
+        "samples": 6722
+      },
+      {
+        "pc": "0x7f2922a6d800",
+        "sass": "      SEL R40, R40, RZ, P5 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 89,
+        "samples": 2979
+      },
+      {
+        "pc": "0x7f2922a6c850",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 96,
+        "samples": 2092
+      },
+      {
+        "pc": "0x7f2922a6d4d0",
+        "sass": "      I2F.S8 R18, R12 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 92,
+        "samples": 759
+      },
+      {
+        "pc": "0x7f2922a6fd60",
+        "sass": "      IADD3 R74, P0, R119, c[0x0][0x170], RZ ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 97,
+        "samples": 626
+      },
+      {
+        "pc": "0x7f2922a6d480",
+        "sass": "      LDS.128 R12, [R2+0x1000] ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 96,
+        "samples": 601
+      },
+      {
+        "pc": "0x7f2922a6c2f0",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 77,
+        "samples": 541
+      },
+      {
+        "pc": "0x7f2922a6fb70",
+        "sass": "      IADD3 R90, P3, R119, c[0x0][0x168], RZ ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 96,
+        "samples": 528
+      },
+      {
+        "pc": "0x7f2922a6bfd0",
+        "sass": "      R2UR UR11, R9 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 33,
+        "samples": 499
+      },
+      {
+        "pc": "0x7f2922a6fda0",
+        "sass": "      IADD3 R74, P2, R91, c[0x0][0x170], RZ ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 97,
+        "samples": 455
+      },
+      {
+        "pc": "0x7f2922a6d450",
+        "sass": "      IMAD.WIDE R16, R47, R22, c[0x0][0x180] ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 91,
+        "samples": 443
+      },
+      {
+        "pc": "0x7f2922a6fe10",
+        "sass": "      IADD3 R74, P2, R120, c[0x0][0x170], RZ ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 97,
+        "samples": 301
+      },
+      {
+        "pc": "0x7f2922a6fc80",
+        "sass": "      SEL R74, RZ, 0x10, P5 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 96,
+        "samples": 281
+      },
+      {
+        "pc": "0x7f2922a6c050",
+        "sass": "      SEL R9, R5, RZ, !P2 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 58,
+        "samples": 187
+      },
+      {
+        "pc": "0x7f2922a6fbe0",
+        "sass": "      LEA R91, R13, UR9, 0xa ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 80,
+        "samples": 178
+      },
+      {
+        "pc": "0x7f2922a6d400",
+        "sass": "      IMAD.WIDE R14, R47, R22, c[0x0][0x178] ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 89,
+        "samples": 151
+      },
+      {
+        "pc": "0x7f2922a6d640",
+        "sass": "      SEL R20, R20, RZ, P0 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 90,
+        "samples": 79
+      },
+      {
+        "pc": "0x7f2922a6c5d0",
+        "sass": "      SEL R5, R26, RZ, !P6 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 96,
+        "samples": 45
+      },
+      {
+        "pc": "0x7f2922a6d3c0",
+        "sass": "      IMAD.WIDE R16, R23, R22, c[0x0][0x180] ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 91,
+        "samples": 43
+      },
+      {
+        "pc": "0x7f2922a6d610",
+        "sass": "      I2F.S8 R118, R44 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 92,
+        "samples": 42
+      },
+      {
+        "pc": "0x7f2922a6c780",
+        "sass": "      LOP3.LUT R7, R32, 0xf, RZ, 0xc0, !PT ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 58,
+        "samples": 37
+      },
+      {
+        "pc": "0x7f2922a6c270",
+        "sass": "      LOP3.LUT R3, R0, 0x10, RZ, 0xfc, !PT ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 26,
+        "samples": 31
+      },
+      {
+        "pc": "0x7f2922a6c830",
+        "sass": "      SGXT.U32 R8, R10, 0x2 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 77,
+        "samples": 25
+      },
+      {
+        "pc": "0x7f2922a6c6e0",
+        "sass": "      SHF.R.U32.HI R10, RZ, 0x5, R32 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 77,
+        "samples": 4
+      },
+      {
+        "pc": "0x7f2922a6c680",
+        "sass": "      IMAD.U32 R9, RZ, RZ, UR7 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 77,
+        "samples": 1
+      }
+    ],
+    "lines": [
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 89,
+        "samples": 22927
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 110,
+        "samples": 21423
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 96,
+        "samples": 3547
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 97,
+        "samples": 1382
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 92,
+        "samples": 801
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 77,
+        "samples": 571
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 33,
+        "samples": 499
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 91,
+        "samples": 486
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 58,
+        "samples": 224
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 80,
+        "samples": 178
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 90,
+        "samples": 79
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_load_average.py",
+        "line": 26,
+        "samples": 31
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "_attention_dual_packed",
+    "total_samples": 55172,
+    "instructions": [
+      {
+        "pc": "0x7f2922a728e0",
+        "sass": "      SEL R41, R38, RZ, !P3 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 90,
+        "samples": 26231
+      },
+      {
+        "pc": "0x7f2922a75430",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 99,
+        "samples": 21509
+      },
+      {
+        "pc": "0x7f2922a72900",
+        "sass": "      SEL R39, R39, RZ, !P3 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 91,
+        "samples": 3058
+      },
+      {
+        "pc": "0x7f2922a71c90",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 99,
+        "samples": 2094
+      },
+      {
+        "pc": "0x7f2922a72860",
+        "sass": "      SEL R30, R30, RZ, !P3 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 77,
+        "samples": 944
+      },
+      {
+        "pc": "0x7f2922a71770",
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 77,
+        "samples": 564
+      },
+      {
+        "pc": "0x7f2922a71650",
+        "sass": "      IADD3 R123, R135, 0x3f, RZ ",
+        "source": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "samples": 467
+      },
+      {
+        "pc": "0x7f2922a716b0",
+        "sass": "      SEL R8, R8, RZ, !P3 ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 58,
+        "samples": 239
+      },
+      {
+        "pc": "0x7f2922a75080",
+        "sass": "      IADD3 R146, P5, R145, c[0x0][0x170], RZ ",
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 100,
+        "samples": 66
+      }
+    ],
+    "lines": [
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 90,
+        "samples": 26231
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 99,
+        "samples": 23603
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 91,
+        "samples": 3058
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 77,
+        "samples": 1508
+      },
+      {
+        "source": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "samples": 467
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 58,
+        "samples": 239
+      },
+      {
+        "source": "/tmp/nanovllm_ncu_scale_variants_2026-10-04/dual_packed.py",
+        "line": 100,
+        "samples": 66
+      }
+    ]
+  }
+]

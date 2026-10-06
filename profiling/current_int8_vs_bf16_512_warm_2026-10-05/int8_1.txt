@@ -1,0 +1,22 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/current_int8_vs_bf16_512_warm_2026-10-05/measurement_snapshot/nanovllm/__init__.py
+Output token SHA256: 61fa5a2d71b62fcfaee4fd5f290ef36e8a6fa92582543b80aeee12ef78324c35
+Preemptions: 224
+Prefill batches: {"fresh": 90, "cached": 69}
+Actual KV dtype: torch.int8
+KV tensor bytes: 19964887040
+Scale tensor bytes: 623902720
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8 | blocks: 1360 | requests: 512 | seed: 0
+Input: 291939 tokens | Output: 284413 tokens | elapsed: 51.220 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                            2584.25    2173.35    4341.73   27843.38 ms/request
+TPOT                              62.74      58.69      83.64     196.63 ms/request/token
+ITL                               57.10      47.29      77.15      88.79 ms/token
+End-to-end latency             34243.15   36736.33   49076.27   50704.66 ms/request
+Requests/s: 10.00
+Input tokens/s: 5699.71
+Output tokens/s: 5552.78
+Total tokens/s: 11252.49
+Prefill model-run tokens/s: 48295.66 (410912 tokens / 8.508 s)
+Decode model-run tokens/s: 6722.17 (283677 tokens / 42.200 s)
+Peak PyTorch allocated: 20.76 GiB
+Peak PyTorch reserved: 21.06 GiB

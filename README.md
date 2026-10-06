@@ -43,9 +43,43 @@ outputs = llm.generate(prompts, sampling_params)
 outputs[0]["text"]
 ```
 
+Set `kv_cache_dtype="int8"` to store K/V as INT8 with one FP32 scale per token
+and KV head. Decode and cached-prefix prefill use a Triton attention kernel
+that restores K/V inside the kernel. Ordinary prefill still attends to the
+newly computed FP16/BF16 K/V with FlashAttention. The default `"auto"` keeps
+the model's FP16/BF16 cache. `"int8_dequant"` retains the earlier path that
+restores the referenced cache into a shared FP16/BF16 buffer before calling
+FlashAttention, for direct comparison. `"int8_half"` stores two FP32 scales
+per token and KV head, one for each half of the head dimension, and reads them
+inside the fused attention kernel. `"int8_half_dequant"` uses the same cache
+format but restores BF16 K/V before FlashAttention. All five modes support
+eager execution and CUDA Graph decoding.
+
+```bash
+python benchmark_inference_metrics.py --kv-cache-dtype auto
+python benchmark_inference_metrics.py --kv-cache-dtype int8
+python benchmark_inference_metrics.py --kv-cache-dtype int8_dequant
+python benchmark_inference_metrics.py --kv-cache-dtype int8_half
+python benchmark_inference_metrics.py --kv-cache-dtype int8_half_dequant
+```
+
 ## Benchmark
 
 See `bench.py` for benchmark.
+
+Set `preemption_lock=True` when constructing `LLM` to try decode priority after
+KV-cache preemption. `Scheduler.lock` becomes 1 whenever a request is preempted,
+and returns to 0 when any request finishes. While locked, running requests decode
+before waiting requests prefill. If no request can decode, prefill resumes to
+restore progress. The option defaults to `False`, preserving prefill priority.
+
+```python
+llm = LLM("/YOUR/MODEL/PATH", preemption_lock=True)
+```
+
+```bash
+python benchmark_inference_metrics.py --requests 1024 --preemption-lock
+```
 
 **Test Configuration:**
 - Hardware: RTX 4070 Laptop (8GB)

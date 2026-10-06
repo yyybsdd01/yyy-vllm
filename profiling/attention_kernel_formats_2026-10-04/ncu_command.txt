@@ -1,0 +1,14 @@
+Recorded collection command (working directory /home/xgd/yyy/nano-vllm):
+
+sudo -n /usr/local/cuda-12.4/bin/ncu \
+  --profile-from-start off --clock-control none --cache-control none \
+  --section SpeedOfLight --section LaunchStats --section Occupancy \
+  --section MemoryWorkloadAnalysis --section SchedulerStats \
+  --section WarpStateStats --section SourceCounters \
+  --metrics dram__bytes_read.sum,dram__bytes_write.sum,dram__bytes.sum,smsp__sass_thread_inst_executed_op_conversion_pred_on.sum,smsp__sass_thread_inst_executed_op_fp32_pred_on.sum \
+  --import-source yes --export /tmp/attention_kernel_formats_20261004_ncu \
+  /home/xgd/anaconda3/envs/nanovllm/bin/python \
+  profiling/compare_attention_kernel_formats.py --profile \
+  --outdir /tmp/attention_kernel_formats_20261004_ncu_sources
+
+The report was copied into ncu_formats.ncu-rep. Use fresh output paths for a rerun.

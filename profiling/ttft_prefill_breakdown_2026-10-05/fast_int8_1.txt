@@ -1,0 +1,28 @@
+SCALE_LAYOUT: token_head | package: /home/xgd/yyy/nano-vllm/profiling/fast_int8_vs_bf16_paired_2026-10-05/variants/fast_int8/nanovllm/__init__.py
+Representative prefill warmup: page-table strides 1/2/3/4 and 16384 tokens
+PREFILL_EXPERIMENT: int8_token_head
+ATTENTION_TILE_CONFIGURATION: tiled {'prefill': [64, 64, 1], 'decode': [16, 64, 1]}
+Output token SHA256: 5197ac33586f61685dc51439b99c0f583902f1543db1d66e254839a033e4271a
+INITIAL_PREFILL_TRACE: [{"batch": 1, "requests": 31, "tokens": 15705, "model_run_ms": 248.11233510263264, "initial_cached_tokens": 0, "first_token_elapsed_ms": 250.89133018627763, "cumulative_requests": 31}, {"batch": 2, "requests": 30, "tokens": 16364, "model_run_ms": 260.78191911801696, "initial_cached_tokens": 0, "first_token_elapsed_ms": 512.5863391440362, "cumulative_requests": 61}, {"batch": 3, "requests": 28, "tokens": 16114, "model_run_ms": 255.9918910264969, "initial_cached_tokens": 0, "first_token_elapsed_ms": 769.5188210345805, "cumulative_requests": 89}, {"batch": 4, "requests": 26, "tokens": 16130, "model_run_ms": 261.2968301400542, "initial_cached_tokens": 0, "first_token_elapsed_ms": 1031.736336182803, "cumulative_requests": 115}, {"batch": 5, "requests": 30, "tokens": 16314, "model_run_ms": 261.9117801077664, "initial_cached_tokens": 0, "first_token_elapsed_ms": 1294.6396491024643, "cumulative_requests": 145}, {"batch": 6, "requests": 30, "tokens": 16167, "model_run_ms": 259.8857949487865, "initial_cached_tokens": 0, "first_token_elapsed_ms": 1555.5271999910474, "cumulative_requests": 175}, {"batch": 7, "requests": 31, "tokens": 16047, "model_run_ms": 253.1803350429982, "initial_cached_tokens": 0, "first_token_elapsed_ms": 1809.6554011572152, "cumulative_requests": 206}, {"batch": 8, "requests": 29, "tokens": 15817, "model_run_ms": 251.7169089987874, "initial_cached_tokens": 0, "first_token_elapsed_ms": 2062.3231360223144, "cumulative_requests": 235}, {"batch": 9, "requests": 21, "tokens": 14169, "model_run_ms": 231.20427108369768, "initial_cached_tokens": 0, "first_token_elapsed_ms": 2294.2770740482956, "cumulative_requests": 256}]
+Preemptions: 0
+Actual KV dtype: torch.int8
+KV tensor bytes: 19377684480
+Scale tensor bytes: 1211105280
+Prefill dispatch audit: {"flash": 0, "int8": 252}
+Prefill shape SHA256: bd8dd314cf69a399e4e4c76ef8e81a9012dfa41c0a512d72fb7849bf05b7e589
+Prefill batches: 9
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8_half | blocks: 1320 | requests: 256 | seed: 0
+Input: 142827 tokens | Output: 512 tokens | elapsed: 2.320 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                            1254.37    1294.64    2294.28    2294.28 ms/request
+TPOT                            1063.79    1023.52    2067.27    2067.27 ms/request/token
+ITL                             1063.79    1023.52    2067.27    2067.27 ms/token
+End-to-end latency              2318.16    2318.16    2318.16    2318.16 ms/request
+Requests/s: 110.34
+Input tokens/s: 61560.61
+Output tokens/s: 220.68
+Total tokens/s: 61781.29
+Prefill model-run tokens/s: 62531.47 (142827 tokens / 2.284 s)
+Decode model-run tokens/s: 11022.04 (256 tokens / 0.023 s)
+Peak PyTorch allocated: 20.76 GiB
+Peak PyTorch reserved: 21.06 GiB

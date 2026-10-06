@@ -1,0 +1,3 @@
+text=/home/xgd/.cache/nanovllm_eval/wikitext2_test.txt model=/home/xgd/huggingface/Qwen3-0.6B
+scored_tokens=298938 window=4096 chunk=256 block=256
+int8_half    NLL=879323.888306 PPL=18.944100 fresh_tokens=18688 cached_tokens=280250 fresh_PPL=34.889511 cached_PPL=18.188134

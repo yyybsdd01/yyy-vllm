@@ -1,0 +1,26 @@
+[
+  {
+    "upstream_path": "csrc/flash_attn/src/flash_fwd_launch_template.h",
+    "url": "https://raw.githubusercontent.com/Dao-AILab/flash-attention/v2.7.4.post1/csrc/flash_attn/src/flash_fwd_launch_template.h",
+    "local_path": "profiling/flashattention_launch_2026-10-05/source/flash_fwd_launch_template.h",
+    "sha256": "62a3854739485046b5385809d10eaf4f7d19747f7a63564707196587a57b09ee"
+  },
+  {
+    "upstream_path": "csrc/flash_attn/flash_api.cpp",
+    "url": "https://raw.githubusercontent.com/Dao-AILab/flash-attention/v2.7.4.post1/csrc/flash_attn/flash_api.cpp",
+    "local_path": "profiling/flashattention_launch_2026-10-05/source/flash_api.cpp",
+    "sha256": "2ec92d52a6c957fd0bff137f52007fb6269dec57421004f427d60e0ad0efb3cd"
+  },
+  {
+    "upstream_path": "csrc/flash_attn/src/kernel_traits.h",
+    "url": "https://raw.githubusercontent.com/Dao-AILab/flash-attention/v2.7.4.post1/csrc/flash_attn/src/kernel_traits.h",
+    "local_path": "profiling/flashattention_launch_2026-10-05/source/kernel_traits.h",
+    "sha256": "880a6f432613dc01979a605d304da75985f9ed34ff66f1f4ded85fc90b7047ac"
+  },
+  {
+    "upstream_path": "csrc/flash_attn/src/flash_fwd_kernel.h",
+    "url": "https://raw.githubusercontent.com/Dao-AILab/flash-attention/v2.7.4.post1/csrc/flash_attn/src/flash_fwd_kernel.h",
+    "local_path": "profiling/flashattention_launch_2026-10-05/source/flash_fwd_kernel.h",
+    "sha256": "f62f9f9125bc24330b48e2cbf2fbdb369c4f9f3e326c8e66a797f8e09f934ec1"
+  }
+]

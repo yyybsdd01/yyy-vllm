@@ -1,0 +1,8 @@
+{
+  "original_files_unchanged": true,
+  "writer_ast_only_scale_address_and_block_size_argument": true,
+  "attention_ast_only_scale_address": true,
+  "gpu_unittest": "PASS: D=80/128, scattered pages, skips, decode, prefill, empty context",
+  "benchmark_shapes": 8,
+  "benchmark_old_new_bitwise_equal": true
+}

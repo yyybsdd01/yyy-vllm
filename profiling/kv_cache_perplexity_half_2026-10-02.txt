@@ -1,0 +1,10 @@
+text=/home/xgd/.cache/nanovllm_eval/wikitext2_test.txt model=/home/xgd/huggingface/Qwen3-0.6B
+scored_tokens=298938 window=4096 chunk=256 block=256
+auto         NLL=877201.595184 PPL=18.810083 fresh_tokens=18688 cached_tokens=280250 fresh_PPL=34.889511 cached_PPL=18.050919
+int8         NLL=881086.955719 PPL=19.056158 fresh_tokens=18688 cached_tokens=280250 fresh_PPL=34.889511 cached_PPL=18.302918
+int8_half    NLL=879235.727936 PPL=18.938513 fresh_tokens=18688 cached_tokens=280250 fresh_PPL=34.889511 cached_PPL=18.182414
+int8_half_dequant NLL=879167.063293 PPL=18.934164 fresh_tokens=18688 cached_tokens=280250 fresh_PPL=34.889511 cached_PPL=18.177959
+int8_vs_auto delta_PPL=+0.246074 relative=+1.3082% delta_NLL_per_token=+0.01299721
+int8_half_vs_auto delta_PPL=+0.128430 relative=+0.6828% delta_NLL_per_token=+0.00680453
+int8_half_dequant_vs_auto delta_PPL=+0.124081 relative=+0.6596% delta_NLL_per_token=+0.00657484
+int8_half_vs_int8 delta_PPL=-0.117644 relative=-0.6174% delta_NLL_per_token=-0.00619268

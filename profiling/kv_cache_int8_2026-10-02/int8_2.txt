@@ -1,0 +1,15 @@
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8 | blocks: 1272 | requests: 256 | seed: 0
+Input: 142827 tokens | Output: 133966 tokens | elapsed: 48.216 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                            1296.08    1332.30    2265.88    2265.88 ms/request
+TPOT                              59.14      60.50      68.87      73.30 ms/request/token
+ITL                               55.78      58.08      62.57      62.91 ms/token
+End-to-end latency             30429.28   31528.68   47885.12   48129.96 ms/request
+Requests/s: 5.31
+Input tokens/s: 2962.25
+Output tokens/s: 2778.47
+Total tokens/s: 5740.72
+Prefill model-run tokens/s: 63315.21 (142827 tokens / 2.256 s)
+Decode model-run tokens/s: 2924.78 (133710 tokens / 45.716 s)
+Peak PyTorch allocated: 20.76 GiB
+Peak PyTorch reserved: 21.21 GiB

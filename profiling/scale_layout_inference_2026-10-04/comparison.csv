@@ -1,0 +1,31 @@
+metric,statistic,unit,token_head,head_token,change_pct
+TTFT,mean,ms,1300.37,1300.92,0.04229565431379534
+TTFT,p50,ms,1336.99,1337.66,0.05011256628695282
+TTFT,p95,ms,2275.1,2274.36,-0.03252604281129834
+TTFT,p99,ms,2275.1,2274.36,-0.03252604281129834
+TPOT,mean,ms,29.95,29.9,-0.16694490818029983
+TPOT,p50,ms,29.75,29.63,-0.4033613445378226
+TPOT,p95,ms,37.65,37.31,-0.9030544488711767
+TPOT,p99,ms,42.32,41.96,-0.8506616257088817
+ITL,mean,ms,27.96,27.99,0.10729613733904131
+ITL,p50,ms,27.93,27.95,0.07160759040458764
+ITL,p95,ms,29.8,29.64,-0.5369127516778538
+ITL,p99,ms,30.06,29.78,-0.9314703925482282
+End-to-end latency,mean,ms,15901.3,15916.43,0.09514945318935819
+End-to-end latency,p50,ms,16427.35,16425.86,-0.00907023956997488
+End-to-end latency,p95,ms,24580.91,24701.31,0.48981099560594377
+End-to-end latency,p99,ms,24759.0,24877.73,0.4795427925198936
+elapsed_s,run_median,s,24.839,24.957,0.47505938242280443
+requests_per_s,run_median,request/s,10.31,10.26,-0.4849660523763455
+input_tokens_per_s,run_median,token/s,5750.07,5722.85,-0.4733855413934007
+output_tokens_per_s,run_median,token/s,5393.33,5367.8,-0.4733624680855697
+total_tokens_per_s,run_median,token/s,11143.4,11090.65,-0.47337437406895777
+blocks,run_median,block,1320,1320,0.0
+peak_allocated_gib,run_median,GiB,20.76,20.76,0.0
+peak_reserved_gib,run_median,GiB,21.21,21.21,0.0
+prefill_tokens_per_s,run_median,token/s,63059.94,63072.58,0.020044421228426756
+prefill_tokens,run_median,token,142827,142827,0.0
+prefill_seconds,run_median,s,2.265,2.264,-0.04415011037529615
+decode_tokens_per_s,run_median,token/s,5985.58,5952.88,-0.5463129721764659
+decode_tokens,run_median,token,133710,133710,0.0
+decode_seconds,run_median,s,22.339,22.461,0.5461300863959906

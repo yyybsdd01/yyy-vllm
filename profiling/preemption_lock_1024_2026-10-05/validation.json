@@ -1,0 +1,21 @@
+{
+  "all_12_fresh_trials_valid": true,
+  "identical_workload": true,
+  "exact_reference_kernels": true,
+  "source_snapshots_unchanged": true,
+  "per_request_output_lengths_pass": true,
+  "identical_output_digests_within_each_variant_across_both_policies": true,
+  "identical_preemption_histograms_and_decode_batch_statistics": true,
+  "cpu_unit_tests": {
+    "command": "python -m unittest discover -s tests -p test_scheduler_preemption_lock.py -v",
+    "tests": 7,
+    "result": "PASS"
+  },
+  "cpu_scheduler_replay_counts_match_gpu": true,
+  "cpu_scheduler_replay_same_trace_both_policies": true,
+  "eligible_prefill_while_locked": {
+    "bf16": 0,
+    "fast_int8_half": 0
+  },
+  "replay_script_sha256": "a9f2d161ef15486916d191e97cbaf16b247dcaafa9bc0d9fd825f0926c57fe4f"
+}

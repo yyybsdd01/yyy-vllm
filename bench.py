@@ -6,6 +6,7 @@ from nanovllm import LLM, SamplingParams
 
 
 def main():
+    """构造随机请求并运行预热与正式生成，统计总输出 token 的吞吐量。"""
     seed(0)
     num_seqs = 256
     max_input_len = 1024

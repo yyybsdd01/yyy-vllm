@@ -1,0 +1,11 @@
+QUALITY START fast_int8 mode=int8_half tokens=298938 package=/home/xgd/yyy/nano-vllm/profiling/fast_int8_vs_bf16_paired_2026-10-05/variants/fast_int8/nanovllm/__init__.py
+QUALITY PROGRESS fast_int8 chunks=128
+QUALITY PROGRESS fast_int8 chunks=256
+QUALITY PROGRESS fast_int8 chunks=384
+QUALITY PROGRESS fast_int8 chunks=512
+QUALITY PROGRESS fast_int8 chunks=640
+QUALITY PROGRESS fast_int8 chunks=768
+QUALITY PROGRESS fast_int8 chunks=896
+QUALITY PROGRESS fast_int8 chunks=1024
+QUALITY PROGRESS fast_int8 chunks=1152
+QUALITY COMPLETE fast_int8 NLL=879110.076904 PPL=18.930555 fresh_PPL=35.487352 cached_PPL=18.153684 dispatch={'flash': 0, 'int8': 32704}

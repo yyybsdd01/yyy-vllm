@@ -1,0 +1,31 @@
+metric,unit,flash_token_head,flash_head_token,int8_token_head,int8_head_token
+TTFT MEAN ms,ms,1179.74,1178.82,1507.36,1499.13
+TTFT P50 ms,ms,1217.92,1216.51,1557.69,1549.6
+TTFT P95 ms,ms,2156.19,2155.88,2762.17,2746.19
+TTFT P99 ms,ms,2156.19,2155.88,2762.17,2746.19
+TPOT MEAN ms,ms,29.99,29.87,30.97,30.82
+TPOT P50 ms,ms,29.79,29.58,30.28,30.08
+TPOT P95 ms,ms,37.7,37.33,40.46,40.0
+TPOT P99 ms,ms,42.39,42.01,46.45,45.95
+ITL MEAN ms,ms,27.99,27.96,28.69,28.65
+ITL P50 ms,ms,27.97,27.92,28.08,28.07
+ITL P95 ms,ms,29.86,29.57,30.07,29.82
+ITL P99 ms,ms,30.1,29.78,30.33,29.94
+End-to-end latency MEAN ms,ms,15799.78,15779.88,16496.14,16463.99
+End-to-end latency P50 ms,ms,16335.3,16286.93,17032.92,16973.18
+End-to-end latency P95 ms,ms,24478.33,24553.93,25223.78,25302.67
+End-to-end latency P99 ms,ms,24656.34,24730.58,25402.12,25480.04
+generate 时间 s,s,24.736,24.811,25.482,25.56
+请求/s,request/s,10.35,10.32,10.05,10.02
+输出 token/s,token/s,5415.78,5399.56,5257.29,5241.33
+输入 token/s,token/s,5774.0,5756.71,5605.03,5588.01
+输入+输出 token/s,token/s,11189.77,11156.27,10862.32,10829.34
+KV blocks,block,1320,1320,1320,1320
+峰值 allocated GiB,GiB,20.76,20.76,20.76,20.76
+峰值 reserved GiB,GiB,21.06,21.06,21.06,21.06
+prefill model-run seconds,s,2.146,2.146,2.752,2.736
+prefill model-run tokens_per_s,token/s,66555.68,66558.85,51897.13,52202.86
+prefill model-run tokens,token,142827,142827,142827,142827
+decode model-run seconds,s,22.357,22.436,22.488,22.591
+decode model-run tokens_per_s,token/s,5980.75,5959.7,5945.87,5918.81
+decode model-run tokens,token,133710,133710,133710,133710

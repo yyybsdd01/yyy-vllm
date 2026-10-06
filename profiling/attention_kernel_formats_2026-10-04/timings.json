@@ -1,0 +1,768 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3090 Ti",
+  "torch": "2.5.1+cu121",
+  "triton": "3.1.0",
+  "cuda": "12.1",
+  "seed": 37,
+  "source_sha256": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+  "rounds": 11,
+  "replays": 10,
+  "calls_per_graph": 8,
+  "BM": 16,
+  "BN": 64,
+  "BD": 128,
+  "query_heads": 16,
+  "kv_heads": 8,
+  "head_dim": 128,
+  "cases": [
+    {
+      "batch": 1,
+      "context": 1024,
+      "mode": "decode",
+      "qlen": 1,
+      "logical_bf16_KV_MiB": 4.0,
+      "logical_int8_KV_scales_MiB": 2.125,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 12.395600229501724,
+          "min_round_us": 12.388800084590912,
+          "max_round_us": 12.40919977426529,
+          "round_us": [
+            12.388800084590912,
+            12.391600012779236,
+            12.395600229501724,
+            12.396799772977829,
+            12.396000325679779,
+            12.391600012779236,
+            12.40919977426529,
+            12.402000278234482,
+            12.393199652433395,
+            12.39439994096756,
+            12.402000278234482
+          ],
+          "kernel_count": 2,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, false, false, false, false, true, false, true, false>(flash::Flash_fwd_params)",
+              "duration_us": 9.47199999999998
+            },
+            {
+              "name": "void flash::flash_fwd_splitkv_combine_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, 4, 3, true>(flash::Flash_fwd_params)",
+              "duration_us": 4.160000000000082
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 29.611998796463013,
+          "min_round_us": 29.604798555374146,
+          "max_round_us": 29.618000984191895,
+          "round_us": [
+            29.617199301719666,
+            29.60599958896637,
+            29.6068012714386,
+            29.610401391983032,
+            29.611998796463013,
+            29.611998796463013,
+            29.613998532295227,
+            29.604798555374146,
+            29.60599958896637,
+            29.61280047893524,
+            29.618000984191895
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 29.536000000000058
+            }
+          ],
+          "correctness_max_abs": 0.000244140625
+        },
+        "triton_int8_half": {
+          "median_us": 43.34920048713684,
+          "min_round_us": 43.34680140018463,
+          "max_round_us": 43.3571994304657,
+          "round_us": [
+            43.351998925209045,
+            43.34680140018463,
+            43.353599309921265,
+            43.3571994304657,
+            43.34680140018463,
+            43.35480034351349,
+            43.34680140018463,
+            43.34720075130463,
+            43.35640072822571,
+            43.34920048713684,
+            43.34920048713684
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 46.975999999999885
+            }
+          ],
+          "correctness_max_abs": 0.000244140625
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 150,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    },
+    {
+      "batch": 64,
+      "context": 512,
+      "mode": "decode",
+      "qlen": 1,
+      "logical_bf16_KV_MiB": 128.0,
+      "logical_int8_KV_scales_MiB": 68.0,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 164.87280130386353,
+          "min_round_us": 164.51040506362915,
+          "max_round_us": 165.04759788513184,
+          "round_us": [
+            164.55520391464233,
+            164.51040506362915,
+            164.55520391464233,
+            165.04759788513184,
+            164.9176001548767,
+            164.92600440979004,
+            164.84440565109253,
+            164.87280130386353,
+            164.93680477142334,
+            164.87560272216797,
+            164.85480070114136
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, false, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+              "duration_us": 167.55500000000006
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 154.96400594711304,
+          "min_round_us": 154.7719955444336,
+          "max_round_us": 155.14839887619019,
+          "round_us": [
+            154.9232006072998,
+            154.967999458313,
+            154.7719955444336,
+            155.14839887619019,
+            155.0271987915039,
+            154.994797706604,
+            154.93600368499756,
+            154.9515962600708,
+            154.96400594711304,
+            154.993999004364,
+            154.9347996711731
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 154.46600000000012
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        },
+        "triton_int8_half": {
+          "median_us": 195.878803730011,
+          "min_round_us": 194.19440031051636,
+          "max_round_us": 197.36599922180176,
+          "round_us": [
+            195.31919956207275,
+            195.26439905166626,
+            195.2947974205017,
+            194.19440031051636,
+            197.36599922180176,
+            195.878803730011,
+            196.2291955947876,
+            197.16880321502686,
+            196.88119888305664,
+            196.48959636688232,
+            195.71720361709595
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 188.48000000000002
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 150,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    },
+    {
+      "batch": 64,
+      "context": 1024,
+      "mode": "decode",
+      "qlen": 1,
+      "logical_bf16_KV_MiB": 256.0,
+      "logical_int8_KV_scales_MiB": 136.0,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 320.8928108215332,
+          "min_round_us": 320.7940101623535,
+          "max_round_us": 321.041202545166,
+          "round_us": [
+            320.84360122680664,
+            320.7940101623535,
+            320.9619998931885,
+            320.94600200653076,
+            320.79920768737793,
+            320.83799839019775,
+            320.92039585113525,
+            320.8992004394531,
+            321.041202545166,
+            320.8928108215332,
+            320.8256006240845
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, false, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+              "duration_us": 325.443
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 306.46040439605713,
+          "min_round_us": 306.31279945373535,
+          "max_round_us": 306.9648027420044,
+          "round_us": [
+            306.7683935165405,
+            306.31279945373535,
+            306.7811965942383,
+            306.9416046142578,
+            306.9648027420044,
+            306.46040439605713,
+            306.32479190826416,
+            306.6728115081787,
+            306.4079999923706,
+            306.4300060272217,
+            306.46040439605713
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 306.0179999999998
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        },
+        "triton_int8_half": {
+          "median_us": 361.50519847869873,
+          "min_round_us": 359.02318954467773,
+          "max_round_us": 363.0320072174072,
+          "round_us": [
+            360.7016086578369,
+            361.89959049224854,
+            359.635591506958,
+            360.0572109222412,
+            363.0320072174072,
+            362.8432035446167,
+            362.9499912261963,
+            361.50519847869873,
+            359.02318954467773,
+            362.26959228515625,
+            360.837197303772
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 357.88699999999994
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 150,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    },
+    {
+      "batch": 256,
+      "context": 512,
+      "mode": "decode",
+      "qlen": 1,
+      "logical_bf16_KV_MiB": 512.0,
+      "logical_int8_KV_scales_MiB": 272.0,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 585.1963996887207,
+          "min_round_us": 584.7859859466553,
+          "max_round_us": 585.7964038848877,
+          "round_us": [
+            585.040807723999,
+            585.1627826690674,
+            584.857988357544,
+            585.2484226226807,
+            585.2131843566895,
+            585.2940082550049,
+            585.1963996887207,
+            584.8147869110107,
+            585.4288101196289,
+            584.7859859466553,
+            585.7964038848877
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, false, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+              "duration_us": 587.6219999999998
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 574.4627952575684,
+          "min_round_us": 574.2551803588867,
+          "max_round_us": 574.8635768890381,
+          "round_us": [
+            574.397611618042,
+            574.2623805999756,
+            574.5967864990234,
+            574.4627952575684,
+            574.6243953704834,
+            574.567985534668,
+            574.2551803588867,
+            574.4584083557129,
+            574.3696212768555,
+            574.8635768890381,
+            574.6912002563477
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 573.3419999999999
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        },
+        "triton_int8_half": {
+          "median_us": 631.8672180175781,
+          "min_round_us": 629.7579765319824,
+          "max_round_us": 637.0560169219971,
+          "round_us": [
+            635.6904029846191,
+            633.7771892547607,
+            631.8180084228516,
+            631.8672180175781,
+            629.7579765319824,
+            630.9780120849609,
+            636.4935874938965,
+            631.282377243042,
+            630.4647922515869,
+            637.0560169219971,
+            634.8968029022217
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 630.7949999999998
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 150,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    },
+    {
+      "batch": 256,
+      "context": 1024,
+      "mode": "decode",
+      "qlen": 1,
+      "logical_bf16_KV_MiB": 1024.0,
+      "logical_int8_KV_scales_MiB": 544.0,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 1152.1843910217285,
+          "min_round_us": 1152.0604133605957,
+          "max_round_us": 1152.4131774902344,
+          "round_us": [
+            1152.1464347839355,
+            1152.2735595703125,
+            1152.132797241211,
+            1152.3119926452637,
+            1152.4131774902344,
+            1152.128028869629,
+            1152.2724151611328,
+            1152.262783050537,
+            1152.1843910217285,
+            1152.184009552002,
+            1152.0604133605957
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, false, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+              "duration_us": 1154.7959999999998
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 1141.089153289795,
+          "min_round_us": 1140.6975746154785,
+          "max_round_us": 1141.32080078125,
+          "round_us": [
+            1140.824031829834,
+            1140.6975746154785,
+            1140.9420013427734,
+            1141.273593902588,
+            1141.2664413452148,
+            1141.089153289795,
+            1140.9963607788086,
+            1141.2035942077637,
+            1141.0823822021484,
+            1141.32080078125,
+            1141.200828552246
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 1138.292
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        },
+        "triton_int8_half": {
+          "median_us": 1245.114803314209,
+          "min_round_us": 1242.4799919128418,
+          "max_round_us": 1252.3256301879883,
+          "round_us": [
+            1243.3143615722656,
+            1252.3256301879883,
+            1245.048427581787,
+            1245.0347900390625,
+            1242.4799919128418,
+            1245.4447746276855,
+            1249.128818511963,
+            1244.456386566162,
+            1247.1579551696777,
+            1251.7239570617676,
+            1245.114803314209
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 1243.272
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 150,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    },
+    {
+      "batch": 64,
+      "context": 4096,
+      "mode": "decode",
+      "qlen": 1,
+      "logical_bf16_KV_MiB": 1024.0,
+      "logical_int8_KV_scales_MiB": 544.0,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 1261.620044708252,
+          "min_round_us": 1260.3351593017578,
+          "max_round_us": 1262.973976135254,
+          "round_us": [
+            1260.3615760803223,
+            1260.3351593017578,
+            1261.4219665527344,
+            1261.3727569580078,
+            1261.620044708252,
+            1261.2028121948242,
+            1262.526798248291,
+            1262.1288299560547,
+            1262.876796722412,
+            1262.406826019287,
+            1262.973976135254
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, false, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+              "duration_us": 1261.285
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 1219.8439598083496,
+          "min_round_us": 1218.380355834961,
+          "max_round_us": 1220.4496383666992,
+          "round_us": [
+            1218.380355834961,
+            1218.7532424926758,
+            1218.505573272705,
+            1219.405174255371,
+            1220.3408241271973,
+            1220.0063705444336,
+            1220.2912330627441,
+            1220.4496383666992,
+            1219.7367668151855,
+            1219.8439598083496,
+            1219.9372291564941
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 1212.532
+            }
+          ],
+          "correctness_max_abs": 0.000244140625
+        },
+        "triton_int8_half": {
+          "median_us": 1505.8444023132324,
+          "min_round_us": 1498.582363128662,
+          "max_round_us": 1510.4915618896484,
+          "round_us": [
+            1500.4847526550293,
+            1498.582363128662,
+            1507.9071998596191,
+            1506.120777130127,
+            1507.1435928344727,
+            1505.8444023132324,
+            1510.4915618896484,
+            1505.1848411560059,
+            1506.9944381713867,
+            1505.325984954834,
+            1505.7235717773438
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 1511.065
+            }
+          ],
+          "correctness_max_abs": 0.000244140625
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 150,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    },
+    {
+      "batch": 1,
+      "context": 1024,
+      "mode": "prefill",
+      "qlen": 128,
+      "logical_bf16_KV_MiB": 4.0,
+      "logical_int8_KV_scales_MiB": 2.125,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 41.31799936294556,
+          "min_round_us": 41.297200322151184,
+          "max_round_us": 41.34239852428436,
+          "round_us": [
+            41.31360054016113,
+            41.34239852428436,
+            41.31320118904114,
+            41.297200322151184,
+            41.31799936294556,
+            41.30359888076782,
+            41.31839871406555,
+            41.321200132369995,
+            41.337600350379944,
+            41.308799386024475,
+            41.329601407051086
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, true, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+              "duration_us": 42.016000000000076
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 38.1987988948822,
+          "min_round_us": 38.11360001564026,
+          "max_round_us": 38.28279972076416,
+          "round_us": [
+            38.22520077228546,
+            38.28279972076416,
+            38.1987988948822,
+            38.11360001564026,
+            38.146400451660156,
+            38.1987988948822,
+            38.20439875125885,
+            38.19040060043335,
+            38.233599066734314,
+            38.25559914112091,
+            38.19560110569
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 36.99200000000019
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        },
+        "triton_int8_half": {
+          "median_us": 83.53679776191711,
+          "min_round_us": 83.40399861335754,
+          "max_round_us": 83.82480144500732,
+          "round_us": [
+            83.4496021270752,
+            83.82480144500732,
+            83.4876000881195,
+            83.48199725151062,
+            83.53679776191711,
+            83.69600176811218,
+            83.57160091400146,
+            83.69519710540771,
+            83.40399861335754,
+            83.42639803886414,
+            83.60239863395691
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 87.9050000000002
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 145,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    },
+    {
+      "batch": 8,
+      "context": 1024,
+      "mode": "prefill",
+      "qlen": 128,
+      "logical_bf16_KV_MiB": 32.0,
+      "logical_int8_KV_scales_MiB": 17.0,
+      "variants": {
+        "flash_bf16": {
+          "median_us": 164.4528031349182,
+          "min_round_us": 163.40800523757935,
+          "max_round_us": 168.06559562683105,
+          "round_us": [
+            163.69680166244507,
+            165.01359939575195,
+            163.40800523757935,
+            164.44120407104492,
+            165.47160148620605,
+            164.46000337600708,
+            164.39039707183838,
+            164.43560123443604,
+            164.4528031349182,
+            164.48320150375366,
+            168.06559562683105
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::bfloat16_t> >, true, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+              "duration_us": 165.05899999999997
+            }
+          ],
+          "correctness_max_abs": 0.0
+        },
+        "triton_bf16": {
+          "median_us": 262.53719329833984,
+          "min_round_us": 260.6372117996216,
+          "max_round_us": 265.99600315093994,
+          "round_us": [
+            260.68639755249023,
+            260.6372117996216,
+            260.76879501342773,
+            262.827205657959,
+            263.809609413147,
+            262.25759983062744,
+            262.5220060348511,
+            262.6260042190552,
+            265.30280113220215,
+            262.53719329833984,
+            265.99600315093994
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_bf16_paged_attention_control",
+              "duration_us": 259.49
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        },
+        "triton_int8_half": {
+          "median_us": 538.4131908416748,
+          "min_round_us": 535.1716041564941,
+          "max_round_us": 541.8508052825928,
+          "round_us": [
+            535.1716041564941,
+            535.9096050262451,
+            541.8508052825928,
+            538.4131908416748,
+            539.7480010986328,
+            538.123607635498,
+            538.1392002105713,
+            538.7475967407227,
+            541.5919780731201,
+            537.6952171325684,
+            541.4031982421875
+          ],
+          "kernel_count": 1,
+          "kernels": [
+            {
+              "name": "_int8_paged_attention_kernel",
+              "duration_us": 537.9589999999998
+            }
+          ],
+          "correctness_max_abs": 0.00048828125
+        }
+      },
+      "bf16_control_resources": {
+        "registers": 145,
+        "spills": 0,
+        "shared_bytes": 39936
+      }
+    }
+  ],
+  "flash_attn": "2.7.4.post1"
+}

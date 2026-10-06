@@ -1,0 +1,5 @@
+Identical reconstructed KV: all five variants bitwise equal in all eight timed cases.
+Distinct half scales: production dual and dual_packed match BF16 FlashAttention in decode and cached prefill (rtol=0.02, atol=0.005).
+Existing tests: python -m unittest tests.test_quantized_attention tests.test_half_head_kvcache -v
+Ran 2 tests in 5.597s: OK (head_dim=80 and 128, single/two scales, decode/prefill).
+Production kernel SHA256 unchanged: 02a9a36c499ed979f21e8053a1d33260c1ba474a7dd6c5509f2c52ee64c80ca9

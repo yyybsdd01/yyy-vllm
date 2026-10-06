@@ -1,0 +1,883 @@
+{
+  "started_utc": "2026-10-04T15:52:15.721771+00:00",
+  "model": "/home/xgd/huggingface/Qwen3-0.6B",
+  "python": "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+  "gpu": "0",
+  "runs_per_variant": 3,
+  "variants": [
+    "flash_token_head",
+    "flash_head_token",
+    "int8_token_head",
+    "int8_head_token"
+  ],
+  "variant_roots": {
+    "flash_token_head": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/token_head",
+    "flash_head_token": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/head_token",
+    "int8_token_head": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/token_head",
+    "int8_head_token": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/head_token"
+  },
+  "original_source_hashes": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+    "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+    "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+    "nanovllm/engine/model_runner.py": "4084396da1c8915de058ebdcb799b380914a98d1d31ad18d814078d78064c5f2",
+    "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+    "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "a444d22f3859635c417a1288be4ee86272a7f43d1f9aeebd51c6f6ffe8d79351"
+  },
+  "variant_source_hashes": {
+    "flash_token_head": {
+      "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+      "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+      "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+      "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+      "nanovllm/engine/model_runner.py": "4084396da1c8915de058ebdcb799b380914a98d1d31ad18d814078d78064c5f2",
+      "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+      "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+      "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+      "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+      "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+      "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+      "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+      "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+      "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+      "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+      "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+      "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+      "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+      "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+      "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+      "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+      "benchmark_inference_metrics.py": "96d004fa4175fa83dd132d18969731496e2d25337465e994fb055b339a715a7b"
+    },
+    "flash_head_token": {
+      "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+      "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+      "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+      "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+      "nanovllm/engine/model_runner.py": "2cb890279d3b78f4df8c2602b993674ddd6cc662d44735e437b8fb6cf2538ccc",
+      "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+      "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+      "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+      "nanovllm/layers/attention.py": "e01aa8b628d924154a61c4c8a375d6b3343bd3e806f7959abaceed54d6649b89",
+      "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+      "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+      "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+      "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+      "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+      "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+      "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+      "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+      "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+      "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+      "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+      "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+      "benchmark_inference_metrics.py": "c9c6d5094be774b2592d7e0647c819a29c1ab31e2928e3236f3ec338a0830a24"
+    },
+    "int8_token_head": {
+      "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+      "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+      "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+      "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+      "nanovllm/engine/model_runner.py": "d618d5566a3d5b4e3ad27bf839f41965c35e0c8a0125b1fe808125d2d38efcf8",
+      "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+      "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+      "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+      "nanovllm/layers/attention.py": "c307b42ac5f461aa3d4dcaa5e34ef34759d18ab82714d52a24b0d677ab9ed40c",
+      "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+      "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+      "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+      "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+      "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+      "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+      "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+      "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+      "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+      "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+      "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+      "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+      "benchmark_inference_metrics.py": "45de20f61865fa3edd9b1f2189a64eb4a2ab5db2ce31bc2e271ce47c042e939e"
+    },
+    "int8_head_token": {
+      "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+      "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+      "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+      "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+      "nanovllm/engine/model_runner.py": "71f30ca596a151e0dae6ae5c7ef8fb08cd8a370472832fae03791c6fc00c2699",
+      "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+      "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+      "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+      "nanovllm/layers/attention.py": "de73506bf8b2ef9af39636e02daea237cd913f6946c79077d68083f3bf4e2dd1",
+      "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+      "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+      "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+      "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+      "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+      "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+      "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+      "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+      "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+      "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+      "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+      "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+      "benchmark_inference_metrics.py": "74a9146853a6a2e0843e933e8424e0f6ddb79ea651919ead66682c98fdbb423f"
+    }
+  },
+  "workload_sha256": "917347ade636c3fdf45ea6db31b735899458158c0d86f2e559498eebacb48f61",
+  "input_tokens": 142827,
+  "output_tokens": 133966,
+  "config": {
+    "requests": 256,
+    "input_length": [
+      100,
+      1024
+    ],
+    "output_length": [
+      100,
+      1024
+    ],
+    "python_seed": 0,
+    "torch_sampling_seed": 0,
+    "temperature": 0.6,
+    "ignore_eos": true,
+    "kv_cache_dtype": "int8_half",
+    "max_model_len": 4096,
+    "max_num_batched_tokens": 16384,
+    "max_num_seqs": 512,
+    "block_size": 256,
+    "gpu_memory_utilization": 0.9,
+    "tensor_parallel_size": 1,
+    "decode_cuda_graph": true,
+    "prefill_warmup_lengths": [
+      256,
+      512,
+      768,
+      1024
+    ],
+    "prefill_warmup_batches": [
+      4,
+      4,
+      4,
+      16
+    ]
+  },
+  "model_config": {
+    "architectures": [
+      "Qwen3ForCausalLM"
+    ],
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 1024,
+    "initializer_range": 0.02,
+    "intermediate_size": 3072,
+    "max_position_embeddings": 40960,
+    "max_window_layers": 28,
+    "model_type": "qwen3",
+    "num_attention_heads": 16,
+    "num_hidden_layers": 28,
+    "num_key_value_heads": 8,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": null,
+    "rope_theta": 1000000,
+    "sliding_window": null,
+    "tie_word_embeddings": true,
+    "torch_dtype": "bfloat16",
+    "transformers_version": "4.51.0",
+    "use_cache": true,
+    "use_sliding_window": false,
+    "vocab_size": 151936
+  },
+  "weight_files": [
+    {
+      "name": "model.safetensors",
+      "size": 1503300328,
+      "mtime_ns": 1790061211487904598
+    }
+  ],
+  "git_head": "bb823b3e06983d71485a8e1f23715ebd87d98ef8",
+  "nvidia_smi": "0, NVIDIA GeForce RTX 3090 Ti, 535.183.01, 24564 MiB, 60, 41.24 W, 210 MHz, 405 MHz\n1, NVIDIA GeForce RTX 3090 Ti, 535.183.01, 24564 MiB, 55, 39.47 W, 210 MHz, 405 MHz\n",
+  "validation": [
+    {
+      "layout": "token_head",
+      "package": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/token_head/nanovllm/layers/attention.py",
+      "cases": [
+        {
+          "prefixes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "query_lengths": [
+            1,
+            17,
+            255,
+            257
+          ],
+          "max_abs_error": 0.00390625,
+          "finite": true,
+          "allocated_cache_flash_calls": 0
+        },
+        {
+          "prefixes": [
+            256,
+            0,
+            13,
+            17
+          ],
+          "query_lengths": [
+            1,
+            17,
+            255,
+            257
+          ],
+          "max_abs_error": 0.00390625,
+          "finite": true,
+          "allocated_cache_flash_calls": 0
+        }
+      ],
+      "warmup_without_cache": "PASS",
+      "correctness": "PASS",
+      "rtol": 0.02,
+      "atol": 0.005
+    },
+    {
+      "layout": "head_token",
+      "package": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/head_token/nanovllm/layers/attention.py",
+      "cases": [
+        {
+          "prefixes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "query_lengths": [
+            1,
+            17,
+            255,
+            257
+          ],
+          "max_abs_error": 0.00390625,
+          "finite": true,
+          "allocated_cache_flash_calls": 0
+        },
+        {
+          "prefixes": [
+            256,
+            0,
+            13,
+            17
+          ],
+          "query_lengths": [
+            1,
+            17,
+            255,
+            257
+          ],
+          "max_abs_error": 0.00390625,
+          "finite": true,
+          "allocated_cache_flash_calls": 0
+        }
+      ],
+      "warmup_without_cache": "PASS",
+      "correctness": "PASS",
+      "rtol": 0.02,
+      "atol": 0.005
+    }
+  ],
+  "smoke_runs": [
+    {
+      "variant": "flash_token_head",
+      "trial": 0,
+      "log": "flash_token_head_smoke.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--requests",
+        "4",
+        "--min-input",
+        "257",
+        "--max-input",
+        "257",
+        "--min-output",
+        "16",
+        "--max-output",
+        "16"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/token_head",
+      "process_wall_s": 18.02807357814163,
+      "returncode": 0,
+      "metrics": {
+        "gpu": "NVIDIA GeForce RTX 3090 Ti",
+        "graph": true,
+        "mode": "int8_half",
+        "blocks": 1320,
+        "requests": 4,
+        "seed": 0,
+        "input_tokens": 1028,
+        "output_tokens": 64,
+        "elapsed_s": 0.074,
+        "latency_ms": {
+          "TTFT": {
+            "mean": 29.78,
+            "p50": 29.78,
+            "p95": 29.78,
+            "p99": 29.78
+          },
+          "TPOT": {
+            "mean": 2.97,
+            "p50": 2.97,
+            "p95": 2.97,
+            "p99": 2.97
+          },
+          "ITL": {
+            "mean": 2.97,
+            "p50": 2.97,
+            "p95": 3.01,
+            "p99": 3.01
+          },
+          "End-to-end latency": {
+            "mean": 74.34,
+            "p50": 74.34,
+            "p95": 74.34,
+            "p99": 74.34
+          }
+        },
+        "requests_per_s": 53.72,
+        "input_tokens_per_s": 13805.3,
+        "output_tokens_per_s": 859.47,
+        "total_tokens_per_s": 14664.78,
+        "peak_allocated_gib": 20.35,
+        "peak_reserved_gib": 21.06,
+        "stages": {
+          "prefill": {
+            "tokens_per_s": 34800.88,
+            "tokens": 1028,
+            "seconds": 0.03
+          },
+          "decode": {
+            "tokens_per_s": 1360.05,
+            "tokens": 60,
+            "seconds": 0.044
+          }
+        },
+        "variant": "flash_token_head",
+        "layout": "token_head",
+        "prefill_mode": "flash",
+        "trial": 0,
+        "log": "flash_token_head_smoke.txt",
+        "output_sha256": "1bfb0b9c4ed9de575534e34c92cb92ec89010b457a34287070e055cc636c393f",
+        "prefill_shape_sha256": "9dc86b8d640fa4f569bc7c882a0092b5bc8b55ba4ed81f60c099962a31d972dd",
+        "prefill_dispatch": {
+          "flash": 28,
+          "int8": 0
+        },
+        "prefill_batches": 1,
+        "process_wall_s": 18.02807357814163
+      }
+    },
+    {
+      "variant": "flash_head_token",
+      "trial": 0,
+      "log": "flash_head_token_smoke.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--requests",
+        "4",
+        "--min-input",
+        "257",
+        "--max-input",
+        "257",
+        "--min-output",
+        "16",
+        "--max-output",
+        "16"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/head_token",
+      "process_wall_s": 17.920021248050034,
+      "returncode": 0,
+      "metrics": {
+        "gpu": "NVIDIA GeForce RTX 3090 Ti",
+        "graph": true,
+        "mode": "int8_half",
+        "blocks": 1320,
+        "requests": 4,
+        "seed": 0,
+        "input_tokens": 1028,
+        "output_tokens": 64,
+        "elapsed_s": 0.074,
+        "latency_ms": {
+          "TTFT": {
+            "mean": 29.34,
+            "p50": 29.34,
+            "p95": 29.34,
+            "p99": 29.34
+          },
+          "TPOT": {
+            "mean": 2.97,
+            "p50": 2.97,
+            "p95": 2.97,
+            "p99": 2.97
+          },
+          "ITL": {
+            "mean": 2.97,
+            "p50": 2.96,
+            "p95": 3.0,
+            "p99": 3.0
+          },
+          "End-to-end latency": {
+            "mean": 73.85,
+            "p50": 73.85,
+            "p95": 73.85,
+            "p99": 73.85
+          }
+        },
+        "requests_per_s": 54.08,
+        "input_tokens_per_s": 13898.26,
+        "output_tokens_per_s": 865.26,
+        "total_tokens_per_s": 14763.52,
+        "peak_allocated_gib": 20.35,
+        "peak_reserved_gib": 21.06,
+        "stages": {
+          "prefill": {
+            "tokens_per_s": 35305.95,
+            "tokens": 1028,
+            "seconds": 0.029
+          },
+          "decode": {
+            "tokens_per_s": 1361.26,
+            "tokens": 60,
+            "seconds": 0.044
+          }
+        },
+        "variant": "flash_head_token",
+        "layout": "head_token",
+        "prefill_mode": "flash",
+        "trial": 0,
+        "log": "flash_head_token_smoke.txt",
+        "output_sha256": "1bfb0b9c4ed9de575534e34c92cb92ec89010b457a34287070e055cc636c393f",
+        "prefill_shape_sha256": "9dc86b8d640fa4f569bc7c882a0092b5bc8b55ba4ed81f60c099962a31d972dd",
+        "prefill_dispatch": {
+          "flash": 28,
+          "int8": 0
+        },
+        "prefill_batches": 1,
+        "process_wall_s": 17.920021248050034
+      }
+    },
+    {
+      "variant": "int8_token_head",
+      "trial": 0,
+      "log": "int8_token_head_smoke.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--requests",
+        "4",
+        "--min-input",
+        "257",
+        "--max-input",
+        "257",
+        "--min-output",
+        "16",
+        "--max-output",
+        "16"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/token_head",
+      "process_wall_s": 19.925503741018474,
+      "returncode": 0,
+      "metrics": {
+        "gpu": "NVIDIA GeForce RTX 3090 Ti",
+        "graph": true,
+        "mode": "int8_half",
+        "blocks": 1320,
+        "requests": 4,
+        "seed": 0,
+        "input_tokens": 1028,
+        "output_tokens": 64,
+        "elapsed_s": 0.075,
+        "latency_ms": {
+          "TTFT": {
+            "mean": 30.31,
+            "p50": 30.31,
+            "p95": 30.31,
+            "p99": 30.31
+          },
+          "TPOT": {
+            "mean": 2.99,
+            "p50": 2.99,
+            "p95": 2.99,
+            "p99": 2.99
+          },
+          "ITL": {
+            "mean": 2.99,
+            "p50": 2.99,
+            "p95": 3.08,
+            "p99": 3.08
+          },
+          "End-to-end latency": {
+            "mean": 75.18,
+            "p50": 75.18,
+            "p95": 75.18,
+            "p99": 75.18
+          }
+        },
+        "requests_per_s": 53.08,
+        "input_tokens_per_s": 13641.55,
+        "output_tokens_per_s": 849.28,
+        "total_tokens_per_s": 14490.83,
+        "peak_allocated_gib": 20.35,
+        "peak_reserved_gib": 21.06,
+        "stages": {
+          "prefill": {
+            "tokens_per_s": 34241.83,
+            "tokens": 1028,
+            "seconds": 0.03
+          },
+          "decode": {
+            "tokens_per_s": 1352.42,
+            "tokens": 60,
+            "seconds": 0.044
+          }
+        },
+        "variant": "int8_token_head",
+        "layout": "token_head",
+        "prefill_mode": "int8",
+        "trial": 0,
+        "log": "int8_token_head_smoke.txt",
+        "output_sha256": "7929a2cb4ea4532d1ee20c781b466a78c5d791b140c554debd2f9a3dc006eebd",
+        "prefill_shape_sha256": "9dc86b8d640fa4f569bc7c882a0092b5bc8b55ba4ed81f60c099962a31d972dd",
+        "prefill_dispatch": {
+          "flash": 0,
+          "int8": 28
+        },
+        "prefill_batches": 1,
+        "process_wall_s": 19.925503741018474
+      }
+    },
+    {
+      "variant": "int8_head_token",
+      "trial": 0,
+      "log": "int8_head_token_smoke.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--requests",
+        "4",
+        "--min-input",
+        "257",
+        "--max-input",
+        "257",
+        "--min-output",
+        "16",
+        "--max-output",
+        "16"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/head_token",
+      "process_wall_s": 18.769089245935902,
+      "returncode": 0,
+      "metrics": {
+        "gpu": "NVIDIA GeForce RTX 3090 Ti",
+        "graph": true,
+        "mode": "int8_half",
+        "blocks": 1320,
+        "requests": 4,
+        "seed": 0,
+        "input_tokens": 1028,
+        "output_tokens": 64,
+        "elapsed_s": 0.075,
+        "latency_ms": {
+          "TTFT": {
+            "mean": 29.94,
+            "p50": 29.94,
+            "p95": 29.94,
+            "p99": 29.94
+          },
+          "TPOT": {
+            "mean": 2.96,
+            "p50": 2.96,
+            "p95": 2.96,
+            "p99": 2.96
+          },
+          "ITL": {
+            "mean": 2.96,
+            "p50": 2.96,
+            "p95": 3.05,
+            "p99": 3.05
+          },
+          "End-to-end latency": {
+            "mean": 74.38,
+            "p50": 74.38,
+            "p95": 74.38,
+            "p99": 74.38
+          }
+        },
+        "requests_per_s": 53.68,
+        "input_tokens_per_s": 13796.65,
+        "output_tokens_per_s": 858.94,
+        "total_tokens_per_s": 14655.59,
+        "peak_allocated_gib": 20.35,
+        "peak_reserved_gib": 21.06,
+        "stages": {
+          "prefill": {
+            "tokens_per_s": 34605.03,
+            "tokens": 1028,
+            "seconds": 0.03
+          },
+          "decode": {
+            "tokens_per_s": 1363.02,
+            "tokens": 60,
+            "seconds": 0.044
+          }
+        },
+        "variant": "int8_head_token",
+        "layout": "head_token",
+        "prefill_mode": "int8",
+        "trial": 0,
+        "log": "int8_head_token_smoke.txt",
+        "output_sha256": "7929a2cb4ea4532d1ee20c781b466a78c5d791b140c554debd2f9a3dc006eebd",
+        "prefill_shape_sha256": "9dc86b8d640fa4f569bc7c882a0092b5bc8b55ba4ed81f60c099962a31d972dd",
+        "prefill_dispatch": {
+          "flash": 0,
+          "int8": 28
+        },
+        "prefill_batches": 1,
+        "process_wall_s": 18.769089245935902
+      }
+    }
+  ],
+  "runs": [
+    {
+      "variant": "flash_token_head",
+      "trial": 1,
+      "log": "flash_token_head_1.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/token_head",
+      "process_wall_s": 42.806821341160685,
+      "returncode": 0
+    },
+    {
+      "variant": "flash_head_token",
+      "trial": 1,
+      "log": "flash_head_token_1.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/head_token",
+      "process_wall_s": 42.88459697202779,
+      "returncode": 0
+    },
+    {
+      "variant": "int8_token_head",
+      "trial": 1,
+      "log": "int8_token_head_1.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/token_head",
+      "process_wall_s": 44.69634059607051,
+      "returncode": 0
+    },
+    {
+      "variant": "int8_head_token",
+      "trial": 1,
+      "log": "int8_head_token_1.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/head_token",
+      "process_wall_s": 43.63878034101799,
+      "returncode": 0
+    },
+    {
+      "variant": "flash_token_head",
+      "trial": 2,
+      "log": "flash_token_head_2.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/token_head",
+      "process_wall_s": 43.188797255046666,
+      "returncode": 0
+    },
+    {
+      "variant": "int8_head_token",
+      "trial": 2,
+      "log": "int8_head_token_2.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/head_token",
+      "process_wall_s": 43.782923793187365,
+      "returncode": 0
+    },
+    {
+      "variant": "int8_token_head",
+      "trial": 2,
+      "log": "int8_token_head_2.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/token_head",
+      "process_wall_s": 43.784457511035725,
+      "returncode": 0
+    },
+    {
+      "variant": "flash_head_token",
+      "trial": 2,
+      "log": "flash_head_token_2.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/head_token",
+      "process_wall_s": 42.797820302890614,
+      "returncode": 0
+    },
+    {
+      "variant": "int8_token_head",
+      "trial": 3,
+      "log": "int8_token_head_3.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/token_head",
+      "process_wall_s": 43.746311413124204,
+      "returncode": 0
+    },
+    {
+      "variant": "int8_head_token",
+      "trial": 3,
+      "log": "int8_head_token_3.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/int8/variants/head_token",
+      "process_wall_s": 43.787629693048075,
+      "returncode": 0
+    },
+    {
+      "variant": "flash_token_head",
+      "trial": 3,
+      "log": "flash_token_head_3.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/token_head",
+      "process_wall_s": 42.88089670496993,
+      "returncode": 0
+    },
+    {
+      "variant": "flash_head_token",
+      "trial": 3,
+      "log": "flash_head_token_3.txt",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--kv-cache-dtype",
+        "int8_half"
+      ],
+      "cwd": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/head_token",
+      "process_wall_s": 42.87649002391845,
+      "returncode": 0
+    }
+  ],
+  "original_repository_unchanged": true,
+  "outputs_identical_within_each_prefill_mode": true,
+  "finished_utc": "2026-10-04T16:02:21.326798+00:00"
+}

@@ -1,0 +1,4339 @@
+{
+  "started_utc": "2026-10-05T06:07:14.604282+00:00",
+  "device": "NVIDIA GeForce RTX 3090 Ti",
+  "torch": "2.5.1+cu121",
+  "triton": "3.1.0",
+  "seed": 59,
+  "configs": [
+    [
+      16,
+      64,
+      3
+    ],
+    [
+      64,
+      64,
+      3
+    ],
+    [
+      16,
+      64,
+      2
+    ],
+    [
+      32,
+      64,
+      2
+    ],
+    [
+      64,
+      64,
+      2
+    ],
+    [
+      128,
+      64,
+      2
+    ],
+    [
+      16,
+      128,
+      2
+    ],
+    [
+      32,
+      128,
+      2
+    ],
+    [
+      64,
+      128,
+      2
+    ],
+    [
+      16,
+      64,
+      1
+    ],
+    [
+      64,
+      64,
+      1
+    ],
+    [
+      16,
+      128,
+      1
+    ],
+    [
+      32,
+      128,
+      1
+    ],
+    [
+      64,
+      128,
+      1
+    ],
+    [
+      16,
+      256,
+      1
+    ],
+    [
+      32,
+      256,
+      1
+    ],
+    [
+      64,
+      256,
+      1
+    ]
+  ],
+  "rounds": 11,
+  "calls_per_graph": 4,
+  "replays": 5,
+  "original_source_hashes": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+    "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+    "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+    "nanovllm/engine/model_runner.py": "4084396da1c8915de058ebdcb799b380914a98d1d31ad18d814078d78064c5f2",
+    "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+    "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "a444d22f3859635c417a1288be4ee86272a7f43d1f9aeebd51c6f6ffe8d79351"
+  },
+  "validation": [
+    {
+      "mode": "prefill",
+      "config": "M16_N64_S3",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N64_S3",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M32_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M128_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N64_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N64_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N128_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M32_N128_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N128_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N64_S3",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N64_S3",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M32_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M128_N64_S2",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N64_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N64_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N128_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "prefill",
+      "config": "M32_N128_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N128_S1",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N64_S3",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N64_S3",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N64_S2",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M32_N64_S2",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N64_S2",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M128_N64_S2",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N64_S1",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N64_S1",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N128_S1",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M32_N128_S1",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N128_S1",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N64_S3",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N64_S3",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N64_S2",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M32_N64_S2",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N64_S2",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M128_N64_S2",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N64_S1",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N64_S1",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N128_S1",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M32_N128_S1",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N128_S1",
+      "status": "PASS",
+      "test": "zero_context"
+    }
+  ],
+  "unsupported": [
+    {
+      "mode": "prefill",
+      "config": "M16_N128_S2",
+      "error": "out of resource: shared memory, Required: 103424, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "config": "M32_N128_S2",
+      "error": "out of resource: shared memory, Required: 107520, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N128_S2",
+      "error": "out of resource: shared memory, Required: 115712, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "config": "M16_N256_S1",
+      "error": "out of resource: shared memory, Required: 135168, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "config": "M32_N256_S1",
+      "error": "out of resource: shared memory, Required: 139264, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "config": "M64_N256_S1",
+      "error": "out of resource: shared memory, Required: 147456, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N128_S2",
+      "error": "out of resource: shared memory, Required: 103424, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "config": "M32_N128_S2",
+      "error": "out of resource: shared memory, Required: 107520, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N128_S2",
+      "error": "out of resource: shared memory, Required: 115712, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "config": "M16_N256_S1",
+      "error": "out of resource: shared memory, Required: 135168, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "config": "M32_N256_S1",
+      "error": "out of resource: shared memory, Required: 139264, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "config": "M64_N256_S1",
+      "error": "out of resource: shared memory, Required: 147456, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    }
+  ],
+  "cases": [
+    {
+      "case": "prefill_B1_Q1024_K1024",
+      "mode": "prefill",
+      "batch": 1,
+      "q_length": 1024,
+      "kv_length": 1024,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 98.15040230751038,
+          "round_us": [
+            105.57440519332886,
+            104.85759973526001,
+            105.01120090484619,
+            104.75519895553589,
+            97.9968011379242,
+            96.9215989112854,
+            98.35519790649414,
+            96.61440253257751,
+            97.433602809906,
+            97.79199957847595,
+            98.15040230751038
+          ],
+          "min_round_us": 96.61440253257751,
+          "max_round_us": 105.57440519332886,
+          "speedup_vs_current": 3.088158460864382,
+          "latency_change_percent": -67.61824198230755
+        },
+        "flash_restored": {
+          "median_us": 98.45759868621826,
+          "round_us": [
+            104.85759973526001,
+            106.23999834060669,
+            104.80639934539795,
+            97.63839840888977,
+            97.53599762916565,
+            98.45759868621826,
+            97.68959879875183,
+            96.97279930114746,
+            97.94560074806213,
+            98.55999946594238,
+            99.32799935340881
+          ],
+          "min_round_us": 96.97279930114746,
+          "max_round_us": 106.23999834060669,
+          "speedup_vs_current": 3.0785231345034676,
+          "latency_change_percent": -67.51689182412822
+        },
+        "M16_N64_S3": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            64,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 303.10399532318115,
+          "round_us": [
+            324.0959882736206,
+            323.9936113357544,
+            323.9936113357544,
+            324.1983890533447,
+            301.4143943786621,
+            301.51679515838623,
+            302.8991937637329,
+            303.05280685424805,
+            303.10399532318115,
+            303.4111976623535,
+            302.9504060745239
+          ],
+          "min_round_us": 301.4143943786621,
+          "max_round_us": 324.1983890533447,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "grid": [
+            16,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 196.19840383529663,
+          "round_us": [
+            209.30559635162354,
+            209.30559635162354,
+            209.6640110015869,
+            209.25440788269043,
+            194.91839408874512,
+            194.96959447860718,
+            195.94240188598633,
+            196.19840383529663,
+            196.04480266571045,
+            196.2496042251587,
+            196.0960030555725
+          ],
+          "min_round_us": 194.91839408874512,
+          "max_round_us": 209.6640110015869,
+          "speedup_vs_current": 1.54488512341634,
+          "latency_change_percent": -35.270268006166546
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            64,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 321.0239887237549,
+          "round_us": [
+            342.630410194397,
+            342.9375886917114,
+            343.09120178222656,
+            334.2848062515259,
+            319.5391893386841,
+            320.71681022644043,
+            321.0239887237549,
+            320.9216117858887,
+            320.9728002548218,
+            321.0239887237549,
+            321.0752010345459
+          ],
+          "min_round_us": 319.5391893386841,
+          "max_round_us": 343.09120178222656,
+          "speedup_vs_current": 0.9441786469858048,
+          "latency_change_percent": 5.912160076104156
+        },
+        "M32_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            32,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 254.82239723205566,
+          "round_us": [
+            271.8719959259033,
+            272.43518829345703,
+            272.58880138397217,
+            253.59361171722412,
+            253.59361171722412,
+            254.71999645233154,
+            254.82239723205566,
+            254.77120876312256,
+            254.82239723205566,
+            254.82239723205566,
+            254.82239723205566
+          ],
+          "min_round_us": 253.59361171722412,
+          "max_round_us": 272.58880138397217,
+          "speedup_vs_current": 1.1894715637854922,
+          "latency_change_percent": -15.929053670059934
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 62,
+          "shared_bytes": 66560,
+          "grid": [
+            16,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 209.86878871917725,
+          "round_us": [
+            223.8464117050171,
+            224.4607925415039,
+            224.00000095367432,
+            224.05118942260742,
+            209.0496063232422,
+            209.45920944213867,
+            209.76641178131104,
+            210.27839183807373,
+            209.71519947052002,
+            209.86878871917725,
+            209.86878871917725
+          ],
+          "min_round_us": 209.0496063232422,
+          "max_round_us": 224.4607925415039,
+          "speedup_vs_current": 1.4442547516141657,
+          "latency_change_percent": -30.76013778854777
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 92,
+          "shared_bytes": 82944,
+          "grid": [
+            8,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 216.42239093780518,
+          "round_us": [
+            229.8880100250244,
+            230.45120239257812,
+            230.348801612854,
+            230.297589302063,
+            215.29600620269775,
+            216.21758937835693,
+            216.26880168914795,
+            216.21758937835693,
+            216.1151885986328,
+            216.42239093780518,
+            216.72959327697754
+          ],
+          "min_round_us": 215.29600620269775,
+          "max_round_us": 230.45120239257812,
+          "speedup_vs_current": 1.4005205007197534,
+          "latency_change_percent": -28.597974861054777
+        },
+        "M16_N64_S1": {
+          "registers": 168,
+          "spills": 4,
+          "shared_bytes": 36864,
+          "grid": [
+            64,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 210.32960414886475,
+          "round_us": [
+            222.9759931564331,
+            224.4607925415039,
+            224.20480251312256,
+            224.61440563201904,
+            208.84480476379395,
+            210.32960414886475,
+            210.0735902786255,
+            210.27839183807373,
+            209.97118949890137,
+            210.1248025894165,
+            210.48319339752197
+          ],
+          "min_round_us": 208.84480476379395,
+          "max_round_us": 224.61440563201904,
+          "speedup_vs_current": 1.441090504352652,
+          "latency_change_percent": -30.60810566861607
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 58,
+          "shared_bytes": 49152,
+          "grid": [
+            16,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 164.86400365829468,
+          "round_us": [
+            174.3872046470642,
+            175.25759935379028,
+            176.63999795913696,
+            163.9423966407776,
+            163.83999586105347,
+            163.83999586105347,
+            165.1711940765381,
+            164.86400365829468,
+            164.24959897994995,
+            165.32479524612427,
+            164.35199975967407
+          ],
+          "min_round_us": 163.83999586105347,
+          "max_round_us": 176.63999795913696,
+          "speedup_vs_current": 1.8385092476063456,
+          "latency_change_percent": -45.60810606191108
+        },
+        "M16_N128_S1": {
+          "registers": 168,
+          "spills": 2,
+          "shared_bytes": 69632,
+          "grid": [
+            64,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 271.3599920272827,
+          "round_us": [
+            290.25280475616455,
+            290.15040397644043,
+            290.30399322509766,
+            270.07999420166016,
+            270.1312065124512,
+            271.2575912475586,
+            271.41120433807373,
+            271.2064027786255,
+            271.3599920272827,
+            271.3088035583496,
+            271.46239280700684
+          ],
+          "min_round_us": 270.07999420166016,
+          "max_round_us": 290.30399322509766,
+          "speedup_vs_current": 1.1169811476582991,
+          "latency_change_percent": -10.472974221950382
+        },
+        "M32_N128_S1": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 73728,
+          "grid": [
+            32,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 232.03840255737305,
+          "round_us": [
+            247.5519895553589,
+            247.75679111480713,
+            247.70560264587402,
+            231.16800785064697,
+            230.96320629119873,
+            231.2704086303711,
+            232.03840255737305,
+            232.14080333709717,
+            231.98719024658203,
+            232.2432041168213,
+            232.03840255737305
+          ],
+          "min_round_us": 230.96320629119873,
+          "max_round_us": 247.75679111480713,
+          "speedup_vs_current": 1.3062665144328283,
+          "latency_change_percent": -23.445943921008116
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 106,
+          "shared_bytes": 81920,
+          "grid": [
+            16,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 232.49919414520264,
+          "round_us": [
+            247.34721183776855,
+            247.0911979675293,
+            247.39840030670166,
+            231.42399787902832,
+            231.11679553985596,
+            232.49919414520264,
+            232.2432041168213,
+            232.7552080154419,
+            232.49919414520264,
+            232.44800567626953,
+            231.93600177764893
+          ],
+          "min_round_us": 231.11679553985596,
+          "max_round_us": 247.39840030670166,
+          "speedup_vs_current": 1.3036776167657755,
+          "latency_change_percent": -23.29391966697666
+        }
+      }
+    },
+    {
+      "case": "prefill_B16_Q1024_K1024",
+      "mode": "prefill",
+      "batch": 16,
+      "q_length": 1024,
+      "kv_length": 1024,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 943.1039810180664,
+          "round_us": [
+            936.1920356750488,
+            943.1039810180664,
+            942.080020904541,
+            941.8239593505859,
+            964.6080017089844,
+            943.9743995666504,
+            944.2815780639648,
+            943.4623718261719,
+            944.6399688720703,
+            942.4384117126465,
+            942.7455902099609
+          ],
+          "min_round_us": 936.1920356750488,
+          "max_round_us": 964.6080017089844,
+          "speedup_vs_current": 4.772801578131696,
+          "latency_change_percent": -79.04794524495091
+        },
+        "flash_restored": {
+          "median_us": 942.950439453125,
+          "round_us": [
+            936.7039680480957,
+            940.6463623046875,
+            980.1728248596191,
+            943.1039810180664,
+            978.0735969543457,
+            943.9743995666504,
+            942.5919532775879,
+            942.950439453125,
+            942.796802520752,
+            942.4384117126465,
+            945.6640243530273
+          ],
+          "min_round_us": 936.7039680480957,
+          "max_round_us": 980.1728248596191,
+          "speedup_vs_current": 4.773578738195258,
+          "latency_change_percent": -79.05135633359073
+        },
+        "M16_N64_S3": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            64,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 4501.2481689453125,
+          "round_us": [
+            4470.630264282227,
+            4501.9134521484375,
+            4500.940704345703,
+            4502.374267578125,
+            4500.531387329102,
+            4506.21452331543,
+            4517.887878417969,
+            4501.2481689453125,
+            4499.046325683594,
+            4496.691131591797,
+            4508.723068237305
+          ],
+          "min_round_us": 4470.630264282227,
+          "max_round_us": 4517.887878417969,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "grid": [
+            16,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2312.5503540039062,
+          "round_us": [
+            2379.5711517333984,
+            2312.5503540039062,
+            2313.0624771118164,
+            2341.427230834961,
+            2311.1679077148438,
+            2311.4240646362305,
+            2311.9871139526367,
+            2317.670440673828,
+            2311.577606201172,
+            2311.7311477661133,
+            2361.497688293457
+          ],
+          "min_round_us": 2311.1679077148438,
+          "max_round_us": 2379.5711517333984,
+          "speedup_vs_current": 1.9464433114513315,
+          "latency_change_percent": -48.62424227221047
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            64,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 4777.369689941406,
+          "round_us": [
+            4744.294357299805,
+            4778.803253173828,
+            4791.296005249023,
+            4777.420806884766,
+            4775.423812866211,
+            4777.369689941406,
+            4778.035354614258,
+            4775.987243652344,
+            4775.628662109375,
+            4778.803253173828,
+            4774.195098876953
+          ],
+          "min_round_us": 4744.294357299805,
+          "max_round_us": 4791.296005249023,
+          "speedup_vs_current": 0.9422021867854484,
+          "latency_change_percent": 6.134332314780844
+        },
+        "M32_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            32,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 3486.822509765625,
+          "round_us": [
+            3465.1649475097656,
+            3496.9600677490234,
+            3487.027359008789,
+            3486.7198944091797,
+            3485.0303649902344,
+            3486.259078979492,
+            3486.207962036133,
+            3517.2863006591797,
+            3486.822509765625,
+            3487.180709838867,
+            3526.553726196289
+          ],
+          "min_round_us": 3465.1649475097656,
+          "max_round_us": 3526.553726196289,
+          "speedup_vs_current": 1.2909312579973777,
+          "latency_change_percent": -22.536541445955816
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 62,
+          "shared_bytes": 66560,
+          "grid": [
+            16,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2484.992027282715,
+          "round_us": [
+            2507.366371154785,
+            2525.388717651367,
+            2500.6591796875,
+            2483.456039428711,
+            2483.865547180176,
+            2483.6095809936523,
+            2484.992027282715,
+            2491.494369506836,
+            2483.251190185547,
+            2488.115119934082,
+            2483.8144302368164
+          ],
+          "min_round_us": 2483.251190185547,
+          "max_round_us": 2525.388717651367,
+          "speedup_vs_current": 1.8113732839084116,
+          "latency_change_percent": -44.793267689015835
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 92,
+          "shared_bytes": 82944,
+          "grid": [
+            8,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2100.6847381591797,
+          "round_us": [
+            2116.147232055664,
+            2102.016067504883,
+            2100.7871627807617,
+            2101.043128967285,
+            2099.8144149780273,
+            2100.6847381591797,
+            2100.070381164551,
+            2099.7631072998047,
+            2100.0192642211914,
+            2143.6416625976562,
+            2100.0192642211914
+          ],
+          "min_round_us": 2099.7631072998047,
+          "max_round_us": 2143.6416625976562,
+          "speedup_vs_current": 2.142752830626901,
+          "latency_change_percent": -53.331061534174616
+        },
+        "M16_N64_S1": {
+          "registers": 168,
+          "spills": 4,
+          "shared_bytes": 36864,
+          "grid": [
+            64,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2924.0320205688477,
+          "round_us": [
+            2918.2464599609375,
+            2925.209617614746,
+            2924.0320205688477,
+            2925.619125366211,
+            2920.6527709960938,
+            2921.011161804199,
+            2921.3695526123047,
+            2962.995147705078,
+            2954.5984268188477,
+            2986.649513244629,
+            2921.3184356689453
+          ],
+          "min_round_us": 2918.2464599609375,
+          "max_round_us": 2986.649513244629,
+          "speedup_vs_current": 1.539397700600293,
+          "latency_change_percent": -35.039528796876404
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 58,
+          "shared_bytes": 49152,
+          "grid": [
+            16,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1639.833641052246,
+          "round_us": [
+            1650.2784729003906,
+            1639.833641052246,
+            1632.6143264770508,
+            1642.291259765625,
+            1635.0208282470703,
+            1641.164779663086,
+            1685.6576919555664,
+            1634.3551635742188,
+            1635.1232528686523,
+            1642.8031921386719,
+            1634.048080444336
+          ],
+          "min_round_us": 1632.6143264770508,
+          "max_round_us": 1685.6576919555664,
+          "speedup_vs_current": 2.7449419601228318,
+          "latency_change_percent": -63.56935722038904
+        },
+        "M16_N128_S1": {
+          "registers": 168,
+          "spills": 2,
+          "shared_bytes": 69632,
+          "grid": [
+            64,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 4063.7439727783203,
+          "round_us": [
+            4039.014434814453,
+            4079.564666748047,
+            4066.252899169922,
+            4086.1183166503906,
+            4062.7201080322266,
+            4062.3104095458984,
+            4064.1536712646484,
+            4062.6174926757812,
+            4063.385772705078,
+            4073.8815307617188,
+            4063.7439727783203
+          ],
+          "min_round_us": 4039.014434814453,
+          "max_round_us": 4086.1183166503906,
+          "speedup_vs_current": 1.1076603740535054,
+          "latency_change_percent": -9.719619530986757
+        },
+        "M32_N128_S1": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 73728,
+          "grid": [
+            32,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 3223.654556274414,
+          "round_us": [
+            3203.891372680664,
+            3224.1153717041016,
+            3224.6273040771484,
+            3232.563018798828,
+            3222.681427001953,
+            3223.603057861328,
+            3238.7073516845703,
+            3223.654556274414,
+            3223.0911254882812,
+            3224.576187133789,
+            3223.1937408447266
+          ],
+          "min_round_us": 3203.891372680664,
+          "max_round_us": 3238.7073516845703,
+          "speedup_vs_current": 1.3963183989997416,
+          "latency_change_percent": -28.383096526096484
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 106,
+          "shared_bytes": 81920,
+          "grid": [
+            16,
+            16,
+            16
+          ],
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 2826.2399673461914,
+          "round_us": [
+            2968.6784744262695,
+            2825.1136779785156,
+            2826.2399673461914,
+            2826.08642578125,
+            2866.5855407714844,
+            2837.196731567383,
+            2825.676727294922,
+            2824.2944717407227,
+            2862.540817260742,
+            2836.3264083862305,
+            2825.6256103515625
+          ],
+          "min_round_us": 2824.2944717407227,
+          "max_round_us": 2968.6784744262695,
+          "speedup_vs_current": 1.5926631216569822,
+          "latency_change_percent": -37.21208293191247
+        }
+      }
+    },
+    {
+      "case": "prefill_B32_Q512_K512",
+      "mode": "prefill",
+      "batch": 32,
+      "q_length": 512,
+      "kv_length": 512,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 526.0799884796143,
+          "round_us": [
+            524.6463775634766,
+            526.5920162200928,
+            525.6703853607178,
+            526.0799884796143,
+            530.841588973999,
+            523.9808082580566,
+            525.2096176147461,
+            526.4383792877197,
+            526.8991947174072,
+            526.2847900390625,
+            524.0831851959229
+          ],
+          "min_round_us": 523.9808082580566,
+          "max_round_us": 530.841588973999,
+          "speedup_vs_current": 4.817518327567593,
+          "latency_change_percent": -79.24242458450783
+        },
+        "flash_restored": {
+          "median_us": 526.796817779541,
+          "round_us": [
+            526.3872146606445,
+            523.8783836364746,
+            528.3840179443359,
+            523.7760066986084,
+            533.8111877441406,
+            525.8240222930908,
+            526.8479824066162,
+            527.7184009552002,
+            526.1824131011963,
+            527.1552085876465,
+            526.796817779541
+          ],
+          "min_round_us": 523.7760066986084,
+          "max_round_us": 533.8111877441406,
+          "speedup_vs_current": 4.810962976104594,
+          "latency_change_percent": -79.21414059998246
+        },
+        "M16_N64_S3": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            32,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2534.39998626709,
+          "round_us": [
+            2517.6576614379883,
+            2535.6800079345703,
+            2535.4751586914062,
+            2534.39998626709,
+            2536.5503311157227,
+            2534.195137023926,
+            2578.483200073242,
+            2532.147216796875,
+            2531.5839767456055,
+            2532.4031829833984,
+            2547.2511291503906
+          ],
+          "min_round_us": 2517.6576614379883,
+          "max_round_us": 2578.483200073242,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "grid": [
+            8,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1312.5632286071777,
+          "round_us": [
+            1333.9136123657227,
+            1312.5632286071777,
+            1313.0240440368652,
+            1334.3744277954102,
+            1312.2559547424316,
+            1312.3583793640137,
+            1311.2832069396973,
+            1323.0591773986816,
+            1310.5664253234863,
+            1311.4879608154297,
+            1324.4416236877441
+          ],
+          "min_round_us": 1310.5664253234863,
+          "max_round_us": 1334.3744277954102,
+          "speedup_vs_current": 1.930878399630668,
+          "latency_change_percent": -48.2100996007166
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            32,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2676.838493347168,
+          "round_us": [
+            2827.212715148926,
+            2676.838493347168,
+            2716.364860534668,
+            2677.8112411499023,
+            2679.193687438965,
+            2676.326370239258,
+            2676.7871856689453,
+            2674.278450012207,
+            2673.151969909668,
+            2676.8896102905273,
+            2673.766326904297
+          ],
+          "min_round_us": 2673.151969909668,
+          "max_round_us": 2827.212715148926,
+          "speedup_vs_current": 0.9467885315329688,
+          "latency_change_percent": 5.620206275721906
+        },
+        "M32_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            16,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1947.1872329711914,
+          "round_us": [
+            2056.038475036621,
+            1954.4063568115234,
+            1945.2415466308594,
+            1947.1872329711914,
+            1946.5215682983398,
+            1945.8560943603516,
+            1945.804786682129,
+            1956.2496185302734,
+            1952.1535873413086,
+            1944.371223449707,
+            1948.7232208251953
+          ],
+          "min_round_us": 1944.371223449707,
+          "max_round_us": 2056.038475036621,
+          "speedup_vs_current": 1.3015697429362645,
+          "latency_change_percent": -23.16969525243734
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 62,
+          "shared_bytes": 66560,
+          "grid": [
+            8,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1424.1791725158691,
+          "round_us": [
+            1439.3856048583984,
+            1431.9104194641113,
+            1436.8255615234375,
+            1423.7183570861816,
+            1424.1791725158691,
+            1424.0192413330078,
+            1428.5311698913574,
+            1422.5407600402832,
+            1422.4384307861328,
+            1426.9951820373535,
+            1423.0015754699707
+          ],
+          "min_round_us": 1422.4384307861328,
+          "max_round_us": 1439.3856048583984,
+          "speedup_vs_current": 1.7795513620592918,
+          "latency_change_percent": -43.806061386011194
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 92,
+          "shared_bytes": 82944,
+          "grid": [
+            4,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1270.1696395874023,
+          "round_us": [
+            1288.3456230163574,
+            1274.5216369628906,
+            1270.4256057739258,
+            1270.1696395874023,
+            1269.9135780334473,
+            1270.2719688415527,
+            1269.7088241577148,
+            1269.1455841064453,
+            1269.1967964172363,
+            1285.0175857543945,
+            1269.3504333496094
+          ],
+          "min_round_us": 1269.1455841064453,
+          "max_round_us": 1288.3456230163574,
+          "speedup_vs_current": 1.995324016003371,
+          "latency_change_percent": -49.88282644926023
+        },
+        "M16_N64_S1": {
+          "registers": 168,
+          "spills": 4,
+          "shared_bytes": 36864,
+          "grid": [
+            32,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1647.1551895141602,
+          "round_us": [
+            1733.9391708374023,
+            1646.3872909545898,
+            1645.8240509033203,
+            1648.9984512329102,
+            1645.7216262817383,
+            1645.7216262817383,
+            1647.1551895141602,
+            1670.1440811157227,
+            1669.068717956543,
+            1654.630470275879,
+            1644.8511123657227
+          ],
+          "min_round_us": 1644.8511123657227,
+          "max_round_us": 1733.9391708374023,
+          "speedup_vs_current": 1.53865282542966,
+          "latency_change_percent": -35.008080869655856
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 58,
+          "shared_bytes": 49152,
+          "grid": [
+            8,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 968.4479713439941,
+          "round_us": [
+            969.3696022033691,
+            968.1407928466797,
+            969.3696022033691,
+            969.3696022033691,
+            968.7552452087402,
+            968.4479713439941,
+            985.5487823486328,
+            968.3456420898438,
+            967.4240112304688,
+            966.1439895629883,
+            967.7824020385742
+          ],
+          "min_round_us": 966.1439895629883,
+          "max_round_us": 985.5487823486328,
+          "speedup_vs_current": 2.6169707214626063,
+          "latency_change_percent": -61.78787971150448
+        },
+        "M16_N128_S1": {
+          "registers": 168,
+          "spills": 2,
+          "shared_bytes": 69632,
+          "grid": [
+            32,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2375.321578979492,
+          "round_us": [
+            2375.7312774658203,
+            2399.6416091918945,
+            2376.140785217285,
+            2384.998321533203,
+            2375.321578979492,
+            2374.8096466064453,
+            2374.0415573120117,
+            2371.9423294067383,
+            2372.710418701172,
+            2391.6032791137695,
+            2373.2736587524414
+          ],
+          "min_round_us": 2371.9423294067383,
+          "max_round_us": 2399.6416091918945,
+          "speedup_vs_current": 1.066971313987701,
+          "latency_change_percent": -6.27676799832625
+        },
+        "M32_N128_S1": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 73728,
+          "grid": [
+            16,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1939.9168014526367,
+          "round_us": [
+            2037.2991561889648,
+            1939.9168014526367,
+            1940.5311584472656,
+            1961.9840621948242,
+            1939.3024444580078,
+            1940.5311584472656,
+            1939.967918395996,
+            1938.3295059204102,
+            1937.766456604004,
+            1938.4832382202148,
+            1937.766456604004
+          ],
+          "min_round_us": 1937.766456604004,
+          "max_round_us": 2037.2991561889648,
+          "speedup_vs_current": 1.3064477736206501,
+          "latency_change_percent": -23.456565184490298
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 106,
+          "shared_bytes": 81920,
+          "grid": [
+            8,
+            32,
+            16
+          ],
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1790.412712097168,
+          "round_us": [
+            1850.7776260375977,
+            1787.6480102539062,
+            1790.412712097168,
+            1787.5455856323242,
+            1835.8783721923828,
+            1788.057518005371,
+            1790.719985961914,
+            1785.036849975586,
+            1796.6079711914062,
+            1795.123291015625,
+            1789.6448135375977
+          ],
+          "min_round_us": 1785.036849975586,
+          "max_round_us": 1850.7776260375977,
+          "speedup_vs_current": 1.4155395396508694,
+          "latency_change_percent": -29.35555864114956
+        }
+      }
+    },
+    {
+      "case": "prefill_B8_Q128_K1024",
+      "mode": "prefill",
+      "batch": 8,
+      "q_length": 128,
+      "kv_length": 1024,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 164.9664044380188,
+          "round_us": [
+            163.83999586105347,
+            163.89119625091553,
+            164.9664044380188,
+            165.1711940765381,
+            165.06880521774292,
+            165.12000560760498,
+            164.91520404815674,
+            165.01760482788086,
+            164.86400365829468,
+            164.9664044380188,
+            164.81280326843262
+          ],
+          "min_round_us": 163.83999586105347,
+          "max_round_us": 165.1711940765381,
+          "speedup_vs_current": 3.274674031687946,
+          "latency_change_percent": -69.46260939796365
+        },
+        "flash_restored": {
+          "median_us": 164.91520404815674,
+          "round_us": [
+            163.89119625091553,
+            163.89119625091553,
+            164.9664044380188,
+            164.91520404815674,
+            165.01760482788086,
+            164.9664044380188,
+            164.9664044380188,
+            164.81280326843262,
+            165.01760482788086,
+            164.91520404815674,
+            164.91520404815674
+          ],
+          "min_round_us": 163.89119625091553,
+          "max_round_us": 165.01760482788086,
+          "speedup_vs_current": 3.2756907031832236,
+          "latency_change_percent": -69.47208724473808
+        },
+        "M16_N64_S3": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            8,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 540.2112007141113,
+          "round_us": [
+            536.9344234466553,
+            536.627197265625,
+            539.9040222167969,
+            540.3647899627686,
+            540.3647899627686,
+            540.2112007141113,
+            540.9279823303223,
+            541.1327838897705,
+            539.8528099060059,
+            539.6480083465576,
+            540.6720161437988
+          ],
+          "min_round_us": 536.627197265625,
+          "max_round_us": 541.1327838897705,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "grid": [
+            2,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 334.5407962799072,
+          "round_us": [
+            332.3391914367676,
+            332.8000068664551,
+            334.64319705963135,
+            334.4383955001831,
+            334.74559783935547,
+            334.5407962799072,
+            334.7968101501465,
+            334.74559783935547,
+            334.2848062515259,
+            334.5407962799072,
+            334.59200859069824
+          ],
+          "min_round_us": 332.3391914367676,
+          "max_round_us": 334.7968101501465,
+          "speedup_vs_current": 1.6147842257842944,
+          "latency_change_percent": -38.07222141309289
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            8,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 586.2400054931641,
+          "round_us": [
+            582.1951866149902,
+            583.0656051635742,
+            586.5471839904785,
+            586.2400054931641,
+            586.2912178039551,
+            586.0352039337158,
+            586.3935947418213,
+            586.188793182373,
+            586.4448070526123,
+            587.007999420166,
+            586.2400054931641
+          ],
+          "min_round_us": 582.1951866149902,
+          "max_round_us": 587.007999420166,
+          "speedup_vs_current": 0.9214847087408649,
+          "latency_change_percent": 8.520520255449494
+        },
+        "M32_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            4,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 464.0768051147461,
+          "round_us": [
+            461.46559715270996,
+            461.2607955932617,
+            463.82079124450684,
+            464.38398361206055,
+            464.0768051147461,
+            464.5376205444336,
+            464.1280174255371,
+            464.0255928039551,
+            464.4864082336426,
+            464.1280174255371,
+            463.82079124450684
+          ],
+          "min_round_us": 461.2607955932617,
+          "max_round_us": 464.5376205444336,
+          "speedup_vs_current": 1.1640555932989163,
+          "latency_change_percent": -14.093450024494548
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 62,
+          "shared_bytes": 66560,
+          "grid": [
+            2,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 371.2512016296387,
+          "round_us": [
+            369.66400146484375,
+            369.25439834594727,
+            371.4560031890869,
+            370.9439992904663,
+            371.2512016296387,
+            371.19998931884766,
+            371.4560031890869,
+            371.04640007019043,
+            371.8143939971924,
+            371.3536024093628,
+            371.66080474853516
+          ],
+          "min_round_us": 369.25439834594727,
+          "max_round_us": 371.8143939971924,
+          "speedup_vs_current": 1.455109635585847,
+          "latency_change_percent": -31.276656030293804
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 92,
+          "shared_bytes": 82944,
+          "grid": [
+            1,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 299.62239265441895,
+          "round_us": [
+            297.7792024612427,
+            299.5199918746948,
+            299.62239265441895,
+            299.4175910949707,
+            299.3151903152466,
+            299.9808073043823,
+            299.8784065246582,
+            299.9295949935913,
+            299.8784065246582,
+            299.3151903152466,
+            299.8271942138672
+          ],
+          "min_round_us": 297.7792024612427,
+          "max_round_us": 299.9808073043823,
+          "speedup_vs_current": 1.8029733890323236,
+          "latency_change_percent": -44.536064365502845
+        },
+        "M16_N64_S1": {
+          "registers": 168,
+          "spills": 4,
+          "shared_bytes": 36864,
+          "grid": [
+            8,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 389.99040126800537,
+          "round_us": [
+            387.89119720458984,
+            389.6320104598999,
+            390.45119285583496,
+            390.34879207611084,
+            390.40000438690186,
+            390.0928020477295,
+            389.734411239624,
+            390.0928020477295,
+            389.99040126800537,
+            389.42720890045166,
+            389.683198928833
+          ],
+          "min_round_us": 387.89119720458984,
+          "max_round_us": 390.45119285583496,
+          "speedup_vs_current": 1.3851910174139714,
+          "latency_change_percent": -27.807790591444114
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 58,
+          "shared_bytes": 49152,
+          "grid": [
+            2,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 242.5856113433838,
+          "round_us": [
+            240.94719886779785,
+            241.51039123535156,
+            243.09759140014648,
+            242.53439903259277,
+            242.5856113433838,
+            242.48321056365967,
+            242.89278984069824,
+            242.94400215148926,
+            242.79038906097412,
+            242.5856113433838,
+            242.99519062042236
+          ],
+          "min_round_us": 240.94719886779785,
+          "max_round_us": 243.09759140014648,
+          "speedup_vs_current": 2.2268888815068006,
+          "latency_change_percent": -55.09430181701025
+        },
+        "M16_N128_S1": {
+          "registers": 168,
+          "spills": 2,
+          "shared_bytes": 69632,
+          "grid": [
+            8,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 494.84801292419434,
+          "round_us": [
+            491.98079109191895,
+            491.6224002838135,
+            495.00160217285156,
+            495.00160217285156,
+            495.2576160430908,
+            494.6432113647461,
+            494.84801292419434,
+            494.5919990539551,
+            494.89917755126953,
+            494.84801292419434,
+            495.1551914215088
+          ],
+          "min_round_us": 491.6224002838135,
+          "max_round_us": 495.2576160430908,
+          "speedup_vs_current": 1.0916709506861577,
+          "latency_change_percent": -8.397306040665365
+        },
+        "M32_N128_S1": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 73728,
+          "grid": [
+            4,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 451.43041610717773,
+          "round_us": [
+            448.71678352355957,
+            448.8704204559326,
+            451.6863822937012,
+            451.43041610717773,
+            451.02081298828125,
+            451.99360847473145,
+            451.8400192260742,
+            451.8911838531494,
+            451.1744022369385,
+            451.2767791748047,
+            451.58400535583496
+          ],
+          "min_round_us": 448.71678352355957,
+          "max_round_us": 451.99360847473145,
+          "speedup_vs_current": 1.1966654913785326,
+          "latency_change_percent": -16.434458317334645
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 106,
+          "shared_bytes": 81920,
+          "grid": [
+            2,
+            8,
+            16
+          ],
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 423.2704162597656,
+          "round_us": [
+            420.8127975463867,
+            420.86400985717773,
+            423.2704162597656,
+            423.2704162597656,
+            423.2704162597656,
+            423.2704162597656,
+            423.37279319763184,
+            423.2192039489746,
+            423.3215808868408,
+            423.2704162597656,
+            423.47521781921387
+          ],
+          "min_round_us": 420.8127975463867,
+          "max_round_us": 423.47521781921387,
+          "speedup_vs_current": 1.2762791349504046,
+          "latency_change_percent": -21.647234322383603
+        }
+      }
+    },
+    {
+      "case": "prefill_B1_Q128_K4096",
+      "mode": "prefill",
+      "batch": 1,
+      "q_length": 128,
+      "kv_length": 4096,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 156.05759620666504,
+          "round_us": [
+            166.9119954109192,
+            166.80959463119507,
+            155.95519542694092,
+            156.15999698638916,
+            156.21119737625122,
+            156.00639581680298,
+            156.00639581680298,
+            156.05759620666504,
+            156.1087965965271,
+            156.00639581680298,
+            155.90399503707886
+          ],
+          "min_round_us": 155.90399503707886,
+          "max_round_us": 166.9119954109192,
+          "speedup_vs_current": 2.215551223506729,
+          "latency_change_percent": -54.86450552846074
+        },
+        "flash_restored": {
+          "median_us": 156.1087965965271,
+          "round_us": [
+            166.9119954109192,
+            167.11679697036743,
+            155.95519542694092,
+            156.3647985458374,
+            156.21119737625122,
+            156.05759620666504,
+            156.15999698638916,
+            156.05759620666504,
+            156.05759620666504,
+            156.05759620666504,
+            156.1087965965271
+          ],
+          "min_round_us": 155.95519542694092,
+          "max_round_us": 167.11679697036743,
+          "speedup_vs_current": 2.214824569475207,
+          "latency_change_percent": -54.84969718224926
+        },
+        "M16_N64_S3": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            8,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 345.7535982131958,
+          "round_us": [
+            367.61600971221924,
+            367.5647974014282,
+            345.8559989929199,
+            345.2415943145752,
+            345.8048105239868,
+            345.7535982131958,
+            345.3439950942993,
+            345.6000089645386,
+            345.7535982131958,
+            345.1391935348511,
+            344.7295904159546
+          ],
+          "min_round_us": 344.7295904159546,
+          "max_round_us": 367.61600971221924,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "grid": [
+            2,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 333.0048084259033,
+          "round_us": [
+            355.020809173584,
+            355.0719976425171,
+            333.516788482666,
+            332.9535961151123,
+            332.9024076461792,
+            332.8511953353882,
+            333.3120107650757,
+            333.26079845428467,
+            333.0048084259033,
+            332.9024076461792,
+            332.9024076461792
+          ],
+          "min_round_us": 332.8511953353882,
+          "max_round_us": 355.0719976425171,
+          "speedup_vs_current": 1.03828410120429,
+          "latency_change_percent": -3.6872471763638504
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            8,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 386.5600109100342,
+          "round_us": [
+            410.4703903198242,
+            410.06078720092773,
+            386.0991954803467,
+            387.02080249786377,
+            386.5600109100342,
+            386.45761013031006,
+            386.6624116897583,
+            387.32800483703613,
+            386.0480070114136,
+            385.84320545196533,
+            386.2528085708618
+          ],
+          "min_round_us": 385.84320545196533,
+          "max_round_us": 410.4703903198242,
+          "speedup_vs_current": 0.8944370562263476,
+          "latency_change_percent": 11.802165735286628
+        },
+        "M32_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            4,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 280.88319301605225,
+          "round_us": [
+            299.16160106658936,
+            299.4688034057617,
+            280.88319301605225,
+            281.1903953552246,
+            280.88319301605225,
+            280.98559379577637,
+            280.678391456604,
+            280.83200454711914,
+            280.88319301605225,
+            280.6272029876709,
+            280.98559379577637
+          ],
+          "min_round_us": 280.6272029876709,
+          "max_round_us": 299.4688034057617,
+          "speedup_vs_current": 1.2309515371873327,
+          "latency_change_percent": -18.76203328971393
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 62,
+          "shared_bytes": 66560,
+          "grid": [
+            2,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 374.3232011795044,
+          "round_us": [
+            397.9775905609131,
+            398.1312036514282,
+            374.3232011795044,
+            374.2719888687134,
+            374.16958808898926,
+            374.4767904281616,
+            374.52800273895264,
+            374.2719888687134,
+            374.4256019592285,
+            374.2208003997803,
+            374.3232011795044
+          ],
+          "min_round_us": 374.16958808898926,
+          "max_round_us": 398.1312036514282,
+          "speedup_vs_current": 0.9236766439368843,
+          "latency_change_percent": 8.262995125416527
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 92,
+          "shared_bytes": 82944,
+          "grid": [
+            1,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 555.9296131134033,
+          "round_us": [
+            593.3568000793457,
+            555.3152084350586,
+            555.5712223052979,
+            556.2367916107178,
+            556.1344146728516,
+            555.7248115539551,
+            555.9296131134033,
+            555.8271884918213,
+            556.3392162322998,
+            555.9296131134033,
+            555.3664207458496
+          ],
+          "min_round_us": 555.3152084350586,
+          "max_round_us": 593.3568000793457,
+          "speedup_vs_current": 0.621937723872727,
+          "latency_change_percent": 60.78780263932655
+        },
+        "M16_N64_S1": {
+          "registers": 168,
+          "spills": 4,
+          "shared_bytes": 36864,
+          "grid": [
+            8,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 233.88159275054932,
+          "round_us": [
+            248.1152057647705,
+            240.12799263000488,
+            233.57439041137695,
+            233.98399353027344,
+            233.88159275054932,
+            233.88159275054932,
+            233.62560272216797,
+            233.98399353027344,
+            233.7791919708252,
+            233.3695888519287,
+            234.64961051940918
+          ],
+          "min_round_us": 233.3695888519287,
+          "max_round_us": 248.1152057647705,
+          "speedup_vs_current": 1.4783275338045334,
+          "latency_change_percent": -32.35599167753704
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 58,
+          "shared_bytes": 49152,
+          "grid": [
+            2,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 374.9887943267822,
+          "round_us": [
+            399.4112014770508,
+            398.84800910949707,
+            374.9887943267822,
+            375.04000663757324,
+            375.19359588623047,
+            374.8863935470581,
+            374.8863935470581,
+            375.04000663757324,
+            374.9376058578491,
+            374.783992767334,
+            374.9376058578491
+          ],
+          "min_round_us": 374.783992767334,
+          "max_round_us": 399.4112014770508,
+          "speedup_vs_current": 0.9220371473604367,
+          "latency_change_percent": 8.455500178355235
+        },
+        "M16_N128_S1": {
+          "registers": 168,
+          "spills": 2,
+          "shared_bytes": 69632,
+          "grid": [
+            8,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 319.23201084136963,
+          "round_us": [
+            338.2272005081177,
+            338.4320020675659,
+            319.43678855895996,
+            319.0272092819214,
+            319.23201084136963,
+            319.0783977508545,
+            318.92480850219727,
+            318.77119541168213,
+            319.23201084136963,
+            319.0272092819214,
+            319.33441162109375
+          ],
+          "min_round_us": 318.77119541168213,
+          "max_round_us": 338.4320020675659,
+          "speedup_vs_current": 1.083079348157867,
+          "latency_change_percent": -7.670661276957313
+        },
+        "M32_N128_S1": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 73728,
+          "grid": [
+            4,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 265.7279968261719,
+          "round_us": [
+            280.678391456604,
+            280.93440532684326,
+            265.7279968261719,
+            265.57440757751465,
+            265.7279968261719,
+            265.7279968261719,
+            265.4720067977905,
+            265.7792091369629,
+            265.9327983856201,
+            265.7792091369629,
+            265.7279968261719
+          ],
+          "min_round_us": 265.4720067977905,
+          "max_round_us": 280.93440532684326,
+          "speedup_vs_current": 1.3011560781808524,
+          "latency_change_percent": -23.145269290206826
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 106,
+          "shared_bytes": 81920,
+          "grid": [
+            2,
+            1,
+            16
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 391.2192106246948,
+          "round_us": [
+            415.53921699523926,
+            415.4367923736572,
+            391.32161140441895,
+            390.86079597473145,
+            391.1679983139038,
+            391.4752006530762,
+            391.0144090652466,
+            391.32161140441895,
+            391.2192106246948,
+            391.0655975341797,
+            391.2192106246948
+          ],
+          "min_round_us": 390.86079597473145,
+          "max_round_us": 415.53921699523926,
+          "speedup_vs_current": 0.8837848163465695,
+          "latency_change_percent": 13.149714897099752
+        }
+      }
+    },
+    {
+      "case": "decode_B1_Q1_K1024",
+      "mode": "decode",
+      "batch": 1,
+      "q_length": 1,
+      "kv_length": 1024,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 12.902399897575378,
+          "round_us": [
+            12.902399897575378,
+            12.902399897575378,
+            12.953600287437439,
+            12.902399897575378,
+            12.953600287437439,
+            12.902399897575378,
+            12.083200365304947,
+            12.083200365304947,
+            12.083200365304947,
+            12.083200365304947,
+            12.083200365304947
+          ],
+          "min_round_us": 12.083200365304947,
+          "max_round_us": 12.953600287437439,
+          "speedup_vs_current": 3.4007937030397564,
+          "latency_change_percent": -70.59509963494219
+        },
+        "flash_restored": {
+          "median_us": 12.902399897575378,
+          "round_us": [
+            12.902399897575378,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.083200365304947,
+            12.083200365304947,
+            12.083200365304947,
+            12.083200365304947,
+            12.083200365304947
+          ],
+          "min_round_us": 12.083200365304947,
+          "max_round_us": 12.953600287437439,
+          "speedup_vs_current": 3.4007937030397564,
+          "latency_change_percent": -70.59509963494219
+        },
+        "M16_N64_S3": {
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 43.87840032577515,
+          "round_us": [
+            44.13439929485321,
+            43.87840032577515,
+            43.92960071563721,
+            43.92960071563721,
+            43.92960071563721,
+            43.92960071563721,
+            41.16480052471161,
+            41.21600091457367,
+            41.16480052471161,
+            41.16480052471161,
+            41.11360013484955
+          ],
+          "min_round_us": 41.11360013484955,
+          "max_round_us": 44.13439929485321,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 56.98559880256653,
+          "round_us": [
+            57.03679919242859,
+            56.98559880256653,
+            56.98559880256653,
+            57.03679919242859,
+            56.98559880256653,
+            56.98559880256653,
+            53.45280170440674,
+            53.40160131454468,
+            53.40160131454468,
+            53.40160131454468,
+            53.45280170440674
+          ],
+          "min_round_us": 53.40160131454468,
+          "max_round_us": 57.03679919242859,
+          "speedup_vs_current": 0.7699910371705867,
+          "latency_change_percent": 29.87164158099884
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 47.7183997631073,
+          "round_us": [
+            47.974398732185364,
+            47.76960015296936,
+            47.82080054283142,
+            47.7183997631073,
+            47.7183997631073,
+            47.82080054283142,
+            44.80000138282776,
+            44.80000138282776,
+            44.7488009929657,
+            44.80000138282776,
+            44.7488009929657
+          ],
+          "min_round_us": 44.7488009929657,
+          "max_round_us": 47.974398732185364,
+          "speedup_vs_current": 0.9195279083876365,
+          "latency_change_percent": 8.75145722911974
+        },
+        "M32_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 53.29920053482056,
+          "round_us": [
+            53.35040092468262,
+            53.29920053482056,
+            53.29920053482056,
+            53.29920053482056,
+            53.29920053482056,
+            53.35040092468262,
+            49.97119903564453,
+            50.02239942550659,
+            49.91999864578247,
+            49.97119903564453,
+            49.97119903564453
+          ],
+          "min_round_us": 49.91999864578247,
+          "max_round_us": 53.35040092468262,
+          "speedup_vs_current": 0.8232468758534048,
+          "latency_change_percent": 21.47024535785418
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 65.53599834442139,
+          "round_us": [
+            65.53599834442139,
+            65.58719873428345,
+            65.53599834442139,
+            65.58719873428345,
+            65.58719873428345,
+            65.58719873428345,
+            61.54239773750305,
+            61.49119734764099,
+            61.44000291824341,
+            61.44000291824341,
+            61.44000291824341
+          ],
+          "min_round_us": 61.44000291824341,
+          "max_round_us": 65.58719873428345,
+          "speedup_vs_current": 0.6695312718847168,
+          "latency_change_percent": 49.3582214890457
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 82944,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 91.95520281791687,
+          "round_us": [
+            91.95520281791687,
+            92.00639724731445,
+            91.95520281791687,
+            91.95520281791687,
+            91.95520281791687,
+            92.00639724731445,
+            86.32320165634155,
+            86.32320165634155,
+            86.32320165634155,
+            86.32320165634155,
+            86.22080087661743
+          ],
+          "min_round_us": 86.22080087661743,
+          "max_round_us": 92.00639724731445,
+          "speedup_vs_current": 0.4771714811249998,
+          "latency_change_percent": 109.56826624306161
+        },
+        "M16_N64_S1": {
+          "registers": 196,
+          "spills": 0,
+          "shared_bytes": 36864,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 48.69120121002197,
+          "round_us": [
+            48.844799399375916,
+            48.69120121002197,
+            48.742398619651794,
+            48.69120121002197,
+            48.69120121002197,
+            48.742398619651794,
+            45.67039906978607,
+            45.67039906978607,
+            45.67039906978607,
+            45.67039906978607,
+            45.61919867992401
+          ],
+          "min_round_us": 45.61919867992401,
+          "max_round_us": 48.844799399375916,
+          "speedup_vs_current": 0.9011566614779629,
+          "latency_change_percent": 10.968496682910466
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 49152,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 66.04800224304199,
+          "round_us": [
+            66.15039706230164,
+            66.09920263290405,
+            66.09920263290405,
+            66.09920263290405,
+            66.04800224304199,
+            66.09920263290405,
+            62.05440163612366,
+            62.0032012462616,
+            62.05440163612366,
+            62.0032012462616,
+            62.0032012462616
+          ],
+          "min_round_us": 62.0032012462616,
+          "max_round_us": 66.15039706230164,
+          "speedup_vs_current": 0.6643410676421729,
+          "latency_change_percent": 50.525091508962625
+        },
+        "M16_N128_S1": {
+          "registers": 179,
+          "spills": 0,
+          "shared_bytes": 69632,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 40.140798687934875,
+          "round_us": [
+            40.140798687934875,
+            40.140798687934875,
+            40.140798687934875,
+            40.140798687934875,
+            40.140798687934875,
+            40.140798687934875,
+            37.63200044631958,
+            37.63200044631958,
+            37.68320083618164,
+            37.58080005645752,
+            37.58080005645752
+          ],
+          "min_round_us": 37.58080005645752,
+          "max_round_us": 40.140798687934875,
+          "speedup_vs_current": 1.0931122887438631,
+          "latency_change_percent": -8.518090017162095
+        },
+        "M32_N128_S1": {
+          "registers": 252,
+          "spills": 0,
+          "shared_bytes": 73728,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 43.98080110549927,
+          "round_us": [
+            43.98080110549927,
+            43.98080110549927,
+            43.98080110549927,
+            44.03199851512909,
+            44.03199851512909,
+            43.98080110549927,
+            42.70080029964447,
+            41.26720130443573,
+            41.26720130443573,
+            41.26720130443573,
+            41.21600091457367
+          ],
+          "min_round_us": 41.21600091457367,
+          "max_round_us": 44.03199851512909,
+          "speedup_vs_current": 0.9976716936219855,
+          "latency_change_percent": 0.2333740039833776
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 2,
+          "shared_bytes": 81920,
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 55.193597078323364,
+          "round_us": [
+            55.244797468185425,
+            55.244797468185425,
+            55.244797468185425,
+            55.295997858047485,
+            55.244797468185425,
+            55.193597078323364,
+            51.865601539611816,
+            51.814401149749756,
+            51.814401149749756,
+            51.865601539611816,
+            51.814401149749756
+          ],
+          "min_round_us": 51.814401149749756,
+          "max_round_us": 55.295997858047485,
+          "speedup_vs_current": 0.7949907715474459,
+          "latency_change_percent": 25.787623679392468
+        }
+      }
+    },
+    {
+      "case": "decode_B64_Q1_K1024",
+      "mode": "decode",
+      "batch": 64,
+      "q_length": 1,
+      "kv_length": 1024,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 322.20160961151123,
+          "round_us": [
+            321.74079418182373,
+            321.89440727233887,
+            321.4848041534424,
+            321.89440727233887,
+            322.6111888885498,
+            322.20160961151123,
+            322.25279808044434,
+            322.30401039123535,
+            322.30401039123535,
+            322.30401039123535,
+            322.1503973007202
+          ],
+          "min_round_us": 321.4848041534424,
+          "max_round_us": 322.6111888885498,
+          "speedup_vs_current": 1.209597964794587,
+          "latency_change_percent": -17.327903228588916
+        },
+        "flash_restored": {
+          "median_us": 322.0479965209961,
+          "round_us": [
+            321.84319496154785,
+            321.6383934020996,
+            322.0479965209961,
+            321.5359926223755,
+            322.1503973007202,
+            322.25279808044434,
+            322.35519886016846,
+            322.0992088317871,
+            321.89440727233887,
+            322.0992088317871,
+            321.945595741272
+          ],
+          "min_round_us": 321.5359926223755,
+          "max_round_us": 322.35519886016846,
+          "speedup_vs_current": 1.2101749287367949,
+          "latency_change_percent": -17.367318041878445
+        },
+        "M16_N64_S3": {
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 389.734411239624,
+          "round_us": [
+            387.48159408569336,
+            388.91520500183105,
+            386.6111993789673,
+            390.5535936355591,
+            390.1952028274536,
+            391.4752006530762,
+            389.734411239624,
+            388.45438957214355,
+            390.45119285583496,
+            385.89439392089844,
+            391.0144090652466
+          ],
+          "min_round_us": 385.89439392089844,
+          "max_round_us": 391.4752006530762,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 460.85119247436523,
+          "round_us": [
+            458.49599838256836,
+            461.6703987121582,
+            457.2671890258789,
+            461.97757720947266,
+            460.1856231689453,
+            460.0831985473633,
+            462.43839263916016,
+            464.1791820526123,
+            459.2639923095703,
+            461.36322021484375,
+            460.85119247436523
+          ],
+          "min_round_us": 457.2671890258789,
+          "max_round_us": 464.1791820526123,
+          "speedup_vs_current": 0.8456838511084094,
+          "latency_change_percent": 18.24749860001862
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 359.42399501800537,
+          "round_us": [
+            358.1952095031738,
+            358.0928087234497,
+            357.93919563293457,
+            358.24639797210693,
+            359.68000888824463,
+            359.6287965774536,
+            360.24320125579834,
+            359.987211227417,
+            359.78240966796875,
+            359.32159423828125,
+            359.42399501800537
+          ],
+          "min_round_us": 357.93919563293457,
+          "max_round_us": 360.24320125579834,
+          "speedup_vs_current": 1.0843305306316575,
+          "latency_change_percent": -7.777197842297435
+        },
+        "M32_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 395.9295988082886,
+          "round_us": [
+            394.5472002029419,
+            394.29121017456055,
+            394.1888093948364,
+            394.34239864349365,
+            396.0319995880127,
+            395.9295988082886,
+            396.0832118988037,
+            395.87841033935547,
+            396.0832118988037,
+            396.1344003677368,
+            395.9295988082886
+          ],
+          "min_round_us": 394.1888093948364,
+          "max_round_us": 396.1344003677368,
+          "speedup_vs_current": 0.9843528051772045,
+          "latency_change_percent": 1.5895921401858137
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 471.80800437927246,
+          "round_us": [
+            470.1695919036865,
+            469.86241340637207,
+            469.75998878479004,
+            469.9647903442383,
+            471.9615936279297,
+            471.9615936279297,
+            471.9103813171387,
+            471.80800437927246,
+            472.26881980895996,
+            472.3711967468262,
+            471.75679206848145
+          ],
+          "min_round_us": 469.75998878479004,
+          "max_round_us": 472.3711967468262,
+          "speedup_vs_current": 0.826044508830181,
+          "latency_change_percent": 21.058852072773824
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 82944,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 652.288007736206,
+          "round_us": [
+            649.0111827850342,
+            649.3184089660645,
+            649.1648197174072,
+            648.6527919769287,
+            649.0111827850342,
+            652.4928092956543,
+            652.5440216064453,
+            652.3903846740723,
+            652.5951862335205,
+            652.288007736206,
+            652.5440216064453
+          ],
+          "min_round_us": 648.6527919769287,
+          "max_round_us": 652.5951862335205,
+          "speedup_vs_current": 0.5974882362044556,
+          "latency_change_percent": 67.36731192441556
+        },
+        "M16_N64_S1": {
+          "registers": 196,
+          "spills": 0,
+          "shared_bytes": 36864,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 245.45280933380127,
+          "round_us": [
+            244.1215991973877,
+            244.99199390411377,
+            244.58239078521729,
+            244.73600387573242,
+            245.70879936218262,
+            245.70879936218262,
+            245.6576108932495,
+            245.76001167297363,
+            245.45280933380127,
+            245.45280933380127,
+            245.6576108932495
+          ],
+          "min_round_us": 244.1215991973877,
+          "max_round_us": 245.76001167297363,
+          "speedup_vs_current": 1.5878180913774278,
+          "latency_change_percent": -37.020493378274665
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 49152,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 306.6879987716675,
+          "round_us": [
+            304.8959970474243,
+            306.02240562438965,
+            305.2031993865967,
+            305.56159019470215,
+            305.3056001663208,
+            306.8928003311157,
+            307.3024034500122,
+            307.09760189056396,
+            307.09760189056396,
+            306.6879987716675,
+            307.55839347839355
+          ],
+          "min_round_us": 304.8959970474243,
+          "max_round_us": 307.55839347839355,
+          "speedup_vs_current": 1.2707846828065337,
+          "latency_change_percent": -21.308462910373173
+        },
+        "M16_N128_S1": {
+          "registers": 179,
+          "spills": 0,
+          "shared_bytes": 69632,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 297.8816032409668,
+          "round_us": [
+            296.65279388427734,
+            296.65279388427734,
+            296.75519466400146,
+            296.8575954437256,
+            298.54719638824463,
+            297.8816032409668,
+            297.9327917098999,
+            297.8816032409668,
+            298.035192489624,
+            297.8816032409668,
+            298.035192489624
+          ],
+          "min_round_us": 296.65279388427734,
+          "max_round_us": 298.54719638824463,
+          "speedup_vs_current": 1.3083534095402136,
+          "latency_change_percent": -23.568051819315105
+        },
+        "M32_N128_S1": {
+          "registers": 252,
+          "spills": 0,
+          "shared_bytes": 73728,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 319.33441162109375,
+          "round_us": [
+            318.2591915130615,
+            318.0543899536133,
+            318.1567907333374,
+            318.0543899536133,
+            319.33441162109375,
+            319.43678855895996,
+            319.6415901184082,
+            319.5391893386841,
+            319.488000869751,
+            319.38560009002686,
+            319.1296100616455
+          ],
+          "min_round_us": 318.0543899536133,
+          "max_round_us": 319.6415901184082,
+          "speedup_vs_current": 1.2204585445744676,
+          "latency_change_percent": -18.0635831962104
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 4,
+          "shared_bytes": 81920,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 406.4256191253662,
+          "round_us": [
+            404.73599433898926,
+            404.58240509033203,
+            404.531192779541,
+            404.27517890930176,
+            406.57920837402344,
+            406.5279960632324,
+            406.4767837524414,
+            406.4256191253662,
+            406.5279960632324,
+            406.4256191253662,
+            406.9888114929199
+          ],
+          "min_round_us": 404.27517890930176,
+          "max_round_us": 406.9888114929199,
+          "speedup_vs_current": 0.9589317033663824,
+          "latency_change_percent": 4.282713407998195
+        }
+      }
+    },
+    {
+      "case": "decode_B256_Q1_K1024",
+      "mode": "decode",
+      "batch": 256,
+      "q_length": 1,
+      "kv_length": 1024,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 1152.8703689575195,
+          "round_us": [
+            1152.8703689575195,
+            1153.1264305114746,
+            1153.228759765625,
+            1153.0240058898926,
+            1152.7168273925781,
+            1152.8703689575195,
+            1152.7680397033691,
+            1152.8703689575195,
+            1152.614402770996,
+            1152.614402770996,
+            1152.8703689575195
+          ],
+          "min_round_us": 1152.614402770996,
+          "max_round_us": 1153.228759765625,
+          "speedup_vs_current": 1.115557128371386,
+          "latency_change_percent": -10.358692121853885
+        },
+        "flash_restored": {
+          "median_us": 1152.7680397033691,
+          "round_us": [
+            1152.8191566467285,
+            1153.7919998168945,
+            1152.7168273925781,
+            1152.665615081787,
+            1152.8703689575195,
+            1152.7168273925781,
+            1152.614402770996,
+            1152.7680397033691,
+            1153.0752182006836,
+            1152.1535873413086,
+            1292.1855926513672
+          ],
+          "min_round_us": 1152.1535873413086,
+          "max_round_us": 1292.1855926513672,
+          "speedup_vs_current": 1.1156561544763586,
+          "latency_change_percent": -10.366648721679173
+        },
+        "M16_N64_S3": {
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1286.092758178711,
+          "round_us": [
+            1281.4847946166992,
+            1287.065601348877,
+            1285.9904289245605,
+            1285.1712226867676,
+            1289.9328231811523,
+            1308.7231636047363,
+            1314.457607269287,
+            1284.71040725708,
+            1280.8192253112793,
+            1286.297607421875,
+            1286.092758178711
+          ],
+          "min_round_us": 1280.8192253112793,
+          "max_round_us": 1314.457607269287,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1542.0928001403809,
+          "round_us": [
+            1573.2735633850098,
+            1541.6831970214844,
+            1541.9391632080078,
+            1568.563175201416,
+            1541.6319847106934,
+            1542.0928001403809,
+            1541.478443145752,
+            1558.681583404541,
+            1539.9935722351074,
+            1542.2975540161133,
+            1551.5135765075684
+          ],
+          "min_round_us": 1539.9935722351074,
+          "max_round_us": 1573.2735633850098,
+          "speedup_vs_current": 0.833991805202407,
+          "latency_change_percent": 19.90525491522106
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1303.3984184265137,
+          "round_us": [
+            1297.663974761963,
+            1303.4496307373047,
+            1337.1904373168945,
+            1321.6768264770508,
+            1310.0031852722168,
+            1303.3984184265137,
+            1307.801628112793,
+            1302.732753753662,
+            1303.0912399291992,
+            1302.2208213806152,
+            1302.5792121887207
+          ],
+          "min_round_us": 1297.663974761963,
+          "max_round_us": 1337.1904373168945,
+          "speedup_vs_current": 0.9867226628457211,
+          "latency_change_percent": 1.3455996962699723
+        },
+        "M32_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1433.1392288208008,
+          "round_us": [
+            1425.6640434265137,
+            1450.598430633545,
+            1435.4944229125977,
+            1433.1392288208008,
+            1430.5791854858398,
+            1431.0912132263184,
+            1432.0639610290527,
+            1449.2159843444824,
+            1446.399974822998,
+            1432.0128440856934,
+            1448.755168914795
+          ],
+          "min_round_us": 1425.6640434265137,
+          "max_round_us": 1450.598430633545,
+          "speedup_vs_current": 0.8973955442116528,
+          "latency_change_percent": 11.43358204196161
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1710.745620727539,
+          "round_us": [
+            1729.6384811401367,
+            1727.2832870483398,
+            1710.745620727539,
+            1699.123191833496,
+            1698.5599517822266,
+            1699.3280410766602,
+            1714.3808364868164,
+            1722.5215911865234,
+            1698.918342590332,
+            1717.6063537597656,
+            1697.6383209228516
+          ],
+          "min_round_us": 1697.6383209228516,
+          "max_round_us": 1729.6384811401367,
+          "speedup_vs_current": 0.751773228349266,
+          "latency_change_percent": 33.01883630463767
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 82944,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 2344.0895080566406,
+          "round_us": [
+            2359.552001953125,
+            2347.0592498779297,
+            2342.04158782959,
+            2341.632080078125,
+            2347.724723815918,
+            2344.1919326782227,
+            2344.0895080566406,
+            2343.4751510620117,
+            2343.4240341186523,
+            2362.726402282715,
+            2341.3759231567383
+          ],
+          "min_round_us": 2341.3759231567383,
+          "max_round_us": 2362.726402282715,
+          "speedup_vs_current": 0.5486534339914954,
+          "latency_change_percent": 82.26442013219967
+        },
+        "M16_N64_S1": {
+          "registers": 196,
+          "spills": 0,
+          "shared_bytes": 36864,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 860.211181640625,
+          "round_us": [
+            857.3439598083496,
+            859.5456123352051,
+            859.9552154541016,
+            860.211181640625,
+            860.7744216918945,
+            859.5968246459961,
+            860.8256340026855,
+            869.0688133239746,
+            866.2015914916992,
+            866.7136192321777,
+            859.4944000244141
+          ],
+          "min_round_us": 857.3439598083496,
+          "max_round_us": 869.0688133239746,
+          "speedup_vs_current": 1.495089561293344,
+          "latency_change_percent": -33.11437482481391
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 49152,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1052.2624015808105,
+          "round_us": [
+            1053.286361694336,
+            1061.0176086425781,
+            1052.2624015808105,
+            1050.879955291748,
+            1051.699161529541,
+            1051.3407707214355,
+            1072.640037536621,
+            1049.5488166809082,
+            1053.593635559082,
+            1052.2624015808105,
+            1050.163173675537
+          ],
+          "min_round_us": 1049.5488166809082,
+          "max_round_us": 1072.640037536621,
+          "speedup_vs_current": 1.2222167743013699,
+          "latency_change_percent": -18.181453484664456
+        },
+        "M16_N128_S1": {
+          "registers": 179,
+          "spills": 0,
+          "shared_bytes": 69632,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1071.9743728637695,
+          "round_us": [
+            1071.8720436096191,
+            1092.249584197998,
+            1073.151969909668,
+            1088.9727592468262,
+            1071.564769744873,
+            1071.615982055664,
+            1071.9743728637695,
+            1071.615982055664,
+            1071.1039543151855,
+            1088.4608268737793,
+            1085.644817352295
+          ],
+          "min_round_us": 1071.1039543151855,
+          "max_round_us": 1092.249584197998,
+          "speedup_vs_current": 1.1997420747502816,
+          "latency_change_percent": -16.648751340312597
+        },
+        "M32_N128_S1": {
+          "registers": 252,
+          "spills": 0,
+          "shared_bytes": 73728,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1143.9104080200195,
+          "round_us": [
+            1139.9680137634277,
+            1143.7055587768555,
+            1143.9104080200195,
+            1154.6112060546875,
+            1143.449592590332,
+            1144.0128326416016,
+            1152.1023750305176,
+            1143.603229522705,
+            1145.2927589416504,
+            1143.7567710876465,
+            1145.088005065918
+          ],
+          "min_round_us": 1139.9680137634277,
+          "max_round_us": 1154.6112060546875,
+          "speedup_vs_current": 1.1242950052397838,
+          "latency_change_percent": -11.05537289239088
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 4,
+          "shared_bytes": 81920,
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1463.9616012573242,
+          "round_us": [
+            1447.8336334228516,
+            1453.4655570983887,
+            1463.9616012573242,
+            1461.5039825439453,
+            1492.1728134155273,
+            1481.5232276916504,
+            1471.180820465088,
+            1453.2095909118652,
+            1477.888011932373,
+            1475.9424209594727,
+            1461.5551948547363
+          ],
+          "min_round_us": 1447.8336334228516,
+          "max_round_us": 1492.1728134155273,
+          "speedup_vs_current": 0.8785017018712441,
+          "latency_change_percent": 13.830172197727064
+        }
+      }
+    },
+    {
+      "case": "decode_B64_Q1_K4096",
+      "mode": "decode",
+      "batch": 64,
+      "q_length": 1,
+      "kv_length": 4096,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "median_us": 1260.2879524230957,
+          "round_us": [
+            1258.8031768798828,
+            1260.6464385986328,
+            1260.9536170959473,
+            1260.3391647338867,
+            1260.8511924743652,
+            1259.9807739257812,
+            1260.2879524230957,
+            1260.1856231689453,
+            1260.5952262878418,
+            1259.9295616149902,
+            1260.1344108581543
+          ],
+          "min_round_us": 1258.8031768798828,
+          "max_round_us": 1260.9536170959473,
+          "speedup_vs_current": 1.2033313161928607,
+          "latency_change_percent": -16.897367620761916
+        },
+        "flash_restored": {
+          "median_us": 1260.0319862365723,
+          "round_us": [
+            1259.2639923095703,
+            1259.7248077392578,
+            1263.5135650634766,
+            1259.9807739257812,
+            1264.998435974121,
+            1260.0319862365723,
+            1259.4688415527344,
+            1260.0831985473633,
+            1260.3391647338867,
+            1260.0831985473633,
+            1259.3664169311523
+          ],
+          "min_round_us": 1259.2639923095703,
+          "max_round_us": 1264.998435974121,
+          "speedup_vs_current": 1.2035757640572755,
+          "latency_change_percent": -16.914245877718415
+        },
+        "M16_N64_S3": {
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1516.543960571289,
+          "round_us": [
+            1506.662368774414,
+            1517.7727699279785,
+            1513.4719848632812,
+            1511.3727569580078,
+            1518.6944007873535,
+            1521.561622619629,
+            1526.3232231140137,
+            1516.543960571289,
+            1514.9056434631348,
+            1527.6032447814941,
+            1513.6768341064453
+          ],
+          "min_round_us": 1506.662368774414,
+          "max_round_us": 1527.6032447814941,
+          "speedup_vs_current": 1.0,
+          "latency_change_percent": 0.0
+        },
+        "M64_N64_S3": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1790.6688690185547,
+          "round_us": [
+            1797.1712112426758,
+            1790.6688690185547,
+            1790.0032043457031,
+            1806.4895629882812,
+            1793.9456939697266,
+            1787.9039764404297,
+            1788.876724243164,
+            1793.1264877319336,
+            1788.3647918701172,
+            1787.6991271972656,
+            1799.6288299560547
+          ],
+          "min_round_us": 1787.6991271972656,
+          "max_round_us": 1806.4895629882812,
+          "speedup_vs_current": 0.8469147963701907,
+          "latency_change_percent": 18.075632198884726
+        },
+        "M16_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1420.5951690673828,
+          "round_us": [
+            1491.2511825561523,
+            1420.5951690673828,
+            1438.7200355529785,
+            1420.1855659484863,
+            1420.5439567565918,
+            1419.4175720214844,
+            1421.7215538024902,
+            1420.6463813781738,
+            1420.8000183105469,
+            1419.6224212646484,
+            1419.8783874511719
+          ],
+          "min_round_us": 1419.4175720214844,
+          "max_round_us": 1491.2511825561523,
+          "speedup_vs_current": 1.067541262699701,
+          "latency_change_percent": -6.326805816282565
+        },
+        "M32_N64_S2": {
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1564.3648147583008,
+          "round_us": [
+            1641.267204284668,
+            1569.9968338012695,
+            1562.6239776611328,
+            1564.3648147583008,
+            1563.2384300231934,
+            1562.880039215088,
+            1564.8768424987793,
+            1573.4784126281738,
+            1566.8736457824707,
+            1562.9823684692383,
+            1564.2623901367188
+          ],
+          "min_round_us": 1562.6239776611328,
+          "max_round_us": 1641.267204284668,
+          "speedup_vs_current": 0.9694311366914755,
+          "latency_change_percent": 3.1532784693558913
+        },
+        "M64_N64_S2": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1862.9632949829102,
+          "round_us": [
+            1856.7680358886719,
+            1869.4143295288086,
+            1864.29443359375,
+            1861.4784240722656,
+            1862.1440887451172,
+            1861.3248825073242,
+            1867.8783416748047,
+            1874.892807006836,
+            1862.9632949829102,
+            1870.4896926879883,
+            1861.529541015625
+          ],
+          "min_round_us": 1856.7680358886719,
+          "max_round_us": 1874.892807006836,
+          "speedup_vs_current": 0.8140492969751189,
+          "latency_change_percent": 22.842683325917122
+        },
+        "M128_N64_S2": {
+          "registers": 255,
+          "spills": 14,
+          "shared_bytes": 82944,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 2561.9455337524414,
+          "round_us": [
+            2558.3616256713867,
+            2562.4576568603516,
+            2562.918472290039,
+            2560.358428955078,
+            2561.075210571289,
+            2562.6623153686523,
+            2561.0240936279297,
+            2561.0240936279297,
+            2561.9455337524414,
+            2568.396759033203,
+            2562.303924560547
+          ],
+          "min_round_us": 2558.3616256713867,
+          "max_round_us": 2568.396759033203,
+          "speedup_vs_current": 0.5919501178270683,
+          "latency_change_percent": 68.93315329859246
+        },
+        "M16_N64_S1": {
+          "registers": 196,
+          "spills": 0,
+          "shared_bytes": 36864,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 967.5775527954102,
+          "round_us": [
+            983.9615821838379,
+            968.0895805358887,
+            967.5775527954102,
+            967.5264358520508,
+            967.5775527954102,
+            967.4240112304688,
+            967.0656204223633,
+            968.8063621520996,
+            970.854377746582,
+            974.4895935058594,
+            967.3215866088867
+          ],
+          "min_round_us": 967.0656204223633,
+          "max_round_us": 983.9615821838379,
+          "speedup_vs_current": 1.5673616612847936,
+          "latency_change_percent": -36.19851597108209
+        },
+        "M64_N64_S1": {
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 49152,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1214.2592430114746,
+          "round_us": [
+            1214.310359954834,
+            1216.870403289795,
+            1214.8736000061035,
+            1213.3376121520996,
+            1212.9280090332031,
+            1212.3135566711426,
+            1229.6192169189453,
+            1216.256046295166,
+            1214.2592430114746,
+            1212.1088027954102,
+            1213.491153717041
+          ],
+          "min_round_us": 1212.1088027954102,
+          "max_round_us": 1229.6192169189453,
+          "speedup_vs_current": 1.2489457826239152,
+          "latency_change_percent": -19.932473137537166
+        },
+        "M16_N128_S1": {
+          "registers": 179,
+          "spills": 0,
+          "shared_bytes": 69632,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1163.6223793029785,
+          "round_us": [
+            1158.1952095031738,
+            1175.500774383545,
+            1164.236831665039,
+            1165.2095794677734,
+            1163.6223793029785,
+            1162.9055976867676,
+            1163.0080223083496,
+            1163.0080223083496,
+            1163.161563873291,
+            1164.5440101623535,
+            1164.185619354248
+          ],
+          "min_round_us": 1158.1952095031738,
+          "max_round_us": 1175.500774383545,
+          "speedup_vs_current": 1.3032956288445692,
+          "latency_change_percent": -23.271437587299705
+        },
+        "M32_N128_S1": {
+          "registers": 252,
+          "spills": 0,
+          "shared_bytes": 73728,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1241.9584274291992,
+          "round_us": [
+            1301.6575813293457,
+            1241.8047904968262,
+            1241.9584274291992,
+            1248.5119819641113,
+            1241.0367965698242,
+            1242.6752090454102,
+            1243.6991691589355,
+            1242.2656059265137,
+            1241.6000366210938,
+            1241.9072151184082,
+            1241.3439750671387
+          ],
+          "min_round_us": 1241.0367965698242,
+          "max_round_us": 1301.6575813293457,
+          "speedup_vs_current": 1.2210907604294534,
+          "latency_change_percent": -18.106005515240863
+        },
+        "M64_N128_S1": {
+          "registers": 255,
+          "spills": 4,
+          "shared_bytes": 81920,
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1585.2031707763672,
+          "round_us": [
+            1671.628761291504,
+            1583.8720321655273,
+            1584.6912384033203,
+            1584.7935676574707,
+            1613.0048751831055,
+            1597.1839904785156,
+            1583.6159706115723,
+            1584.1279983520508,
+            1597.1327781677246,
+            1592.8319931030273,
+            1585.2031707763672
+          ],
+          "min_round_us": 1583.6159706115723,
+          "max_round_us": 1671.628761291504,
+          "speedup_vs_current": 0.9566874382597584,
+          "latency_change_percent": 4.527347178199426
+        }
+      }
+    }
+  ],
+  "finished_utc": "2026-10-05T06:09:14.087351+00:00",
+  "original_source_hashes_after": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+    "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+    "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+    "nanovllm/engine/model_runner.py": "4084396da1c8915de058ebdcb799b380914a98d1d31ad18d814078d78064c5f2",
+    "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+    "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "a444d22f3859635c417a1288be4ee86272a7f43d1f9aeebd51c6f6ffe8d79351"
+  }
+}

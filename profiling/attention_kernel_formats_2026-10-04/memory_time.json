@@ -1,0 +1,74 @@
+{
+  "source_sha256": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+  "batch": 256,
+  "context": 1024,
+  "mode": "decode",
+  "variants": {
+    "flash_bf16": {
+      "raw_metrics": {
+        "gpu__time_duration.sum": 1156864.0,
+        "dram__bytes_read.sum": 1074888960.0,
+        "dram__bytes_write.sum": 3025280.0,
+        "dram__cycles_active.avg": 11228273.333333334,
+        "dram__cycles_active_read.avg": 11196760.0,
+        "dram__cycles_active_write.avg": 31513.333333333332,
+        "dram__cycles_elapsed.avg": 11848106.666666666,
+        "smsp__warps_issue_stalled_long_scoreboard.sum": 79686000.0,
+        "smsp__inst_issued.sum": 69600448.0,
+        "smsp__cycles_elapsed.avg": 2214128.0,
+        "smsp__cycles_elapsed.avg.per_second": 1913905178.136756
+      },
+      "kernel_us": 1156.864,
+      "dram_read_MiB": 1025.093994140625,
+      "dram_write_MiB": 2.8851318359375,
+      "dram_average_busy_us": 1096.342695667831,
+      "dram_average_read_busy_us": 1093.2656942633873,
+      "dram_average_write_busy_us": 3.0770014044438043,
+      "dram_average_active_pct": 94.76850309697865
+    },
+    "triton_bf16": {
+      "raw_metrics": {
+        "gpu__time_duration.sum": 1147328.0,
+        "dram__bytes_read.sum": 1074856192.0,
+        "dram__bytes_write.sum": 2960768.0,
+        "dram__cycles_active.avg": 11227260.0,
+        "dram__cycles_active_read.avg": 11196418.666666666,
+        "dram__cycles_active_write.avg": 30841.333333333332,
+        "dram__cycles_elapsed.avg": 11750314.666666666,
+        "smsp__warps_issue_stalled_long_scoreboard.sum": 1034448156.0,
+        "smsp__inst_issued.sum": 53047840.0,
+        "smsp__cycles_elapsed.avg": 2201844.714285714,
+        "smsp__cycles_elapsed.avg.per_second": 1919106580.0588098
+      },
+      "kernel_us": 1147.328,
+      "dram_read_MiB": 1025.062744140625,
+      "dram_write_MiB": 2.8236083984375,
+      "dram_average_busy_us": 1096.255728182485,
+      "dram_average_read_busy_us": 1093.2443088039854,
+      "dram_average_write_busy_us": 3.0114193784994807,
+      "dram_average_active_pct": 95.5485901313735
+    },
+    "triton_int8_half": {
+      "raw_metrics": {
+        "gpu__time_duration.sum": 1297856.0,
+        "dram__bytes_read.sum": 672227840.0,
+        "dram__bytes_write.sum": 2898816.0,
+        "dram__cycles_active.avg": 7032569.333333333,
+        "dram__cycles_active_read.avg": 7002373.333333333,
+        "dram__cycles_active_write.avg": 30196.0,
+        "dram__cycles_elapsed.avg": 13292032.0,
+        "smsp__warps_issue_stalled_long_scoreboard.sum": 202345773.0,
+        "smsp__inst_issued.sum": 97161404.0,
+        "smsp__cycles_elapsed.avg": 2488943.4285714286,
+        "smsp__cycles_elapsed.avg.per_second": 1917734655.1323326
+      },
+      "kernel_us": 1297.856,
+      "dram_read_MiB": 641.08642578125,
+      "dram_write_MiB": 2.7645263671875,
+      "dram_average_busy_us": 686.6717071312096,
+      "dram_average_read_busy_us": 683.7233197231744,
+      "dram_average_write_busy_us": 2.9483874080351296,
+      "dram_average_active_pct": 52.90815831118473
+    }
+  }
+}

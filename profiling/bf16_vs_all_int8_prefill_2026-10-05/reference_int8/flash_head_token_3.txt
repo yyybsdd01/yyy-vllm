@@ -1,0 +1,22 @@
+SCALE_LAYOUT: head_token | package: /home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_warm_2026-10-04/flash/variants/head_token/nanovllm/__init__.py
+Representative prefill warmup: page-table strides 1/2/3/4 and 16384 tokens
+PREFILL_EXPERIMENT: flash_head_token
+Output token SHA256: a13925efdc6a8426adab2c0531ac77270aff5b9e23a9b8997152eab8976acafb
+Prefill dispatch audit: {"flash": 252, "int8": 0}
+Prefill shape SHA256: bd8dd314cf69a399e4e4c76ef8e81a9012dfa41c0a512d72fb7849bf05b7e589
+Prefill batches: 9
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8_half | blocks: 1320 | requests: 256 | seed: 0
+Input: 142827 tokens | Output: 133966 tokens | elapsed: 24.811 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                            1178.82    1216.51    2156.47    2156.47 ms/request
+TPOT                              29.87      29.58      37.34      42.02 ms/request/token
+ITL                               27.96      27.92      29.53      29.69 ms/token
+End-to-end latency             15779.88   16286.93   24553.93   24730.58 ms/request
+Requests/s: 10.32
+Input tokens/s: 5756.71
+Output tokens/s: 5399.56
+Total tokens/s: 11156.27
+Prefill model-run tokens/s: 66534.58 (142827 tokens / 2.147 s)
+Decode model-run tokens/s: 5960.59 (133710 tokens / 22.432 s)
+Peak PyTorch allocated: 20.76 GiB
+Peak PyTorch reserved: 21.06 GiB

@@ -1,0 +1,7 @@
+GPU: NVIDIA GeForce RTX 3090 Ti | CUDA Graph kernel timing | random_data=True
+batch=256 context=512  mode=auto      median=591.51 us rounds=[592.82, 591.87, 591.51, 590.95, 588.7]
+batch=256 context=512  mode=int8      median=633.91 us rounds=[634.98, 635.9, 633.91, 631.8, 602.88]
+batch=256 context=512  mode=int8_half median=778.75 us rounds=[779.52, 779.62, 778.75, 765.7, 747.16]
+batch=256 context=1024 mode=auto      median=1154.85 us rounds=[1155.14, 1154.34, 1154.61, 1155.12, 1154.85]
+batch=256 context=1024 mode=int8      median=1175.08 us rounds=[1174.63, 1176.17, 1172.22, 1183.62, 1175.08]
+batch=256 context=1024 mode=int8_half median=1454.89 us rounds=[1454.23, 1454.89, 1453.1, 1459.15, 1455.86]

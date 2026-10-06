@@ -1,0 +1,17 @@
+SCALE_LAYOUT: head_token | package: /home/xgd/yyy/nano-vllm/profiling/scale_layout_inference_2026-10-04/variants/head_token/nanovllm/__init__.py
+Output token SHA256: b5655ac1751b49dfb45d1a2ee796543ddea8d3e66650e548502b27ec3109dc84
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8_half | blocks: 1320 | requests: 4 | seed: 0
+Input: 128 tokens | Output: 64 tokens | elapsed: 0.332 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                             291.62     291.62     291.62     291.62 ms/request
+TPOT                               2.66       2.66       2.66       2.66 ms/request/token
+ITL                                2.66       2.64       2.86       2.86 ms/token
+End-to-end latency               331.48     331.48     331.48     331.48 ms/request
+Requests/s: 12.06
+Input tokens/s: 385.95
+Output tokens/s: 192.98
+Total tokens/s: 578.93
+Prefill model-run tokens/s: 439.12 (128 tokens / 0.291 s)
+Decode model-run tokens/s: 1521.98 (60 tokens / 0.039 s)
+Peak PyTorch allocated: 20.33 GiB
+Peak PyTorch reserved: 20.41 GiB

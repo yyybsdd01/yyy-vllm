@@ -1,0 +1,27 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/preemption_lock_1024_2026-10-05/variants/bf16/nanovllm/__init__.py
+Output token SHA256: b5ed461817b00f2a4283139062e09b2b52b890d305ae9730ce88fa9d45792fff
+Preemption lock enabled: True
+Preemptions: 769
+Per-request preemptions: {"preempted_requests": 427, "repeatedly_preempted_requests": 178, "maximum_per_request": 10, "histogram": {"0": 597, "1": 249, "2": 103, "3": 42, "4": 16, "5": 3, "6": 4, "7": 1, "8": 4, "9": 4, "10": 1}}
+Lock statistics: {"decode_batches": 1760, "prefill_fallback_batches": 0, "completion_unlocks": 441}
+Actual decode batch sizes: {"mean": 147.71802030456854, "p50": 167.0, "p95": 203.0, "maximum": 265, "steps": 3940}
+Prefill attention dispatch: {"flash": 20300, "int8": 0}
+Prefill batches: {"fresh": 406, "cached": 319}
+Actual KV dtype: torch.bfloat16
+KV tensor bytes: 20581449728
+Scale tensor bytes: 0
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: auto | blocks: 701 | requests: 1024 | seed: 0
+Input: 580663 tokens | Output: 583802 tokens | elapsed: 117.681 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                           46197.51   47993.72  100871.80  104417.84 ms/request
+TPOT                              34.93      34.67      39.92      70.91 ms/request/token
+ITL                               34.21      27.24      56.78      68.98 ms/token
+End-to-end latency             65667.22   65988.97  113902.17  116968.48 ms/request
+Requests/s: 8.70
+Input tokens/s: 4934.22
+Output tokens/s: 4960.89
+Total tokens/s: 9895.11
+Prefill model-run tokens/s: 37659.48 (871974 tokens / 23.154 s)
+Decode model-run tokens/s: 6230.96 (582009 tokens / 93.406 s)
+Peak PyTorch allocated: 20.75 GiB
+Peak PyTorch reserved: 21.05 GiB

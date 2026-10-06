@@ -1,0 +1,11 @@
+QUALITY START bf16 mode=auto tokens=298938 package=/home/xgd/yyy/nano-vllm/profiling/fast_int8_vs_bf16_paired_2026-10-05/variants/bf16/nanovllm/__init__.py
+QUALITY PROGRESS bf16 chunks=128
+QUALITY PROGRESS bf16 chunks=256
+QUALITY PROGRESS bf16 chunks=384
+QUALITY PROGRESS bf16 chunks=512
+QUALITY PROGRESS bf16 chunks=640
+QUALITY PROGRESS bf16 chunks=768
+QUALITY PROGRESS bf16 chunks=896
+QUALITY PROGRESS bf16 chunks=1024
+QUALITY PROGRESS bf16 chunks=1152
+QUALITY COMPLETE bf16 NLL=877213.296570 PPL=18.810820 fresh_PPL=34.892483 cached_PPL=18.051570 dispatch={'flash': 32704, 'int8': 0}

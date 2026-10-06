@@ -1,0 +1,17 @@
+{
+  "triton_version": "3.1.0",
+  "num_warps": 6,
+  "stages": {
+    "decode": {
+      "status": "compiler_options_rejected",
+      "error": "num_warps must be a power of 2"
+    },
+    "prefill": {
+      "status": "compiler_options_rejected",
+      "error": "num_warps must be a power of 2"
+    }
+  },
+  "performance_metrics": null,
+  "root_sources_unchanged": true,
+  "reference_kernel_unchanged": true
+}

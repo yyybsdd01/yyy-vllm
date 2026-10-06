@@ -1,0 +1,13 @@
+{
+  "python": "3.11.16 (main, Sep  2 2026, 23:39:52) [GCC 15.3.0]",
+  "python_executable": "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "packages": {
+    "torch": "2.5.1+cu121",
+    "triton": "3.1.0",
+    "flash-attn": "2.7.4.post1",
+    "transformers": "4.57.3"
+  },
+  "cuda_build": "12.1",
+  "driver_version": "535.183.01"
+}

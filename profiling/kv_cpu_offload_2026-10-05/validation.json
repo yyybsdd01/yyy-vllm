@@ -1,0 +1,8 @@
+{
+  "all_offload_data_checks_passed": true,
+  "all_copies_pending_at_host_return": true,
+  "root_sources_unchanged": true,
+  "warp_trials_complete": true,
+  "offload_cases": 22,
+  "samples": 1710
+}

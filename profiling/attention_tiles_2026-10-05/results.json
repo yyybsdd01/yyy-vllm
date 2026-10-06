@@ -1,0 +1,2245 @@
+{
+  "started_utc": "2026-10-05T06:03:11.543262+00:00",
+  "device": "NVIDIA GeForce RTX 3090 Ti",
+  "capability": [
+    8,
+    6
+  ],
+  "torch": "2.5.1+cu121",
+  "triton": "3.1.0",
+  "flash_attn": "2.7.4.post1",
+  "seed": 59,
+  "rounds": 11,
+  "calls_per_graph": 4,
+  "replays": 5,
+  "tiles": [
+    [
+      16,
+      64
+    ],
+    [
+      32,
+      64
+    ],
+    [
+      64,
+      64
+    ],
+    [
+      128,
+      64
+    ],
+    [
+      16,
+      128
+    ],
+    [
+      32,
+      128
+    ],
+    [
+      64,
+      128
+    ],
+    [
+      16,
+      256
+    ],
+    [
+      32,
+      256
+    ],
+    [
+      64,
+      256
+    ]
+  ],
+  "num_warps": 4,
+  "num_stages": 3,
+  "BD": 128,
+  "q_heads": 16,
+  "kv_heads": 8,
+  "scale_groups": 2,
+  "scale_dtype": "float32",
+  "scale_layout": "block/token/head/group",
+  "original_source_hashes": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+    "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+    "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+    "nanovllm/engine/model_runner.py": "4084396da1c8915de058ebdcb799b380914a98d1d31ad18d814078d78064c5f2",
+    "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+    "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "a444d22f3859635c417a1288be4ee86272a7f43d1f9aeebd51c6f6ffe8d79351"
+  },
+  "validation": [
+    {
+      "mode": "prefill",
+      "tile": "M16_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.0,
+      "registers": 168,
+      "spills": 0,
+      "shared_bytes": 54272
+    },
+    {
+      "mode": "prefill",
+      "tile": "M32_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.0,
+      "registers": 255,
+      "spills": 0,
+      "shared_bytes": 58368
+    },
+    {
+      "mode": "prefill",
+      "tile": "M64_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.0,
+      "registers": 255,
+      "spills": 52,
+      "shared_bytes": 66560
+    },
+    {
+      "mode": "prefill",
+      "tile": "M128_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.001953125,
+      "registers": 255,
+      "spills": 114,
+      "shared_bytes": 82944
+    },
+    {
+      "mode": "prefill",
+      "tile": "M16_N128",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 103424, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M32_N128",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 107520, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M64_N128",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 115712, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M16_N256",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 201728, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M32_N256",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 205824, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M64_N256",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 214016, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M16_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.0,
+      "registers": 168,
+      "spills": 0,
+      "shared_bytes": 54272
+    },
+    {
+      "mode": "prefill",
+      "tile": "M32_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.0,
+      "registers": 255,
+      "spills": 0,
+      "shared_bytes": 58368
+    },
+    {
+      "mode": "prefill",
+      "tile": "M64_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.0,
+      "registers": 255,
+      "spills": 52,
+      "shared_bytes": 66560
+    },
+    {
+      "mode": "prefill",
+      "tile": "M128_N64",
+      "q_lengths": [
+        1,
+        17,
+        63,
+        65,
+        255,
+        257
+      ],
+      "kv_lengths": [
+        257,
+        17,
+        319,
+        78,
+        510,
+        514
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.00390625,
+      "max_abs_error_current": 0.001953125,
+      "registers": 255,
+      "spills": 114,
+      "shared_bytes": 82944
+    },
+    {
+      "mode": "decode",
+      "tile": "M16_N64",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125,
+      "max_abs_error_current": 0.0,
+      "registers": 191,
+      "spills": 0,
+      "shared_bytes": 54272
+    },
+    {
+      "mode": "decode",
+      "tile": "M32_N64",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125,
+      "max_abs_error_current": 0.0,
+      "registers": 168,
+      "spills": 0,
+      "shared_bytes": 58368
+    },
+    {
+      "mode": "decode",
+      "tile": "M64_N64",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125,
+      "max_abs_error_current": 0.0,
+      "registers": 255,
+      "spills": 0,
+      "shared_bytes": 66560
+    },
+    {
+      "mode": "decode",
+      "tile": "M128_N64",
+      "q_lengths": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "kv_lengths": [
+        1,
+        17,
+        255,
+        257,
+        1024
+      ],
+      "status": "PASS",
+      "max_abs_error_restored": 0.001953125,
+      "max_abs_error_current": 0.0,
+      "registers": 255,
+      "spills": 12,
+      "shared_bytes": 82944
+    },
+    {
+      "mode": "decode",
+      "tile": "M16_N128",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 103424, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M32_N128",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 107520, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M64_N128",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 115712, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M16_N256",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 201728, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M32_N256",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 205824, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M64_N256",
+      "status": "OUT_OF_RESOURCES",
+      "error": "out of resource: shared memory, Required: 214016, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M16_N64",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "tile": "M32_N64",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "tile": "M64_N64",
+      "status": "PASS",
+      "test": "zero_context"
+    },
+    {
+      "mode": "decode",
+      "tile": "M128_N64",
+      "status": "PASS",
+      "test": "zero_context"
+    }
+  ],
+  "unsupported": [
+    {
+      "mode": "prefill",
+      "tile": "M16_N128",
+      "error": "out of resource: shared memory, Required: 103424, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M32_N128",
+      "error": "out of resource: shared memory, Required: 107520, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M64_N128",
+      "error": "out of resource: shared memory, Required: 115712, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M16_N256",
+      "error": "out of resource: shared memory, Required: 201728, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M32_N256",
+      "error": "out of resource: shared memory, Required: 205824, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "prefill",
+      "tile": "M64_N256",
+      "error": "out of resource: shared memory, Required: 214016, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M16_N128",
+      "error": "out of resource: shared memory, Required: 103424, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M32_N128",
+      "error": "out of resource: shared memory, Required: 107520, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M64_N128",
+      "error": "out of resource: shared memory, Required: 115712, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M16_N256",
+      "error": "out of resource: shared memory, Required: 201728, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M32_N256",
+      "error": "out of resource: shared memory, Required: 205824, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    },
+    {
+      "mode": "decode",
+      "tile": "M64_N256",
+      "error": "out of resource: shared memory, Required: 214016, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+    }
+  ],
+  "cases": [
+    {
+      "case": "prefill_B1_Q1024_K1024",
+      "mode": "prefill",
+      "batch": 1,
+      "q_length": 1024,
+      "kv_length": 1024,
+      "prefix": 0,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 104.29439544677734,
+          "round_us": [
+            104.3455958366394,
+            103.93600463867188,
+            104.6015977859497,
+            105.16480207443237,
+            106.18879795074463,
+            103.62880229949951,
+            104.29439544677734,
+            104.39679622650146,
+            98.61119985580444,
+            98.55999946594238,
+            98.76480102539062
+          ],
+          "min_round_us": 98.55999946594238,
+          "max_round_us": 106.18879795074463,
+          "latency_change_percent": -67.74346877772352,
+          "speedup_vs_current": 3.1001473565433986
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 104.75519895553589,
+          "round_us": [
+            104.96000051498413,
+            104.75519895553589,
+            103.73120307922363,
+            105.36960363388062,
+            104.39679622650146,
+            105.16480207443237,
+            105.16480207443237,
+            105.77919483184814,
+            97.9968011379242,
+            98.25279712677002,
+            98.30399751663208
+          ],
+          "min_round_us": 97.9968011379242,
+          "max_round_us": 105.77919483184814,
+          "latency_change_percent": -67.6009498753038,
+          "speedup_vs_current": 3.086510240736191
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            64,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 323.32799434661865,
+          "round_us": [
+            323.1744050979614,
+            323.4303951263428,
+            323.68640899658203,
+            323.4816074371338,
+            323.32799434661865,
+            323.32799434661865,
+            323.5327959060669,
+            303.3087968826294,
+            303.15520763397217,
+            303.4111976623535,
+            303.51359844207764
+          ],
+          "min_round_us": 303.15520763397217,
+          "max_round_us": 323.68640899658203,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            32,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 248.1152057647705,
+          "round_us": [
+            247.91040420532227,
+            248.26879501342773,
+            248.1152057647705,
+            248.1152057647705,
+            248.1152057647705,
+            248.26879501342773,
+            248.21760654449463,
+            248.524808883667,
+            232.70399570465088,
+            232.55040645599365,
+            232.65280723571777
+          ],
+          "min_round_us": 232.55040645599365,
+          "max_round_us": 248.524808883667,
+          "latency_change_percent": -23.262071301261177,
+          "speedup_vs_current": 1.303136554448641
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            16,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 209.6640110015869,
+          "round_us": [
+            209.6640110015869,
+            209.81760025024414,
+            209.92000102996826,
+            209.92000102996826,
+            209.6640110015869,
+            209.81760025024414,
+            209.86878871917725,
+            207.46240615844727,
+            196.96639776229858,
+            196.96639776229858,
+            196.76159620285034
+          ],
+          "min_round_us": 196.76159620285034,
+          "max_round_us": 209.92000102996826,
+          "latency_change_percent": -35.15438976285489,
+          "speedup_vs_current": 1.5421244342414657
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            8,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 114,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.00390625,
+          "median_us": 240.48640727996826,
+          "round_us": [
+            240.79360961914062,
+            240.1792049407959,
+            240.48640727996826,
+            240.1792049407959,
+            240.48640727996826,
+            240.6399965286255,
+            240.84479808807373,
+            240.58880805969238,
+            226.66239738464355,
+            226.50880813598633,
+            226.3551950454712
+          ],
+          "min_round_us": 226.3551950454712,
+          "max_round_us": 240.84479808807373,
+          "latency_change_percent": -25.62153247325729,
+          "speedup_vs_current": 1.344475132726351
+        }
+      }
+    },
+    {
+      "case": "prefill_B16_Q1024_K1024",
+      "mode": "prefill",
+      "batch": 16,
+      "q_length": 1024,
+      "kv_length": 1024,
+      "prefix": 0,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 954.4192314147949,
+          "round_us": [
+            946.7904090881348,
+            949.2992401123047,
+            975.1551628112793,
+            952.064037322998,
+            953.8559913635254,
+            991.9487953186035,
+            957.0816040039062,
+            954.5215606689453,
+            954.4192314147949,
+            997.6832389831543,
+            954.3680191040039
+          ],
+          "min_round_us": 946.7904090881348,
+          "max_round_us": 997.6832389831543,
+          "latency_change_percent": -79.00149686401325,
+          "speedup_vs_current": 4.7622442110467516
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 955.4431915283203,
+          "round_us": [
+            955.4431915283203,
+            947.3024368286133,
+            952.83203125,
+            999.5776176452637,
+            953.4976005554199,
+            954.5727729797363,
+            997.1712112426758,
+            956.0064315795898,
+            954.3680191040039,
+            996.4544296264648,
+            976.5888214111328
+          ],
+          "min_round_us": 947.3024368286133,
+          "max_round_us": 999.5776176452637,
+          "latency_change_percent": -78.9789683682042,
+          "speedup_vs_current": 4.757140455882429
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            64,
+            16,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 4545.177459716797,
+          "round_us": [
+            4505.241775512695,
+            4556.390380859375,
+            4585.984039306641,
+            4545.177459716797,
+            4577.89421081543,
+            4545.382308959961,
+            4544.870376586914,
+            4545.331192016602,
+            4545.1263427734375,
+            4543.539047241211,
+            4544.2047119140625
+          ],
+          "min_round_us": 4505.241775512695,
+          "max_round_us": 4585.984039306641,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            32,
+            16,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 3213.9774322509766,
+          "round_us": [
+            3191.9103622436523,
+            3240.2942657470703,
+            3213.568115234375,
+            3213.4654998779297,
+            3213.2095336914062,
+            3212.5953674316406,
+            3259.0335845947266,
+            3253.5552978515625,
+            3236.9152069091797,
+            3214.5919799804688,
+            3213.9774322509766
+          ],
+          "min_round_us": 3191.9103622436523,
+          "max_round_us": 3259.0335845947266,
+          "latency_change_percent": -29.288185978744274,
+          "speedup_vs_current": 1.4141908446860145
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            16,
+            16,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2333.5935592651367,
+          "round_us": [
+            2317.977523803711,
+            2389.4527435302734,
+            2333.286476135254,
+            2333.184051513672,
+            2333.798408508301,
+            2334.2592239379883,
+            2333.4911346435547,
+            2361.9583129882812,
+            2333.3375930786133,
+            2333.5935592651367,
+            2388.377571105957
+          ],
+          "min_round_us": 2317.977523803711,
+          "max_round_us": 2389.4527435302734,
+          "latency_change_percent": -48.6578119347943,
+          "speedup_vs_current": 1.9477159772193158
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            8,
+            16,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 114,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2267.5968170166016,
+          "round_us": [
+            2242.355155944824,
+            2254.3359756469727,
+            2255.001640319824,
+            2318.2336807250977,
+            2294.374465942383,
+            2267.340850830078,
+            2294.425582885742,
+            2267.750358581543,
+            2267.3919677734375,
+            2319.411277770996,
+            2267.5968170166016
+          ],
+          "min_round_us": 2242.355155944824,
+          "max_round_us": 2319.411277770996,
+          "latency_change_percent": -50.10982877755686,
+          "speedup_vs_current": 2.0044028222339496
+        }
+      }
+    },
+    {
+      "case": "prefill_B32_Q512_K512",
+      "mode": "prefill",
+      "batch": 32,
+      "q_length": 512,
+      "kv_length": 512,
+      "prefix": 0,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 529.9200057983398,
+          "round_us": [
+            528.2303810119629,
+            529.9200057983398,
+            528.3840179443359,
+            528.4863948822021,
+            529.9712181091309,
+            535.6031894683838,
+            530.6367874145508,
+            528.7936210632324,
+            529.8687934875488,
+            535.2447986602783,
+            530.022382736206
+          ],
+          "min_round_us": 528.2303810119629,
+          "max_round_us": 535.6031894683838,
+          "latency_change_percent": -79.2759605925734,
+          "speedup_vs_current": 4.825314121153638
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 529.2543888092041,
+          "round_us": [
+            532.9408168792725,
+            526.3360023498535,
+            526.3360023498535,
+            529.2543888092041,
+            529.0495872497559,
+            529.0495872497559,
+            545.3824043273926,
+            530.022382736206,
+            530.1760196685791,
+            540.723180770874,
+            529.1520118713379
+          ],
+          "min_round_us": 526.3360023498535,
+          "max_round_us": 545.3824043273926,
+          "latency_change_percent": -79.30199145112218,
+          "speedup_vs_current": 4.83138267934582
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            32,
+            32,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 2557.030487060547,
+          "round_us": [
+            2533.8367462158203,
+            2592.9216384887695,
+            2624.870491027832,
+            2555.6991577148438,
+            2555.3407669067383,
+            2556.3648223876953,
+            2563.5839462280273,
+            2557.491111755371,
+            2557.491111755371,
+            2556.825637817383,
+            2557.030487060547
+          ],
+          "min_round_us": 2533.8367462158203,
+          "max_round_us": 2624.870491027832,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            16,
+            32,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1798.9120483398438,
+          "round_us": [
+            1776.7423629760742,
+            1838.9503479003906,
+            1790.4640197753906,
+            1790.7712936401367,
+            1836.1343383789062,
+            1791.0783767700195,
+            1867.673683166504,
+            1815.6543731689453,
+            1798.9120483398438,
+            1805.9263229370117,
+            1791.744041442871
+          ],
+          "min_round_us": 1776.7423629760742,
+          "max_round_us": 1867.673683166504,
+          "latency_change_percent": -29.648392639706213,
+          "speedup_vs_current": 1.4214316310907726
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            8,
+            32,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1321.1647987365723,
+          "round_us": [
+            1312.7679824829102,
+            1350.6048202514648,
+            1320.4992294311523,
+            1320.7039833068848,
+            1321.1647987365723,
+            1322.2399711608887,
+            1323.6736297607422,
+            1331.4559936523438,
+            1320.8576202392578,
+            1320.8064079284668,
+            1375.436782836914
+          ],
+          "min_round_us": 1312.7679824829102,
+          "max_round_us": 1375.436782836914,
+          "latency_change_percent": -48.33206700420194,
+          "speedup_vs_current": 1.9354364342024788
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            4,
+            32,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 114,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.0078125,
+          "median_us": 1371.4431762695312,
+          "round_us": [
+            1364.2239570617676,
+            1367.091178894043,
+            1371.3919639587402,
+            1446.0415840148926,
+            1383.0656051635742,
+            1371.2896347045898,
+            1400.1152038574219,
+            1371.4431762695312,
+            1371.5456008911133,
+            1430.784034729004,
+            1371.2384223937988
+          ],
+          "min_round_us": 1364.2239570617676,
+          "max_round_us": 1446.0415840148926,
+          "latency_change_percent": -46.36578706395934,
+          "speedup_vs_current": 1.8644815412738696
+        }
+      }
+    },
+    {
+      "case": "prefill_B8_Q128_K1024",
+      "mode": "prefill",
+      "batch": 8,
+      "q_length": 128,
+      "kv_length": 1024,
+      "prefix": 896,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 165.06880521774292,
+          "round_us": [
+            165.01760482788086,
+            165.1711940765381,
+            164.9664044380188,
+            165.22239446640015,
+            165.06880521774292,
+            165.2735948562622,
+            165.06880521774292,
+            164.91520404815674,
+            164.9664044380188,
+            165.01760482788086,
+            165.47839641571045
+          ],
+          "min_round_us": 164.91520404815674,
+          "max_round_us": 165.47839641571045,
+          "latency_change_percent": -69.29231146571763,
+          "speedup_vs_current": 3.2565134262176394
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 165.1711940765381,
+          "round_us": [
+            165.06880521774292,
+            165.12000560760498,
+            165.1711940765381,
+            165.06880521774292,
+            165.1711940765381,
+            165.22239446640015,
+            165.22239446640015,
+            165.1711940765381,
+            165.22239446640015,
+            165.06880521774292,
+            165.2735948562622
+          ],
+          "min_round_us": 165.06880521774292,
+          "max_round_us": 165.2735948562622,
+          "latency_change_percent": -69.27326410433936,
+          "speedup_vs_current": 3.254494728615883
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            8,
+            8,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 537.5487804412842,
+          "round_us": [
+            537.0880126953125,
+            537.3439788818359,
+            537.497615814209,
+            537.5999927520752,
+            537.8047943115234,
+            537.5487804412842,
+            537.5487804412842,
+            537.7535820007324,
+            537.8560066223145,
+            537.395191192627,
+            537.7535820007324
+          ],
+          "min_round_us": 537.0880126953125,
+          "max_round_us": 537.8560066223145,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            4,
+            8,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 413.95201683044434,
+          "round_us": [
+            413.49120140075684,
+            414.1568183898926,
+            413.8495922088623,
+            413.8495922088623,
+            414.3104076385498,
+            414.05439376831055,
+            414.51520919799805,
+            413.95201683044434,
+            414.05439376831055,
+            413.6960029602051,
+            413.8495922088623
+          ],
+          "min_round_us": 413.49120140075684,
+          "max_round_us": 414.51520919799805,
+          "latency_change_percent": -22.992660035313794,
+          "speedup_vs_current": 1.29857751281706
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            2,
+            8,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 334.335994720459,
+          "round_us": [
+            334.5407962799072,
+            334.335994720459,
+            334.38720703125,
+            334.23359394073486,
+            334.23359394073486,
+            334.64319705963135,
+            334.23359394073486,
+            334.38720703125,
+            334.335994720459,
+            334.4383955001831,
+            334.23359394073486
+          ],
+          "min_round_us": 334.23359394073486,
+          "max_round_us": 334.64319705963135,
+          "latency_change_percent": -37.80359906202445,
+          "speedup_vs_current": 1.607810074086498
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            8,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 114,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.001953125,
+          "median_us": 307.96799659729004,
+          "round_us": [
+            307.96799659729004,
+            308.1216096878052,
+            307.8144073486328,
+            308.2240104675293,
+            307.96799659729004,
+            307.7120065689087,
+            307.7631950378418,
+            308.07039737701416,
+            307.96799659729004,
+            307.7631950378418,
+            307.8655958175659
+          ],
+          "min_round_us": 307.7120065689087,
+          "max_round_us": 308.2240104675293,
+          "latency_change_percent": -42.70882796079024,
+          "speedup_vs_current": 1.74546961496198
+        }
+      }
+    },
+    {
+      "case": "prefill_B1_Q128_K4096",
+      "mode": "prefill",
+      "batch": 1,
+      "q_length": 128,
+      "kv_length": 4096,
+      "prefix": 3968,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 157.23520517349243,
+          "round_us": [
+            167.06559658050537,
+            167.0143961906433,
+            166.80959463119507,
+            157.18400478363037,
+            157.18400478363037,
+            157.1328043937683,
+            157.18400478363037,
+            157.23520517349243,
+            157.2864055633545,
+            157.2864055633545,
+            157.18400478363037
+          ],
+          "min_round_us": 157.1328043937683,
+          "max_round_us": 167.06559658050537,
+          "latency_change_percent": -54.87141589636959,
+          "speedup_vs_current": 2.2158904824127954
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 157.18400478363037,
+          "round_us": [
+            167.0143961906433,
+            167.06559658050537,
+            166.86079502105713,
+            157.18400478363037,
+            157.08160400390625,
+            157.18400478363037,
+            157.18400478363037,
+            157.1328043937683,
+            157.18400478363037,
+            157.2864055633545,
+            157.1328043937683
+          ],
+          "min_round_us": 157.08160400390625,
+          "max_round_us": 167.06559658050537,
+          "latency_change_percent": -54.88611108564021,
+          "speedup_vs_current": 2.2166122763176355
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            8,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 348.41599464416504,
+          "round_us": [
+            368.8960075378418,
+            368.8960075378418,
+            355.27679920196533,
+            348.6207962036133,
+            348.36480617523193,
+            348.2624053955078,
+            348.2624053955078,
+            348.46720695495605,
+            348.2624053955078,
+            348.41599464416504,
+            348.05760383605957
+          ],
+          "min_round_us": 348.05760383605957,
+          "max_round_us": 368.8960075378418,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            4,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 250.21440982818604,
+          "round_us": [
+            263.7824058532715,
+            263.8335943222046,
+            250.41921138763428,
+            250.36799907684326,
+            250.31681060791016,
+            250.21440982818604,
+            250.1120090484619,
+            249.90720748901367,
+            249.80480670928955,
+            249.70240592956543,
+            249.80480670928955
+          ],
+          "min_round_us": 249.70240592956543,
+          "max_round_us": 263.8335943222046,
+          "latency_change_percent": -28.185154047325423,
+          "speedup_vs_current": 1.3924697417842993
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            2,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 52,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 335.4111909866333,
+          "round_us": [
+            355.5327892303467,
+            355.020809173584,
+            335.4624032974243,
+            335.4624032974243,
+            335.2576017379761,
+            335.5135917663574,
+            335.2576017379761,
+            335.2576017379761,
+            335.2576017379761,
+            335.4111909866333,
+            335.2576017379761
+          ],
+          "min_round_us": 335.2576017379761,
+          "max_round_us": 355.5327892303467,
+          "latency_change_percent": -3.732550703021964,
+          "speedup_vs_current": 1.0387727184035729
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            1,
+            16
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 114,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 565.1968002319336,
+          "round_us": [
+            598.4255790710449,
+            598.6815929412842,
+            598.7840175628662,
+            565.6064033508301,
+            564.9407863616943,
+            565.3503894805908,
+            565.0944232940674,
+            565.1968002319336,
+            565.1455879211426,
+            564.4800186157227,
+            564.0704154968262
+          ],
+          "min_round_us": 564.0704154968262,
+          "max_round_us": 598.7840175628662,
+          "latency_change_percent": 62.2189592097129,
+          "speedup_vs_current": 0.6164507557388672
+        }
+      }
+    },
+    {
+      "case": "decode_B1_Q1_K1024",
+      "mode": "decode",
+      "batch": 1,
+      "q_length": 1,
+      "kv_length": 1024,
+      "prefix": 1023,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 12.953600287437439,
+          "round_us": [
+            12.902399897575378,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.902399897575378,
+            12.902399897575378,
+            12.953600287437439
+          ],
+          "min_round_us": 12.902399897575378,
+          "max_round_us": 12.953600287437439,
+          "latency_change_percent": -70.54714793310633,
+          "speedup_vs_current": 3.395256926999082
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 12.953600287437439,
+          "round_us": [
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            13.0048006772995,
+            12.953600287437439,
+            12.953600287437439,
+            12.953600287437439,
+            13.0048006772995
+          ],
+          "min_round_us": 12.953600287437439,
+          "max_round_us": 13.0048006772995,
+          "latency_change_percent": -70.54714793310633,
+          "speedup_vs_current": 3.395256926999082
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 43.98080110549927,
+          "round_us": [
+            44.03199851512909,
+            44.13439929485321,
+            43.98080110549927,
+            43.92960071563721,
+            43.98080110549927,
+            43.92960071563721,
+            43.98080110549927,
+            43.98080110549927,
+            43.98080110549927,
+            43.92960071563721,
+            43.98080110549927
+          ],
+          "min_round_us": 43.92960071563721,
+          "max_round_us": 44.13439929485321,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 49.25439953804016,
+          "round_us": [
+            49.4592010974884,
+            49.35680031776428,
+            49.2031991481781,
+            49.2031991481781,
+            49.25439953804016,
+            49.2031991481781,
+            49.25439953804016,
+            49.2031991481781,
+            49.25439953804016,
+            49.2031991481781,
+            49.25439953804016
+          ],
+          "min_round_us": 49.2031991481781,
+          "max_round_us": 49.4592010974884,
+          "latency_change_percent": 11.99068297980932,
+          "speedup_vs_current": 0.8929314237509284
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 57.03679919242859,
+          "round_us": [
+            57.08799958229065,
+            57.03679919242859,
+            57.03679919242859,
+            57.03679919242859,
+            57.03679919242859,
+            56.98559880256653,
+            57.03679919242859,
+            57.03679919242859,
+            57.03679919242859,
+            57.03679919242859,
+            57.03679919242859
+          ],
+          "min_round_us": 56.98559880256653,
+          "max_round_us": 57.08799958229065,
+          "latency_change_percent": 29.685675928483324,
+          "speedup_vs_current": 0.771095182903208
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            1,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 12,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 85.86239814758301,
+          "round_us": [
+            85.91359853744507,
+            85.86239814758301,
+            85.86239814758301,
+            85.86239814758301,
+            85.91359853744507,
+            85.86239814758301,
+            85.91359853744507,
+            85.91359853744507,
+            85.86239814758301,
+            85.91359853744507,
+            85.86239814758301
+          ],
+          "min_round_us": 85.86239814758301,
+          "max_round_us": 85.91359853744507,
+          "latency_change_percent": 95.22699902991751,
+          "speedup_vs_current": 0.5122242338247258
+        }
+      }
+    },
+    {
+      "case": "decode_B64_Q1_K1024",
+      "mode": "decode",
+      "batch": 64,
+      "q_length": 1,
+      "kv_length": 1024,
+      "prefix": 1023,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 321.43359184265137,
+          "round_us": [
+            325.9903907775879,
+            325.73440074920654,
+            325.83680152893066,
+            321.28000259399414,
+            321.2287902832031,
+            321.43359184265137,
+            321.28000259399414,
+            321.4848041534424,
+            321.43359184265137,
+            321.126389503479,
+            321.6383934020996
+          ],
+          "min_round_us": 321.126389503479,
+          "max_round_us": 325.9903907775879,
+          "latency_change_percent": -18.44635116753166,
+          "speedup_vs_current": 1.2261867057036908
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 321.2287902832031,
+          "round_us": [
+            325.27360916137695,
+            325.3760099411011,
+            325.1199960708618,
+            321.126389503479,
+            321.0239887237549,
+            321.2287902832031,
+            321.2287902832031,
+            321.38240337371826,
+            321.6383934020996,
+            321.2287902832031,
+            320.9728002548218
+          ],
+          "min_round_us": 320.9728002548218,
+          "max_round_us": 325.3760099411011,
+          "latency_change_percent": -18.498313112031106,
+          "speedup_vs_current": 1.2269684692227123
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 394.1375970840454,
+          "round_us": [
+            410.368013381958,
+            411.08479499816895,
+            410.8287811279297,
+            412.7744197845459,
+            391.83359146118164,
+            394.1375970840454,
+            392.5503969192505,
+            392.7040100097656,
+            391.37279987335205,
+            394.4960117340088,
+            390.7583951950073
+          ],
+          "min_round_us": 390.7583951950073,
+          "max_round_us": 412.7744197845459,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 406.8863868713379,
+          "round_us": [
+            424.85761642456055,
+            429.0048122406006,
+            427.41761207580566,
+            429.5680046081543,
+            400.74238777160645,
+            406.8863868713379,
+            403.8144111633301,
+            405.0943851470947,
+            406.0160160064697,
+            409.13920402526855,
+            402.73919105529785
+          ],
+          "min_round_us": 400.74238777160645,
+          "max_round_us": 429.5680046081543,
+          "latency_change_percent": 3.2346038240482766,
+          "speedup_vs_current": 0.9686674457572261
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 468.27521324157715,
+          "round_us": [
+            486.1440181732178,
+            488.2944107055664,
+            485.7344150543213,
+            487.06560134887695,
+            466.0223960876465,
+            467.1999931335449,
+            465.2031898498535,
+            465.61279296875,
+            468.68481636047363,
+            468.27521324157715,
+            467.35358238220215
+          ],
+          "min_round_us": 465.2031898498535,
+          "max_round_us": 488.2944107055664,
+          "latency_change_percent": 18.810084779027747,
+          "speedup_vs_current": 0.8416793926709824
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 12,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 619.7760105133057,
+          "round_us": [
+            657.1008205413818,
+            661.9135856628418,
+            656.8448066711426,
+            619.3151950836182,
+            618.7007904052734,
+            619.8783874511719,
+            619.3664073944092,
+            619.7760105133057,
+            618.8032150268555,
+            623.4111785888672,
+            619.5199966430664
+          ],
+          "min_round_us": 618.7007904052734,
+          "max_round_us": 661.9135856628418,
+          "latency_change_percent": 57.248639840148364,
+          "speedup_vs_current": 0.6359355483243311
+        }
+      }
+    },
+    {
+      "case": "decode_B256_Q1_K1024",
+      "mode": "decode",
+      "batch": 256,
+      "q_length": 1,
+      "kv_length": 1024,
+      "prefix": 1023,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 1153.1264305114746,
+          "round_us": [
+            1152.9727935791016,
+            1152.7680397033691,
+            1153.536033630371,
+            1152.9215812683105,
+            1153.433609008789,
+            1154.201602935791,
+            1153.1264305114746,
+            1153.1264305114746,
+            1153.0752182006836,
+            1153.382396697998,
+            1153.48482131958
+          ],
+          "min_round_us": 1152.7680397033691,
+          "max_round_us": 1154.201602935791,
+          "latency_change_percent": -10.328076505204297,
+          "speedup_vs_current": 1.1151762569897778
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 1153.1264305114746,
+          "round_us": [
+            1153.331184387207,
+            1153.0752182006836,
+            1152.614402770996,
+            1153.7919998168945,
+            1152.2560119628906,
+            1153.0752182006836,
+            1153.536033630371,
+            1153.1264305114746,
+            1152.8703689575195,
+            1153.9456367492676,
+            1153.1776428222656
+          ],
+          "min_round_us": 1152.2560119628906,
+          "max_round_us": 1153.9456367492676,
+          "latency_change_percent": -10.328076505204297,
+          "speedup_vs_current": 1.1151762569897778
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1285.9392166137695,
+          "round_us": [
+            1285.2224349975586,
+            1320.7551956176758,
+            1330.2271842956543,
+            1280.8704376220703,
+            1311.1295700073242,
+            1277.235221862793,
+            1280.7680130004883,
+            1299.6607780456543,
+            1286.0416412353516,
+            1285.8367919921875,
+            1285.9392166137695
+          ],
+          "min_round_us": 1277.235221862793,
+          "max_round_us": 1330.2271842956543,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1363.2512092590332,
+          "round_us": [
+            1356.1344146728516,
+            1400.0639915466309,
+            1358.6943626403809,
+            1358.3871841430664,
+            1358.182430267334,
+            1355.9295654296875,
+            1410.4063987731934,
+            1389.8752212524414,
+            1398.7327575683594,
+            1363.2512092590332,
+            1366.220760345459
+          ],
+          "min_round_us": 1355.9295654296875,
+          "max_round_us": 1410.4063987731934,
+          "latency_change_percent": 6.012103188582074,
+          "speedup_vs_current": 0.9432885207655272
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 1541.427230834961,
+          "round_us": [
+            1532.8255653381348,
+            1560.371208190918,
+            1543.3728218078613,
+            1533.5935592651367,
+            1535.2319717407227,
+            1537.945556640625,
+            1543.8336372375488,
+            1579.8272132873535,
+            1541.427230834961,
+            1539.583969116211,
+            1583.0528259277344
+          ],
+          "min_round_us": 1532.8255653381348,
+          "max_round_us": 1583.0528259277344,
+          "latency_change_percent": 19.867814195290002,
+          "speedup_vs_current": 0.8342523025995858
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            256,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 12,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.0009765625,
+          "median_us": 2193.3055877685547,
+          "round_us": [
+            2184.8575592041016,
+            2187.3151779174805,
+            2191.4623260498047,
+            2234.009552001953,
+            2236.160087585449,
+            2179.840087890625,
+            2215.884780883789,
+            2184.499168395996,
+            2200.0640869140625,
+            2247.270393371582,
+            2193.3055877685547
+          ],
+          "min_round_us": 2179.840087890625,
+          "max_round_us": 2247.270393371582,
+          "latency_change_percent": 70.56059566673218,
+          "speedup_vs_current": 0.5863018923514758
+        }
+      }
+    },
+    {
+      "case": "decode_B64_Q1_K4096",
+      "mode": "decode",
+      "batch": 64,
+      "q_length": 1,
+      "kv_length": 4096,
+      "prefix": 4095,
+      "q_stride": [
+        4096,
+        128,
+        1
+      ],
+      "variants": {
+        "flash_bf16": {
+          "status": "REFERENCE",
+          "median_us": 1260.3903770446777,
+          "round_us": [
+            1270.7839965820312,
+            1261.7216110229492,
+            1264.793586730957,
+            1259.2127799987793,
+            1260.3903770446777,
+            1264.5376205444336,
+            1260.3391647338867,
+            1259.1615676879883,
+            1259.8272323608398,
+            1265.664005279541,
+            1259.9807739257812
+          ],
+          "min_round_us": 1259.1615676879883,
+          "max_round_us": 1270.7839965820312,
+          "latency_change_percent": -17.4507888087884,
+          "speedup_vs_current": 1.2113986137113597
+        },
+        "flash_restored": {
+          "status": "REFERENCE",
+          "median_us": 1260.0831985473633,
+          "round_us": [
+            1264.4351959228516,
+            1259.5199584960938,
+            1259.6735954284668,
+            1265.715217590332,
+            1259.5711708068848,
+            1259.3152046203613,
+            1266.1760330200195,
+            1260.0831985473633,
+            1259.9295616149902,
+            1266.8416023254395,
+            1266.329574584961
+          ],
+          "min_round_us": 1259.3152046203613,
+          "max_round_us": 1266.8416023254395,
+          "latency_change_percent": -17.470907450687,
+          "speedup_vs_current": 1.2116939240577222
+        },
+        "M16_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 191,
+          "spills": 0,
+          "shared_bytes": 54272,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1526.8351554870605,
+          "round_us": [
+            1593.5487747192383,
+            1540.608024597168,
+            1543.6800003051758,
+            1525.9136199951172,
+            1538.4575843811035,
+            1525.2991676330566,
+            1526.8351554870605,
+            1526.8351554870605,
+            1526.3744354248047,
+            1524.7360229492188,
+            1525.2479553222656
+          ],
+          "min_round_us": 1524.7360229492188,
+          "max_round_us": 1593.5487747192383,
+          "latency_change_percent": 0.0,
+          "speedup_vs_current": 1.0
+        },
+        "M32_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 168,
+          "spills": 0,
+          "shared_bytes": 58368,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1594.2144393920898,
+          "round_us": [
+            1680.1279067993164,
+            1610.6496810913086,
+            1588.633632659912,
+            1594.2144393920898,
+            1587.558364868164,
+            1593.0368423461914,
+            1623.9103317260742,
+            1617.203140258789,
+            1621.9135284423828,
+            1589.5551681518555,
+            1587.0976448059082
+          ],
+          "min_round_us": 1587.0976448059082,
+          "max_round_us": 1680.1279067993164,
+          "latency_change_percent": 4.4130031760720945,
+          "speedup_vs_current": 0.9577351187894632
+        },
+        "M64_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 0,
+          "shared_bytes": 66560,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 1801.4720916748047,
+          "round_us": [
+            1878.1183242797852,
+            1831.679916381836,
+            1801.4720916748047,
+            1799.3215560913086,
+            1801.215934753418,
+            1803.059196472168,
+            1798.5023498535156,
+            1821.1328506469727,
+            1801.318359375,
+            1801.420783996582,
+            1834.5983505249023
+          ],
+          "min_round_us": 1798.5023498535156,
+          "max_round_us": 1878.1183242797852,
+          "latency_change_percent": 17.987333812741223,
+          "speedup_vs_current": 0.8475486034688343
+        },
+        "M128_N64": {
+          "status": "PASS",
+          "grid": [
+            1,
+            64,
+            8
+          ],
+          "num_warps": 4,
+          "num_stages": 3,
+          "registers": 255,
+          "spills": 12,
+          "shared_bytes": 82944,
+          "max_abs_error_restored": 0.00048828125,
+          "median_us": 2471.3727951049805,
+          "round_us": [
+            2647.9616165161133,
+            2471.3727951049805,
+            2467.9935455322266,
+            2508.3391189575195,
+            2480.076789855957,
+            2467.635154724121,
+            2495.897674560547,
+            2465.3823852539062,
+            2465.945625305176,
+            2504.0895462036133,
+            2462.771224975586
+          ],
+          "min_round_us": 2462.771224975586,
+          "max_round_us": 2647.9616165161133,
+          "latency_change_percent": 61.862450325661534,
+          "speedup_vs_current": 0.6178085145677922
+        }
+      }
+    }
+  ],
+  "finished_utc": "2026-10-05T06:04:22.611173+00:00",
+  "original_source_hashes_after": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "c5124160580a7d8b0ad985959c3dcf8d9c1eb953ae58a48fddfbc9812f287272",
+    "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+    "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+    "nanovllm/engine/model_runner.py": "4084396da1c8915de058ebdcb799b380914a98d1d31ad18d814078d78064c5f2",
+    "nanovllm/engine/scheduler.py": "83aec02d32d589b3a842a2359e2d5194a3a78a8e4b83532d578ea222cada69df",
+    "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "a444d22f3859635c417a1288be4ee86272a7f43d1f9aeebd51c6f6ffe8d79351"
+  }
+}

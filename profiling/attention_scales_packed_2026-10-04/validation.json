@@ -1,0 +1,14 @@
+{
+  "existing_tests": "tests.test_quantized_attention + tests.test_half_head_kvcache: 2 tests passed in 5.504s",
+  "head_dims": [
+    80,
+    128
+  ],
+  "distinct_scales_flash_attention_reference": "decode and cached prefill passed",
+  "identical_KV_bitwise_comparison": "single, four-load dual, actual production packed dual: passed",
+  "production_change": "only the four scale loads replaced by two [BN,2] loads and tl.split",
+  "preserved_other_source_changes": true,
+  "four_load_reference_matches_before_AST": true,
+  "packed_benchmark_uses_actual_production_kernel": true,
+  "source_sha256": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a"
+}

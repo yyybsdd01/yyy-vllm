@@ -1,0 +1,663 @@
+{
+  "flash_bf16": {
+    "total": 19968,
+    "by_source": [
+      {
+        "file": "",
+        "line": -1,
+        "samples": 19968
+      }
+    ],
+    "pcs": [
+      {
+        "pc": 139833475828304,
+        "samples": 10069,
+        "file": "",
+        "line": -1,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475806208,
+        "samples": 4916,
+        "file": "",
+        "line": -1,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475801488,
+        "samples": 1804,
+        "file": "",
+        "line": -1,
+        "sass": "      SHF.R.S32.HI R19, RZ, 0x1f, R22 "
+      },
+      {
+        "pc": 139833475823904,
+        "samples": 1200,
+        "file": "",
+        "line": -1,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475798192,
+        "samples": 870,
+        "file": "",
+        "line": -1,
+        "sass": "@P2   IMAD.IADD R133, R133, 0x1, -R4 "
+      },
+      {
+        "pc": 139833475830432,
+        "samples": 335,
+        "file": "",
+        "line": -1,
+        "sass": "      FMNMX.FTZ R2, R4, R133, !PT "
+      },
+      {
+        "pc": 139833475824800,
+        "samples": 272,
+        "file": "",
+        "line": -1,
+        "sass": "      IMAD.IADD R4, R4, 0x1, -R5 "
+      },
+      {
+        "pc": 139833475812560,
+        "samples": 140,
+        "file": "",
+        "line": -1,
+        "sass": "      FSEL R135, R49, -INF , !P1 "
+      },
+      {
+        "pc": 139833475829696,
+        "samples": 120,
+        "file": "",
+        "line": -1,
+        "sass": "      IMAD.IADD R132, R132, 0x1, -R135 "
+      },
+      {
+        "pc": 139833475815728,
+        "samples": 92,
+        "file": "",
+        "line": -1,
+        "sass": "      FMNMX.FTZ R3, R76, R75, !PT "
+      },
+      {
+        "pc": 139833475843456,
+        "samples": 48,
+        "file": "",
+        "line": -1,
+        "sass": "      IMAD.MOV.U32 R38, RZ, RZ, R238 "
+      },
+      {
+        "pc": 139833475797984,
+        "samples": 31,
+        "file": "",
+        "line": -1,
+        "sass": "@P3   IADD3 R2, R2, -R19, RZ "
+      },
+      {
+        "pc": 139833475804576,
+        "samples": 30,
+        "file": "",
+        "line": -1,
+        "sass": "@!P5  LEA R34, P1, R21, c[0x0][0x168], 0x1 "
+      },
+      {
+        "pc": 139833475814832,
+        "samples": 19,
+        "file": "",
+        "line": -1,
+        "sass": "      IMAD.IADD R6, R6, 0x1, -R3 "
+      },
+      {
+        "pc": 139833475805568,
+        "samples": 18,
+        "file": "",
+        "line": -1,
+        "sass": "@!P4  LEA R30, P1, R21, c[0x0][0x168], 0x1 "
+      },
+      {
+        "pc": 139833475797920,
+        "samples": 4,
+        "file": "",
+        "line": -1,
+        "sass": "@P2   IMAD.IADD R0, R5, 0x1, -R224 "
+      }
+    ],
+    "static_sass_opcodes": {
+      "MOV": 16,
+      "LDC.U8": 2,
+      "S2R": 8,
+      "ISETP.NE.U32.AND": 8,
+      "ISETP.EQ.U32.AND": 1,
+      "IMAD.MOV.U32": 51,
+      "ISETP.NE.AND.EX": 8,
+      "ULDC.64": 1,
+      "ISETP.NE.AND": 11,
+      "IMAD.WIDE": 9,
+      "ISETP.EQ.OR.EX": 1,
+      "LDG.E": 15,
+      "IMAD.IADD": 43,
+      "BRA": 16,
+      "IADD3": 154,
+      "IMAD.SHL.U32": 17,
+      "ISETP.GT.AND": 4,
+      "SEL": 11,
+      "EXIT": 2,
+      "ULDC": 5,
+      "UIADD3": 1,
+      "SHF.R.S32.HI": 32,
+      "USHF.R.S32.HI": 4,
+      "LEA.HI": 13,
+      "ULEA.HI": 1,
+      "IMNMX": 1,
+      "IMAD": 85,
+      "CS2R": 1,
+      "IMAD.WIDE.U32": 34,
+      "LEA": 34,
+      "SHF.L.U64.HI": 2,
+      "IABS": 12,
+      "IADD3.X": 24,
+      "I2F.RP": 5,
+      "MUFU.RCP": 6,
+      "F2I.FTZ.U32.TRUNC.NTZ": 5,
+      "IMAD.MOV": 15,
+      "IMAD.HI.U32": 13,
+      "LOP3.LUT": 36,
+      "ISETP.GT.U32.AND": 8,
+      "ISETP.GE.AND": 63,
+      "ISETP.GE.U32.AND": 8,
+      "IMAD.X": 14,
+      "SHF.R.U32.HI": 3,
+      "LEA.HI.X": 24,
+      "LDS": 34,
+      "LDGSTS.E.BYPASS.LTC128B.128": 86,
+      "LDGDEPBAR": 5,
+      "DEPBAR.LE": 4,
+      "BAR.SYNC.DEFER_BLOCKING": 4,
+      "STS.128": 16,
+      "R2P": 2,
+      "LDSM.16.M88.4": 136,
+      "HMMA.16816.F32.BF16": 512,
+      "FSEL": 64,
+      "FMNMX.FTZ": 133,
+      "SHF.L.U32": 4,
+      "SHFL.BFLY": 12,
+      "LDSM.16.MT88.4": 118,
+      "FSETP.NEU.FTZ.AND": 4,
+      "FMUL.FTZ": 124,
+      "FFMA.FTZ": 126,
+      "MUFU.EX2": 126,
+      "F2FP.BF16.PACK_AB": 89,
+      "FADD.FTZ": 125,
+      "UMOV": 1,
+      "USHF.L.U64.HI": 2,
+      "USHF.L.U32": 2,
+      "LEA.HI.X.SX32": 5,
+      "ULEA": 1,
+      "BSSY": 3,
+      "FSETP.NE.FTZ.AND": 2,
+      "STS": 30,
+      "MUFU.LG2": 2,
+      "ISETP.NE.OR": 1,
+      "LDS.128": 8,
+      "STG.E": 2,
+      "BSYNC": 3,
+      "STG.E.128": 2
+    }
+  },
+  "triton_bf16": {
+    "total": 126548,
+    "by_source": [
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 82,
+        "samples": 121652
+      },
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 33,
+        "samples": 2079
+      },
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 77,
+        "samples": 1272
+      },
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 58,
+        "samples": 538
+      },
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 72,
+        "samples": 487
+      },
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "samples": 471
+      },
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 102,
+        "samples": 40
+      },
+      {
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 26,
+        "samples": 9
+      }
+    ],
+    "pcs": [
+      {
+        "pc": 139833475858704,
+        "samples": 114807,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 82,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475850272,
+        "samples": 6340,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 82,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475847664,
+        "samples": 2079,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 33,
+        "sass": "      R2UR UR11, R7 "
+      },
+      {
+        "pc": 139833475848560,
+        "samples": 1248,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 77,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475847920,
+        "samples": 538,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 58,
+        "sass": "      SEL R12, R8, RZ, !P2 "
+      },
+      {
+        "pc": 139833475857840,
+        "samples": 368,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 82,
+        "sass": "      IMAD.WIDE R128, R143, R120, c[0x0][0x168] "
+      },
+      {
+        "pc": 139833475858400,
+        "samples": 282,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 72,
+        "sass": "      LOP3.LUT R118, R19, 0x10, R110, 0xfe, !PT "
+      },
+      {
+        "pc": 139833475858048,
+        "samples": 121,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R116, R145, R120, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475858080,
+        "samples": 117,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R118, R143, R120, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475858496,
+        "samples": 114,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R32, R127, R120, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475858432,
+        "samples": 105,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 72,
+        "sass": "      LOP3.LUT R116, R19, 0x20, R110, 0xfe, !PT "
+      },
+      {
+        "pc": 139833475858464,
+        "samples": 89,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 72,
+        "sass": "      LOP3.LUT R114, R19, 0x30, R110, 0xfe, !PT "
+      },
+      {
+        "pc": 139833475857904,
+        "samples": 70,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 82,
+        "sass": "      P2R R130, PR, RZ, 0x1 "
+      },
+      {
+        "pc": 139833475857936,
+        "samples": 67,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 82,
+        "sass": "      IMAD.WIDE R118, R147, R120, c[0x0][0x168] "
+      },
+      {
+        "pc": 139833475849760,
+        "samples": 43,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R4, R24, R30, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475858016,
+        "samples": 40,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R128, R141, R120, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475858880,
+        "samples": 40,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 102,
+        "sass": "      ULEA.HI.X UR8, UR8, UR7, UR5, 0x1, UP0 "
+      },
+      {
+        "pc": 139833475858144,
+        "samples": 22,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R114, R147, R120, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475849648,
+        "samples": 11,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 72,
+        "sass": "      LOP3.LUT R12, R112, 0x40, RZ, 0xfc, !PT "
+      },
+      {
+        "pc": 139833475849728,
+        "samples": 11,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 77,
+        "sass": "      IMAD.U32 R2, RZ, RZ, UR4 "
+      },
+      {
+        "pc": 139833475850048,
+        "samples": 9,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 26,
+        "sass": "      IMAD.SHL.U32 R2, R0, 0x2, RZ "
+      },
+      {
+        "pc": 139833475850096,
+        "samples": 9,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 77,
+        "sass": "      SHF.R.U32.HI R5, RZ, 0x5, R0 "
+      },
+      {
+        "pc": 139833475849888,
+        "samples": 8,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R8, R18, R30, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475849872,
+        "samples": 6,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 83,
+        "sass": "      IMAD.WIDE R6, R25, R30, c[0x0][0x170] "
+      },
+      {
+        "pc": 139833475849936,
+        "samples": 4,
+        "file": "/tmp/attention_kernel_formats_20261004_ncu_sources/bf16_control.py",
+        "line": 77,
+        "sass": "      IMAD.U32 R10, RZ, RZ, UR6 "
+      }
+    ],
+    "static_sass_opcodes": {
+      "IMAD.MOV.U32": 10,
+      "S2UR": 1,
+      "UMOV": 3,
+      "ULDC.64": 4,
+      "UIMAD.WIDE": 2,
+      "IMAD.U32": 11,
+      "LDG.E": 1,
+      "SHF.R.U32.HI": 8,
+      "USHF.L.U32": 2,
+      "IMAD.SHL.U32": 37,
+      "S2R": 2,
+      "SGXT.U32": 3,
+      "CS2R": 10,
+      "LOP3.LUT": 70,
+      "IMAD": 36,
+      "IMAD.WIDE": 32,
+      "P2R": 6,
+      "LDG.E.128": 1,
+      "LEA": 3,
+      "R2UR": 1,
+      "UIADD3": 4,
+      "ISETP.GE.AND": 21,
+      "UISETP.GT.AND": 2,
+      "USEL": 2,
+      "ISETP.NE.U32.AND": 18,
+      "SEL": 31,
+      "STS.128": 2,
+      "LDS": 34,
+      "LDGSTS.E": 3,
+      "LDGDEPBAR": 7,
+      "BAR.SYNC.DEFER_BLOCKING": 15,
+      "IMAD.IADD": 16,
+      "LDGSTS.E.BYPASS.128": 31,
+      "PLOP3.LUT": 11,
+      "DEPBAR.LE": 4,
+      "BRA": 3,
+      "USHF.R.S32.HI": 3,
+      "IADD3": 11,
+      "ISETP.LT.AND": 1,
+      "LDSM.16.M88.4": 20,
+      "ISETP.NE.AND": 2,
+      "UISETP.GE.AND": 3,
+      "HMMA.16816.F32.BF16": 32,
+      "NOP": 2,
+      "ISETP.GT.AND": 4,
+      "FMUL": 69,
+      "FSEL": 25,
+      "ISETP.GE.U32.AND": 2,
+      "FMNMX": 9,
+      "SHFL.BFLY": 10,
+      "STS": 17,
+      "FADD": 19,
+      "FSETP.GEU.AND": 9,
+      "MUFU.EX2": 7,
+      "F2FP.BF16.PACK_AB": 10,
+      "FFMA": 2,
+      "LDSM.16.MT88.4": 8,
+      "SHF.R.S32.HI": 3,
+      "LEA.HI": 1,
+      "CALL.REL.NOINC": 1,
+      "FSETP.GT.AND": 3,
+      "ULEA.HI.X": 1,
+      "MUFU.RCP": 1,
+      "EXIT": 1,
+      "STG.E.128": 1
+    }
+  },
+  "triton_int8_half": {
+    "total": 52922,
+    "by_source": [
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "samples": 25162
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "samples": 22475
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 92,
+        "samples": 2887
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 1670
+      },
+      {
+        "file": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "samples": 440
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 221
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 101,
+        "samples": 67
+      }
+    ],
+    "pcs": [
+      {
+        "pc": 139833475868896,
+        "samples": 25162,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "sass": "      SEL R41, R38, RZ, !P3 "
+      },
+      {
+        "pc": 139833475879984,
+        "samples": 20359,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475868928,
+        "samples": 2887,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 92,
+        "sass": "      SEL R39, R39, RZ, !P3 "
+      },
+      {
+        "pc": 139833475865744,
+        "samples": 2116,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475868768,
+        "samples": 1074,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "sass": "      SEL R30, R30, RZ, !P3 "
+      },
+      {
+        "pc": 139833475864432,
+        "samples": 596,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 139833475864144,
+        "samples": 440,
+        "file": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "sass": "      IADD3 R123, R135, 0x3f, RZ "
+      },
+      {
+        "pc": 139833475864240,
+        "samples": 221,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "sass": "      SEL R8, R8, RZ, !P3 "
+      },
+      {
+        "pc": 139833475879040,
+        "samples": 67,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 101,
+        "sass": "      IADD3 R146, P5, R145, c[0x0][0x170], RZ "
+      }
+    ],
+    "static_sass_opcodes": {
+      "IMAD.MOV.U32": 9,
+      "S2R": 4,
+      "ULDC.64": 1,
+      "SHF.R.U32.HI": 15,
+      "IMAD.WIDE": 7,
+      "SGXT.U32": 7,
+      "IMAD.SHL.U32": 54,
+      "LDG.E": 4,
+      "IMAD.IADD": 12,
+      "ISETP.GE.U32.AND": 4,
+      "LOP3.LUT": 74,
+      "CS2R": 12,
+      "IMAD.WIDE.U32": 2,
+      "LDG.E.128": 1,
+      "P2R": 2,
+      "IMAD": 41,
+      "IADD3": 44,
+      "ISETP.GT.AND": 6,
+      "ISETP.GE.AND": 18,
+      "SEL": 25,
+      "ISETP.NE.U32.AND": 9,
+      "STS.128": 18,
+      "LDS": 44,
+      "LDGSTS.E": 3,
+      "LDGDEPBAR": 7,
+      "BAR.SYNC.DEFER_BLOCKING": 29,
+      "SHF.R.S32.HI": 12,
+      "IADD3.X": 16,
+      "LDGSTS.E.BYPASS.128": 16,
+      "DEPBAR.LE": 4,
+      "BRA": 3,
+      "LEA.HI": 2,
+      "LEA": 5,
+      "UMOV": 2,
+      "STS": 24,
+      "LDS.64": 2,
+      "LDS.128": 9,
+      "I2F.S8": 128,
+      "FMUL": 211,
+      "F2FP.BF16.PACK_AB": 76,
+      "LDSM.16.M88.4": 20,
+      "HMMA.16816.F32.BF16": 32,
+      "NOP": 1,
+      "FSEL": 28,
+      "FMNMX": 9,
+      "SHFL.BFLY": 10,
+      "FADD": 19,
+      "FSETP.GEU.AND": 9,
+      "MUFU.EX2": 7,
+      "ISETP.LE.AND": 3,
+      "FFMA": 2,
+      "LDSM.16.MT88.4": 8,
+      "UIADD3": 2,
+      "CALL.REL.NOINC": 1,
+      "FSETP.GT.AND": 4,
+      "MUFU.RCP": 2,
+      "EXIT": 2,
+      "LEA.HI.X": 1,
+      "IMAD.X": 1,
+      "STG.E.128": 1
+    }
+  }
+}

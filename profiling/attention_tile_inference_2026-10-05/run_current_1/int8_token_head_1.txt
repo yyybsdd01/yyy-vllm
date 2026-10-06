@@ -1,0 +1,4 @@
+  File "/home/xgd/yyy/nano-vllm/profiling/attention_tile_inference_2026-10-05/variants/current/benchmark_inference_metrics.py", line 76
+    print('ATTENTION_TILE_CONFIGURATION: current {'prefill': [16, 64, 3], 'decode': [16, 64, 3]}', flush=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?

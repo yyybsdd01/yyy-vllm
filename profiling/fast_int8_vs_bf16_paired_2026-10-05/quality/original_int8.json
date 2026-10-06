@@ -1,0 +1,30 @@
+{
+  "mode": "int8_half",
+  "tokens": 298938,
+  "nll": 879110.0769042969,
+  "ppl": 18.930554834032787,
+  "fresh_tokens": 18688,
+  "fresh_nll": 66700.7678527832,
+  "fresh_ppl": 35.48735237891882,
+  "cached_tokens": 280250,
+  "cached_nll": 812409.3090515137,
+  "cached_ppl": 18.153684413461058,
+  "label": "original_int8",
+  "package": "/home/xgd/yyy/nano-vllm/profiling/fast_int8_vs_bf16_paired_2026-10-05/variants/original_int8/nanovllm/__init__.py",
+  "attention_module": "/home/xgd/yyy/nano-vllm/profiling/fast_int8_vs_bf16_paired_2026-10-05/variants/original_int8/nanovllm/layers/attention.py",
+  "dispatch": {
+    "flash": 0,
+    "int8": 32704
+  },
+  "chunks": 1168,
+  "window_size": 4096,
+  "chunk_size": 256,
+  "block_size": 256,
+  "first_chunk_route": "quantized_int8",
+  "text": "/home/xgd/.cache/nanovllm_eval/wikitext2_test.txt",
+  "text_sha256": "aca2f46735043bcfd0a44eca981d04627b9cdf74c4c9a04bf0856d04066f58fc",
+  "token_ids_sha256": "b2b9470325328ae9c7058152c56ae677f71f38b239afbd148f44f7193827f32c",
+  "model": "/home/xgd/huggingface/Qwen3-0.6B",
+  "model_config_sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+  "evaluation_wall_s": 42.03266026289202
+}

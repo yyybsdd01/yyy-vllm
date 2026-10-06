@@ -1,0 +1,1091 @@
+{
+  "scope": "CPU scheduler replay; synthetic output tokens; no model timing",
+  "variants": {
+    "bf16": {
+      "blocks": 701,
+      "policies": {
+        "original": {
+          "prefill_steps": 725,
+          "decode_steps": 3940,
+          "locked_steps_with_running_and_waiting": 1319,
+          "locked_steps_with_eligible_prefill": 0,
+          "preemptions": 769,
+          "per_request_histogram": {
+            "0": 597,
+            "1": 249,
+            "2": 103,
+            "3": 42,
+            "4": 16,
+            "5": 3,
+            "6": 4,
+            "7": 1,
+            "8": 4,
+            "9": 4,
+            "10": 1
+          },
+          "most_preempted_request": {
+            "request_index": 223,
+            "count": 10,
+            "events": [
+              {
+                "step": 8,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 370
+              },
+              {
+                "step": 192,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 196,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 285
+              },
+              {
+                "step": 197,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 198,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 286
+              },
+              {
+                "step": 200,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 232,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 544
+              },
+              {
+                "step": 240,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 252,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 551
+              },
+              {
+                "step": 263,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 264,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 512,
+                "new_tokens": 49
+              },
+              {
+                "step": 272,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 274,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 512,
+                "new_tokens": 56
+              },
+              {
+                "step": 301,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 304,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 591
+              },
+              {
+                "step": 307,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 321,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 594
+              },
+              {
+                "step": 322,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 328,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 595
+              },
+              {
+                "step": 330,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 343,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 597
+              },
+              {
+                "step": 940,
+                "event": "finish"
+              }
+            ]
+          },
+          "schedule_sha256": "2ac5f7afb6b0bb8ad8b8b1307fe3c9b40d92c0869c6b6ecf1cf5641c5193352d"
+        },
+        "lock": {
+          "prefill_steps": 725,
+          "decode_steps": 3940,
+          "locked_steps_with_running_and_waiting": 1319,
+          "locked_steps_with_eligible_prefill": 0,
+          "preemptions": 769,
+          "per_request_histogram": {
+            "0": 597,
+            "1": 249,
+            "2": 103,
+            "3": 42,
+            "4": 16,
+            "5": 3,
+            "6": 4,
+            "7": 1,
+            "8": 4,
+            "9": 4,
+            "10": 1
+          },
+          "most_preempted_request": {
+            "request_index": 223,
+            "count": 10,
+            "events": [
+              {
+                "step": 8,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 370
+              },
+              {
+                "step": 192,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 196,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 285
+              },
+              {
+                "step": 197,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 198,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 286
+              },
+              {
+                "step": 200,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 232,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 544
+              },
+              {
+                "step": 240,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 252,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 551
+              },
+              {
+                "step": 263,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 264,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 512,
+                "new_tokens": 49
+              },
+              {
+                "step": 272,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 274,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 512,
+                "new_tokens": 56
+              },
+              {
+                "step": 301,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 304,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 591
+              },
+              {
+                "step": 307,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 321,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 594
+              },
+              {
+                "step": 322,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 328,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 595
+              },
+              {
+                "step": 330,
+                "event": "preempt",
+                "held_blocks": 3,
+                "needed_blocks": 3,
+                "free_before": 0,
+                "free_after_release": 3,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 343,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 597
+              },
+              {
+                "step": 940,
+                "event": "finish"
+              }
+            ]
+          },
+          "schedule_sha256": "2ac5f7afb6b0bb8ad8b8b1307fe3c9b40d92c0869c6b6ecf1cf5641c5193352d"
+        }
+      },
+      "identical_schedule": true
+    },
+    "fast_int8_half": {
+      "blocks": 1320,
+      "policies": {
+        "original": {
+          "prefill_steps": 550,
+          "decode_steps": 2383,
+          "locked_steps_with_running_and_waiting": 595,
+          "locked_steps_with_eligible_prefill": 0,
+          "preemptions": 653,
+          "per_request_histogram": {
+            "0": 719,
+            "1": 173,
+            "2": 63,
+            "3": 27,
+            "4": 11,
+            "5": 11,
+            "6": 5,
+            "7": 5,
+            "8": 4,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "17": 1
+          },
+          "most_preempted_request": {
+            "request_index": 426,
+            "count": 17,
+            "events": [
+              {
+                "step": 15,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 311
+              },
+              {
+                "step": 165,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 275,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 444
+              },
+              {
+                "step": 280,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 282,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 192
+              },
+              {
+                "step": 284,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 287,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 450
+              },
+              {
+                "step": 288,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 289,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 195
+              },
+              {
+                "step": 295,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 298,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 457
+              },
+              {
+                "step": 300,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 302,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 459
+              },
+              {
+                "step": 303,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 304,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 460
+              },
+              {
+                "step": 305,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 307,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 461
+              },
+              {
+                "step": 308,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 310,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 206
+              },
+              {
+                "step": 324,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 325,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 218
+              },
+              {
+                "step": 327,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 331,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 476
+              },
+              {
+                "step": 332,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 347,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 477
+              },
+              {
+                "step": 349,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 350,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 479
+              },
+              {
+                "step": 352,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 354,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 481
+              },
+              {
+                "step": 361,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 363,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 487
+              },
+              {
+                "step": 365,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 369,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 489
+              },
+              {
+                "step": 372,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 373,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 236
+              },
+              {
+                "step": 1435,
+                "event": "finish"
+              }
+            ]
+          },
+          "schedule_sha256": "424ab6fced29a132191e1e8c5048153d1ec131c7f220b4ec57f699479dffffe5"
+        },
+        "lock": {
+          "prefill_steps": 550,
+          "decode_steps": 2383,
+          "locked_steps_with_running_and_waiting": 595,
+          "locked_steps_with_eligible_prefill": 0,
+          "preemptions": 653,
+          "per_request_histogram": {
+            "0": 719,
+            "1": 173,
+            "2": 63,
+            "3": 27,
+            "4": 11,
+            "5": 11,
+            "6": 5,
+            "7": 5,
+            "8": 4,
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "17": 1
+          },
+          "most_preempted_request": {
+            "request_index": 426,
+            "count": 17,
+            "events": [
+              {
+                "step": 15,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 311
+              },
+              {
+                "step": 165,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 275,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 444
+              },
+              {
+                "step": 280,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 282,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 192
+              },
+              {
+                "step": 284,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 287,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 450
+              },
+              {
+                "step": 288,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 289,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 195
+              },
+              {
+                "step": 295,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 298,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 457
+              },
+              {
+                "step": 300,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 302,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 459
+              },
+              {
+                "step": 303,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 304,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 460
+              },
+              {
+                "step": 305,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 307,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 461
+              },
+              {
+                "step": 308,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 310,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 206
+              },
+              {
+                "step": 324,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 325,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 218
+              },
+              {
+                "step": 327,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 331,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 476
+              },
+              {
+                "step": 332,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 347,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 477
+              },
+              {
+                "step": 349,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 2
+              },
+              {
+                "step": 350,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 479
+              },
+              {
+                "step": 352,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 354,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 481
+              },
+              {
+                "step": 361,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 363,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 487
+              },
+              {
+                "step": 365,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 0
+              },
+              {
+                "step": 369,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 0,
+                "new_tokens": 489
+              },
+              {
+                "step": 372,
+                "event": "preempt",
+                "held_blocks": 2,
+                "needed_blocks": 2,
+                "free_before": 0,
+                "free_after_release": 2,
+                "free_after_schedule": 1
+              },
+              {
+                "step": 373,
+                "event": "prefill",
+                "lock_before": 0,
+                "cached_tokens": 256,
+                "new_tokens": 236
+              },
+              {
+                "step": 1435,
+                "event": "finish"
+              }
+            ]
+          },
+          "schedule_sha256": "424ab6fced29a132191e1e8c5048153d1ec131c7f220b4ec57f699479dffffe5"
+        }
+      },
+      "identical_schedule": true
+    }
+  },
+  "measured_source_hashes": {
+    "bf16": {
+      "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+      "nanovllm/config.py": "0ab00d600d738d4b1781a387ba3f2452aaa2cc545f9340f9c88aea31966481a0",
+      "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+      "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+      "nanovllm/engine/model_runner.py": "4084396da1c8915de058ebdcb799b380914a98d1d31ad18d814078d78064c5f2",
+      "nanovllm/engine/scheduler.py": "720d9beb602f4613c20446e450265e49176495f6135aeeb075c2c33efd64b559",
+      "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+      "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+      "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+      "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+      "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+      "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+      "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+      "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+      "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+      "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+      "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+      "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+      "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+      "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+      "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+      "benchmark_inference_metrics.py": "eaacf9155f66f92f45abd7f11877b6b25d6cd4f6d7067b56b3e753bca8fb3995"
+    },
+    "fast_int8_half": {
+      "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+      "nanovllm/config.py": "0ab00d600d738d4b1781a387ba3f2452aaa2cc545f9340f9c88aea31966481a0",
+      "nanovllm/engine/block_manager.py": "7c9dc5d0161c4be0f948d4f211fb8c5028d90adfa63c75b7a18761995873abb3",
+      "nanovllm/engine/llm_engine.py": "a6e97e30e60026cf1bb5a8a8e108d29e056c0d7826704bcfc840b3fe9e4a3b37",
+      "nanovllm/engine/model_runner.py": "d618d5566a3d5b4e3ad27bf839f41965c35e0c8a0125b1fe808125d2d38efcf8",
+      "nanovllm/engine/scheduler.py": "720d9beb602f4613c20446e450265e49176495f6135aeeb075c2c33efd64b559",
+      "nanovllm/engine/sequence.py": "0c792f64ebe34b37c6593c2d72a8fa94781eda56f28ea43ee64721155b96e1f8",
+      "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+      "nanovllm/layers/attention.py": "c307b42ac5f461aa3d4dcaa5e34ef34759d18ab82714d52a24b0d677ab9ed40c",
+      "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+      "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+      "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+      "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+      "nanovllm/layers/quantized_attention.py": "d6aeeaecdcadf9c71ce1a02f5cb9360a48a1c98b527b9c04eccef4d1d519b9bb",
+      "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+      "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+      "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+      "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+      "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+      "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+      "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+      "benchmark_inference_metrics.py": "eaacf9155f66f92f45abd7f11877b6b25d6cd4f6d7067b56b3e753bca8fb3995"
+    }
+  }
+}

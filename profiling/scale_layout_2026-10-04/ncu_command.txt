@@ -1,0 +1,12 @@
+Recorded command (working directory /home/xgd/yyy/nano-vllm):
+
+sudo -n /usr/local/cuda-12.4/bin/ncu \
+  --profile-from-start off --clock-control none --cache-control none \
+  --section SpeedOfLight --section LaunchStats --section Occupancy \
+  --section MemoryWorkloadAnalysis --section WarpStateStats --section SourceCounters \
+  --metrics gpu__time_duration.sum,dram__bytes_read.sum,dram__bytes_write.sum,dram__cycles_active.avg,dram__cycles_elapsed.avg,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum,l1tex__t_requests_pipe_lsu_mem_global_op_st.sum,smsp__inst_executed.sum,smsp__warps_issue_stalled_long_scoreboard.sum \
+  --import-source yes --export /tmp/scale_layout_20261004_ncu \
+  /home/xgd/anaconda3/envs/nanovllm/bin/python \
+  profiling/compare_scale_layouts.py --profile --outdir /tmp/scale_layout_20261004_ncu_sources
+
+Copied the report to ncu_layouts.ncu-rep. Use fresh output paths for a rerun.

@@ -1,0 +1,27 @@
+SCALE_LAYOUT: head_token | package: /home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/nanovllm/__init__.py
+PREFILL_EXPERIMENT: int8_head_token
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/benchmark_inference_metrics.py", line 176, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/benchmark_inference_metrics.py", line 127, in main
+[rank0]:     outputs = llm.generate(prompts, params, use_tqdm=False)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/nanovllm/engine/llm_engine.py", line 79, in generate
+[rank0]:     output, num_tokens = self.step()
+[rank0]:                          ^^^^^^^^^^^
+[rank0]:   File "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/nanovllm/engine/llm_engine.py", line 54, in step
+[rank0]:     token_ids = self.model_runner.call("run", seqs, is_prefill)
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/benchmark_inference_metrics.py", line 118, in timed_call
+[rank0]:     result = original_call(method_name, *call_args)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/nanovllm/engine/model_runner.py", line 95, in call
+[rank0]:     return method(*args)
+[rank0]:            ^^^^^^^^^^^^^
+[rank0]:   File "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/nanovllm/engine/model_runner.py", line 262, in run
+[rank0]:     token_ids = self.sampler(logits, temperatures).tolist() if self.rank == 0 else None
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/torch/utils/_device.py", line 106, in __torch_function__
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

@@ -1,0 +1,554 @@
+{
+  "trials": [
+    {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "auto",
+      "blocks": 701,
+      "requests": 1024,
+      "seed": 0,
+      "input_tokens": 580663,
+      "output_tokens": 583802,
+      "elapsed_s": 117.684,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 46143.61,
+          "p50": 47893.06,
+          "p95": 100846.45,
+          "p99": 104398.54
+        },
+        "TPOT": {
+          "mean": 34.92,
+          "p50": 34.69,
+          "p95": 39.83,
+          "p99": 70.76
+        },
+        "ITL": {
+          "mean": 34.21,
+          "p50": 27.26,
+          "p95": 56.75,
+          "p99": 69.0
+        },
+        "End-to-end latency": {
+          "mean": 65610.81,
+          "p50": 65906.63,
+          "p95": 113905.0,
+          "p99": 116971.83
+        }
+      },
+      "requests_per_s": 8.7,
+      "input_tokens_per_s": 4934.1,
+      "output_tokens_per_s": 4960.78,
+      "total_tokens_per_s": 9894.88,
+      "peak_allocated_gib": 20.75,
+      "peak_reserved_gib": 21.05,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 37694.68,
+          "tokens": 871974,
+          "seconds": 23.133
+        },
+        "decode": {
+          "tokens_per_s": 6232.73,
+          "tokens": 582009,
+          "seconds": 93.379
+        }
+      },
+      "variant": "bf16",
+      "trial": 1,
+      "log": "requests_1024_bf16_1.txt",
+      "process_wall_s": 138.55812177015468,
+      "preemptions": 769,
+      "prefill_batches": {
+        "fresh": 406,
+        "cached": 319
+      },
+      "kv_tensor_bytes": 20581449728,
+      "scale_tensor_bytes": 0,
+      "output_sha256": "b5ed461817b00f2a4283139062e09b2b52b890d305ae9730ce88fa9d45792fff",
+      "prefill_attention_dispatch": {
+        "flash": 20300,
+        "int8": 0
+      },
+      "average_started_unfinished_requests": 169.40990601950986
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "int8_half",
+      "blocks": 1320,
+      "requests": 1024,
+      "seed": 0,
+      "input_tokens": 580663,
+      "output_tokens": 583802,
+      "elapsed_s": 94.155,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 28032.82,
+          "p50": 34062.41,
+          "p95": 73424.46,
+          "p99": 77640.97
+        },
+        "TPOT": {
+          "mean": 53.4,
+          "p50": 52.24,
+          "p95": 77.06,
+          "p99": 153.63
+        },
+        "ITL": {
+          "mean": 50.79,
+          "p50": 39.32,
+          "p95": 73.63,
+          "p99": 98.55
+        },
+        "End-to-end latency": {
+          "mean": 56938.48,
+          "p50": 56865.75,
+          "p95": 91092.43,
+          "p99": 93304.61
+        }
+      },
+      "requests_per_s": 10.88,
+      "input_tokens_per_s": 6167.11,
+      "output_tokens_per_s": 6200.44,
+      "total_tokens_per_s": 12367.55,
+      "peak_allocated_gib": 20.76,
+      "peak_reserved_gib": 21.06,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 41292.77,
+          "tokens": 877980,
+          "seconds": 21.262
+        },
+        "decode": {
+          "tokens_per_s": 8109.45,
+          "tokens": 582125,
+          "seconds": 71.784
+        }
+      },
+      "variant": "fast_int8_half",
+      "trial": 1,
+      "log": "requests_1024_fast_int8_half_1.txt",
+      "process_wall_s": 113.93862129608169,
+      "preemptions": 653,
+      "prefill_batches": {
+        "fresh": 301,
+        "cached": 249
+      },
+      "kv_tensor_bytes": 19377684480,
+      "scale_tensor_bytes": 1211105280,
+      "output_sha256": "2abb437c699f55e975959bf3b1d25c7303599b7a747991aa88fc8717cf8224ea",
+      "prefill_attention_dispatch": {
+        "flash": 0,
+        "int8": 15400
+      },
+      "average_started_unfinished_requests": 314.36774064043334
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "int8_half",
+      "blocks": 1320,
+      "requests": 1024,
+      "seed": 0,
+      "input_tokens": 580663,
+      "output_tokens": 583802,
+      "elapsed_s": 94.174,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 28011.29,
+          "p50": 34039.98,
+          "p95": 73419.44,
+          "p99": 77647.05
+        },
+        "TPOT": {
+          "mean": 53.41,
+          "p50": 52.22,
+          "p95": 77.06,
+          "p99": 153.62
+        },
+        "ITL": {
+          "mean": 50.8,
+          "p50": 39.35,
+          "p95": 73.25,
+          "p99": 97.83
+        },
+        "End-to-end latency": {
+          "mean": 56924.28,
+          "p50": 56837.0,
+          "p95": 91111.09,
+          "p99": 93324.25
+        }
+      },
+      "requests_per_s": 10.87,
+      "input_tokens_per_s": 6165.84,
+      "output_tokens_per_s": 6199.17,
+      "total_tokens_per_s": 12365.01,
+      "peak_allocated_gib": 20.76,
+      "peak_reserved_gib": 21.06,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 41292.95,
+          "tokens": 877980,
+          "seconds": 21.262
+        },
+        "decode": {
+          "tokens_per_s": 8106.8,
+          "tokens": 582125,
+          "seconds": 71.807
+        }
+      },
+      "variant": "fast_int8_half",
+      "trial": 2,
+      "log": "requests_1024_fast_int8_half_2.txt",
+      "process_wall_s": 113.9260838709306,
+      "preemptions": 653,
+      "prefill_batches": {
+        "fresh": 301,
+        "cached": 249
+      },
+      "kv_tensor_bytes": 19377684480,
+      "scale_tensor_bytes": 1211105280,
+      "output_sha256": "2abb437c699f55e975959bf3b1d25c7303599b7a747991aa88fc8717cf8224ea",
+      "prefill_attention_dispatch": {
+        "flash": 0,
+        "int8": 15400
+      },
+      "average_started_unfinished_requests": 314.3661987385053
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "auto",
+      "blocks": 701,
+      "requests": 1024,
+      "seed": 0,
+      "input_tokens": 580663,
+      "output_tokens": 583802,
+      "elapsed_s": 117.875,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 46247.24,
+          "p50": 48018.7,
+          "p95": 101035.01,
+          "p99": 104587.9
+        },
+        "TPOT": {
+          "mean": 34.98,
+          "p50": 34.75,
+          "p95": 39.93,
+          "p99": 70.94
+        },
+        "ITL": {
+          "mean": 34.26,
+          "p50": 27.24,
+          "p95": 57.05,
+          "p99": 69.28
+        },
+        "End-to-end latency": {
+          "mean": 65745.96,
+          "p50": 66064.78,
+          "p95": 114093.51,
+          "p99": 117163.08
+        }
+      },
+      "requests_per_s": 8.69,
+      "input_tokens_per_s": 4926.09,
+      "output_tokens_per_s": 4952.72,
+      "total_tokens_per_s": 9878.82,
+      "peak_allocated_gib": 20.75,
+      "peak_reserved_gib": 21.05,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 37345.57,
+          "tokens": 871974,
+          "seconds": 23.349
+        },
+        "decode": {
+          "tokens_per_s": 6234.98,
+          "tokens": 582009,
+          "seconds": 93.346
+        }
+      },
+      "variant": "bf16",
+      "trial": 2,
+      "log": "requests_1024_bf16_2.txt",
+      "process_wall_s": 137.4353002901189,
+      "preemptions": 769,
+      "prefill_batches": {
+        "fresh": 406,
+        "cached": 319
+      },
+      "kv_tensor_bytes": 20581449728,
+      "scale_tensor_bytes": 0,
+      "output_sha256": "b5ed461817b00f2a4283139062e09b2b52b890d305ae9730ce88fa9d45792fff",
+      "prefill_attention_dispatch": {
+        "flash": 20300,
+        "int8": 0
+      },
+      "average_started_unfinished_requests": 169.38260258748673
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "auto",
+      "blocks": 701,
+      "requests": 1024,
+      "seed": 0,
+      "input_tokens": 580663,
+      "output_tokens": 583802,
+      "elapsed_s": 117.84,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 46279.51,
+          "p50": 48072.03,
+          "p95": 101047.67,
+          "p99": 104591.59
+        },
+        "TPOT": {
+          "mean": 34.98,
+          "p50": 34.75,
+          "p95": 39.89,
+          "p99": 71.01
+        },
+        "ITL": {
+          "mean": 34.26,
+          "p50": 27.28,
+          "p95": 56.77,
+          "p99": 69.19
+        },
+        "End-to-end latency": {
+          "mean": 65776.58,
+          "p50": 66113.54,
+          "p95": 114067.83,
+          "p99": 117128.31
+        }
+      },
+      "requests_per_s": 8.69,
+      "input_tokens_per_s": 4927.57,
+      "output_tokens_per_s": 4954.2,
+      "total_tokens_per_s": 9881.77,
+      "peak_allocated_gib": 20.75,
+      "peak_reserved_gib": 21.05,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 37514.73,
+          "tokens": 871974,
+          "seconds": 23.244
+        },
+        "decode": {
+          "tokens_per_s": 6230.13,
+          "tokens": 582009,
+          "seconds": 93.418
+        }
+      },
+      "variant": "bf16",
+      "trial": 3,
+      "log": "requests_1024_bf16_3.txt",
+      "process_wall_s": 137.28853036183864,
+      "preemptions": 769,
+      "prefill_batches": {
+        "fresh": 406,
+        "cached": 319
+      },
+      "kv_tensor_bytes": 20581449728,
+      "scale_tensor_bytes": 0,
+      "output_sha256": "b5ed461817b00f2a4283139062e09b2b52b890d305ae9730ce88fa9d45792fff",
+      "prefill_attention_dispatch": {
+        "flash": 20300,
+        "int8": 0
+      },
+      "average_started_unfinished_requests": 169.4329114052953
+    },
+    {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "int8_half",
+      "blocks": 1320,
+      "requests": 1024,
+      "seed": 0,
+      "input_tokens": 580663,
+      "output_tokens": 583802,
+      "elapsed_s": 94.396,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 28101.27,
+          "p50": 34162.61,
+          "p95": 73623.09,
+          "p99": 77860.0
+        },
+        "TPOT": {
+          "mean": 53.54,
+          "p50": 52.38,
+          "p95": 77.26,
+          "p99": 154.25
+        },
+        "ITL": {
+          "mean": 50.93,
+          "p50": 39.4,
+          "p95": 73.7,
+          "p99": 97.9
+        },
+        "End-to-end latency": {
+          "mean": 57087.0,
+          "p50": 57008.5,
+          "p95": 91334.25,
+          "p99": 93547.11
+        }
+      },
+      "requests_per_s": 10.85,
+      "input_tokens_per_s": 6151.35,
+      "output_tokens_per_s": 6184.6,
+      "total_tokens_per_s": 12335.94,
+      "peak_allocated_gib": 20.76,
+      "peak_reserved_gib": 21.06,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 40973.21,
+          "tokens": 877980,
+          "seconds": 21.428
+        },
+        "decode": {
+          "tokens_per_s": 8101.25,
+          "tokens": 582125,
+          "seconds": 71.856
+        }
+      },
+      "variant": "fast_int8_half",
+      "trial": 3,
+      "log": "requests_1024_fast_int8_half_3.txt",
+      "process_wall_s": 114.13347300095484,
+      "preemptions": 653,
+      "prefill_batches": {
+        "fresh": 301,
+        "cached": 249
+      },
+      "kv_tensor_bytes": 19377684480,
+      "scale_tensor_bytes": 1211105280,
+      "output_sha256": "2abb437c699f55e975959bf3b1d25c7303599b7a747991aa88fc8717cf8224ea",
+      "prefill_attention_dispatch": {
+        "flash": 0,
+        "int8": 15400
+      },
+      "average_started_unfinished_requests": 314.4294624772236
+    }
+  ],
+  "medians": {
+    "1024": {
+      "auto": {
+        "blocks": 701,
+        "elapsed_s": 117.84,
+        "requests_per_s": 8.69,
+        "input_tokens_per_s": 4927.57,
+        "output_tokens_per_s": 4954.2,
+        "total_tokens_per_s": 9881.77,
+        "peak_allocated_gib": 20.75,
+        "peak_reserved_gib": 21.05,
+        "latency_ms": {
+          "TTFT": {
+            "mean": 46247.24,
+            "p50": 48018.7,
+            "p95": 101035.01,
+            "p99": 104587.9
+          },
+          "TPOT": {
+            "mean": 34.98,
+            "p50": 34.75,
+            "p95": 39.89,
+            "p99": 70.94
+          },
+          "ITL": {
+            "mean": 34.26,
+            "p50": 27.26,
+            "p95": 56.77,
+            "p99": 69.19
+          },
+          "End-to-end latency": {
+            "mean": 65745.96,
+            "p50": 66064.78,
+            "p95": 114067.83,
+            "p99": 117128.31
+          }
+        },
+        "stages": {
+          "prefill": {
+            "tokens_per_s": 37514.73,
+            "tokens": 871974,
+            "seconds": 23.244
+          },
+          "decode": {
+            "tokens_per_s": 6232.73,
+            "tokens": 582009,
+            "seconds": 93.379
+          }
+        },
+        "preemptions": 769,
+        "prefill_batches": {
+          "fresh": 406,
+          "cached": 319
+        },
+        "kv_tensor_bytes": 20581449728,
+        "scale_tensor_bytes": 0,
+        "runs": 3,
+        "average_started_unfinished_requests": 169.40990601950986
+      },
+      "int8_half": {
+        "blocks": 1320,
+        "elapsed_s": 94.174,
+        "requests_per_s": 10.87,
+        "input_tokens_per_s": 6165.84,
+        "output_tokens_per_s": 6199.17,
+        "total_tokens_per_s": 12365.01,
+        "peak_allocated_gib": 20.76,
+        "peak_reserved_gib": 21.06,
+        "latency_ms": {
+          "TTFT": {
+            "mean": 28032.82,
+            "p50": 34062.41,
+            "p95": 73424.46,
+            "p99": 77647.05
+          },
+          "TPOT": {
+            "mean": 53.41,
+            "p50": 52.24,
+            "p95": 77.06,
+            "p99": 153.63
+          },
+          "ITL": {
+            "mean": 50.8,
+            "p50": 39.35,
+            "p95": 73.63,
+            "p99": 97.9
+          },
+          "End-to-end latency": {
+            "mean": 56938.48,
+            "p50": 56865.75,
+            "p95": 91111.09,
+            "p99": 93324.25
+          }
+        },
+        "stages": {
+          "prefill": {
+            "tokens_per_s": 41292.77,
+            "tokens": 877980,
+            "seconds": 21.262
+          },
+          "decode": {
+            "tokens_per_s": 8106.8,
+            "tokens": 582125,
+            "seconds": 71.807
+          }
+        },
+        "preemptions": 653,
+        "prefill_batches": {
+          "fresh": 301,
+          "cached": 249
+        },
+        "kv_tensor_bytes": 19377684480,
+        "scale_tensor_bytes": 1211105280,
+        "runs": 3,
+        "average_started_unfinished_requests": 314.36774064043334
+      }
+    }
+  }
+}

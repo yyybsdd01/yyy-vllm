@@ -1,0 +1,618 @@
+[
+  {
+    "variant": "bf16",
+    "trial": 1,
+    "trace": [
+      {
+        "batch": 1,
+        "requests": 31,
+        "tokens": 15705,
+        "model_run_ms": 232.60802892036736,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 235.2705830708146,
+        "cumulative_requests": 31
+      },
+      {
+        "batch": 2,
+        "requests": 30,
+        "tokens": 16364,
+        "model_run_ms": 245.1739669777453,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 481.33729700930417,
+        "cumulative_requests": 61
+      },
+      {
+        "batch": 3,
+        "requests": 28,
+        "tokens": 16114,
+        "model_run_ms": 240.57300807908177,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 722.8890601545572,
+        "cumulative_requests": 89
+      },
+      {
+        "batch": 4,
+        "requests": 26,
+        "tokens": 16130,
+        "model_run_ms": 246.26051099039614,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 970.0796031393111,
+        "cumulative_requests": 115
+      },
+      {
+        "batch": 5,
+        "requests": 30,
+        "tokens": 16314,
+        "model_run_ms": 245.48030504956841,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1216.5488221216947,
+        "cumulative_requests": 145
+      },
+      {
+        "batch": 6,
+        "requests": 30,
+        "tokens": 16167,
+        "model_run_ms": 243.79724287427962,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1461.3989701028913,
+        "cumulative_requests": 175
+      },
+      {
+        "batch": 7,
+        "requests": 31,
+        "tokens": 16047,
+        "model_run_ms": 239.65404788032174,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1702.0290589425713,
+        "cumulative_requests": 206
+      },
+      {
+        "batch": 8,
+        "requests": 29,
+        "tokens": 15817,
+        "model_run_ms": 236.91133107058704,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1939.9003919679672,
+        "cumulative_requests": 235
+      },
+      {
+        "batch": 9,
+        "requests": 21,
+        "tokens": 14169,
+        "model_run_ms": 215.40689491666853,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 2156.1173000372946,
+        "cumulative_requests": 256
+      }
+    ],
+    "metrics": {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "auto",
+      "blocks": 701,
+      "requests": 256,
+      "seed": 0,
+      "input_tokens": 142827,
+      "output_tokens": 512,
+      "elapsed_s": 2.185,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 1179.04,
+          "p50": 1216.55,
+          "p95": 2156.12,
+          "p99": 2156.12
+        },
+        "TPOT": {
+          "mean": 1003.76,
+          "p50": 966.24,
+          "p95": 1947.52,
+          "p99": 1947.52
+        },
+        "ITL": {
+          "mean": 1003.76,
+          "p50": 966.24,
+          "p95": 1947.52,
+          "p99": 1947.52
+        },
+        "End-to-end latency": {
+          "mean": 2182.79,
+          "p50": 2182.79,
+          "p95": 2182.79,
+          "p99": 2182.79
+        }
+      },
+      "requests_per_s": 117.17,
+      "input_tokens_per_s": 65372.81,
+      "output_tokens_per_s": 234.35,
+      "total_tokens_per_s": 65607.15,
+      "peak_allocated_gib": 20.75,
+      "peak_reserved_gib": 21.05,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 66559.16,
+          "tokens": 142827,
+          "seconds": 2.146
+        },
+        "decode": {
+          "tokens_per_s": 9853.22,
+          "tokens": 256,
+          "seconds": 0.026
+        }
+      }
+    },
+    "command": [
+      "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+      "/home/xgd/yyy/nano-vllm/profiling/ttft_prefill_breakdown_2026-10-05/trace_trial.py",
+      "--model",
+      "/home/xgd/huggingface/Qwen3-0.6B",
+      "--kv-cache-dtype",
+      "auto",
+      "--min-output",
+      "2",
+      "--max-output",
+      "2"
+    ]
+  },
+  {
+    "variant": "fast_int8",
+    "trial": 1,
+    "trace": [
+      {
+        "batch": 1,
+        "requests": 31,
+        "tokens": 15705,
+        "model_run_ms": 248.11233510263264,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 250.89133018627763,
+        "cumulative_requests": 31
+      },
+      {
+        "batch": 2,
+        "requests": 30,
+        "tokens": 16364,
+        "model_run_ms": 260.78191911801696,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 512.5863391440362,
+        "cumulative_requests": 61
+      },
+      {
+        "batch": 3,
+        "requests": 28,
+        "tokens": 16114,
+        "model_run_ms": 255.9918910264969,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 769.5188210345805,
+        "cumulative_requests": 89
+      },
+      {
+        "batch": 4,
+        "requests": 26,
+        "tokens": 16130,
+        "model_run_ms": 261.2968301400542,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1031.736336182803,
+        "cumulative_requests": 115
+      },
+      {
+        "batch": 5,
+        "requests": 30,
+        "tokens": 16314,
+        "model_run_ms": 261.9117801077664,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1294.6396491024643,
+        "cumulative_requests": 145
+      },
+      {
+        "batch": 6,
+        "requests": 30,
+        "tokens": 16167,
+        "model_run_ms": 259.8857949487865,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1555.5271999910474,
+        "cumulative_requests": 175
+      },
+      {
+        "batch": 7,
+        "requests": 31,
+        "tokens": 16047,
+        "model_run_ms": 253.1803350429982,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1809.6554011572152,
+        "cumulative_requests": 206
+      },
+      {
+        "batch": 8,
+        "requests": 29,
+        "tokens": 15817,
+        "model_run_ms": 251.7169089987874,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 2062.3231360223144,
+        "cumulative_requests": 235
+      },
+      {
+        "batch": 9,
+        "requests": 21,
+        "tokens": 14169,
+        "model_run_ms": 231.20427108369768,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 2294.2770740482956,
+        "cumulative_requests": 256
+      }
+    ],
+    "metrics": {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "int8_half",
+      "blocks": 1320,
+      "requests": 256,
+      "seed": 0,
+      "input_tokens": 142827,
+      "output_tokens": 512,
+      "elapsed_s": 2.32,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 1254.37,
+          "p50": 1294.64,
+          "p95": 2294.28,
+          "p99": 2294.28
+        },
+        "TPOT": {
+          "mean": 1063.79,
+          "p50": 1023.52,
+          "p95": 2067.27,
+          "p99": 2067.27
+        },
+        "ITL": {
+          "mean": 1063.79,
+          "p50": 1023.52,
+          "p95": 2067.27,
+          "p99": 2067.27
+        },
+        "End-to-end latency": {
+          "mean": 2318.16,
+          "p50": 2318.16,
+          "p95": 2318.16,
+          "p99": 2318.16
+        }
+      },
+      "requests_per_s": 110.34,
+      "input_tokens_per_s": 61560.61,
+      "output_tokens_per_s": 220.68,
+      "total_tokens_per_s": 61781.29,
+      "peak_allocated_gib": 20.76,
+      "peak_reserved_gib": 21.06,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 62531.47,
+          "tokens": 142827,
+          "seconds": 2.284
+        },
+        "decode": {
+          "tokens_per_s": 11022.04,
+          "tokens": 256,
+          "seconds": 0.023
+        }
+      }
+    },
+    "command": [
+      "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+      "/home/xgd/yyy/nano-vllm/profiling/ttft_prefill_breakdown_2026-10-05/trace_trial.py",
+      "--model",
+      "/home/xgd/huggingface/Qwen3-0.6B",
+      "--kv-cache-dtype",
+      "int8_half",
+      "--min-output",
+      "2",
+      "--max-output",
+      "2"
+    ]
+  },
+  {
+    "variant": "fast_int8",
+    "trial": 2,
+    "trace": [
+      {
+        "batch": 1,
+        "requests": 31,
+        "tokens": 15705,
+        "model_run_ms": 247.89447197690606,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 250.72523299604654,
+        "cumulative_requests": 31
+      },
+      {
+        "batch": 2,
+        "requests": 30,
+        "tokens": 16364,
+        "model_run_ms": 260.7456671539694,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 512.4210540670902,
+        "cumulative_requests": 61
+      },
+      {
+        "batch": 3,
+        "requests": 28,
+        "tokens": 16114,
+        "model_run_ms": 253.60106793232262,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 766.9661801774055,
+        "cumulative_requests": 89
+      },
+      {
+        "batch": 4,
+        "requests": 26,
+        "tokens": 16130,
+        "model_run_ms": 260.3848739527166,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1028.2703270204365,
+        "cumulative_requests": 115
+      },
+      {
+        "batch": 5,
+        "requests": 30,
+        "tokens": 16314,
+        "model_run_ms": 261.3475539255887,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1290.5929791741073,
+        "cumulative_requests": 145
+      },
+      {
+        "batch": 6,
+        "requests": 30,
+        "tokens": 16167,
+        "model_run_ms": 260.27745683677495,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1551.8915690481663,
+        "cumulative_requests": 175
+      },
+      {
+        "batch": 7,
+        "requests": 31,
+        "tokens": 16047,
+        "model_run_ms": 252.43734591640532,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1805.2525240927935,
+        "cumulative_requests": 206
+      },
+      {
+        "batch": 8,
+        "requests": 29,
+        "tokens": 15817,
+        "model_run_ms": 251.10849412158132,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 2057.2617191355675,
+        "cumulative_requests": 235
+      },
+      {
+        "batch": 9,
+        "requests": 21,
+        "tokens": 14169,
+        "model_run_ms": 230.92974303290248,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 2288.969943067059,
+        "cumulative_requests": 256
+      }
+    ],
+    "metrics": {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "int8_half",
+      "blocks": 1320,
+      "requests": 256,
+      "seed": 0,
+      "input_tokens": 142827,
+      "output_tokens": 512,
+      "elapsed_s": 2.315,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 1251.26,
+          "p50": 1290.59,
+          "p95": 2288.97,
+          "p99": 2288.97
+        },
+        "TPOT": {
+          "mean": 1061.66,
+          "p50": 1022.33,
+          "p95": 2062.19,
+          "p99": 2062.19
+        },
+        "ITL": {
+          "mean": 1061.66,
+          "p50": 1022.33,
+          "p95": 2062.19,
+          "p99": 2062.19
+        },
+        "End-to-end latency": {
+          "mean": 2312.92,
+          "p50": 2312.92,
+          "p95": 2312.92,
+          "p99": 2312.92
+        }
+      },
+      "requests_per_s": 110.59,
+      "input_tokens_per_s": 61702.12,
+      "output_tokens_per_s": 221.19,
+      "total_tokens_per_s": 61923.31,
+      "peak_allocated_gib": 20.76,
+      "peak_reserved_gib": 21.06,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 62678.43,
+          "tokens": 142827,
+          "seconds": 2.279
+        },
+        "decode": {
+          "tokens_per_s": 11002.17,
+          "tokens": 256,
+          "seconds": 0.023
+        }
+      }
+    },
+    "command": [
+      "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+      "/home/xgd/yyy/nano-vllm/profiling/ttft_prefill_breakdown_2026-10-05/trace_trial.py",
+      "--model",
+      "/home/xgd/huggingface/Qwen3-0.6B",
+      "--kv-cache-dtype",
+      "int8_half",
+      "--min-output",
+      "2",
+      "--max-output",
+      "2"
+    ]
+  },
+  {
+    "variant": "bf16",
+    "trial": 2,
+    "trace": [
+      {
+        "batch": 1,
+        "requests": 31,
+        "tokens": 15705,
+        "model_run_ms": 231.8285449873656,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 234.4716601073742,
+        "cumulative_requests": 31
+      },
+      {
+        "batch": 2,
+        "requests": 30,
+        "tokens": 16364,
+        "model_run_ms": 245.4159208573401,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 480.8424620423466,
+        "cumulative_requests": 61
+      },
+      {
+        "batch": 3,
+        "requests": 28,
+        "tokens": 16114,
+        "model_run_ms": 239.76552509702742,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 721.6449871193618,
+        "cumulative_requests": 89
+      },
+      {
+        "batch": 4,
+        "requests": 26,
+        "tokens": 16130,
+        "model_run_ms": 245.3327151015401,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 967.9266279563308,
+        "cumulative_requests": 115
+      },
+      {
+        "batch": 5,
+        "requests": 30,
+        "tokens": 16314,
+        "model_run_ms": 245.77611195854843,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1214.6936969365925,
+        "cumulative_requests": 145
+      },
+      {
+        "batch": 6,
+        "requests": 30,
+        "tokens": 16167,
+        "model_run_ms": 244.22052688896656,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1459.9454009439796,
+        "cumulative_requests": 175
+      },
+      {
+        "batch": 7,
+        "requests": 31,
+        "tokens": 16047,
+        "model_run_ms": 237.8320589195937,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1698.7227459903806,
+        "cumulative_requests": 206
+      },
+      {
+        "batch": 8,
+        "requests": 29,
+        "tokens": 15817,
+        "model_run_ms": 236.24552111141384,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 1935.9122209716588,
+        "cumulative_requests": 235
+      },
+      {
+        "batch": 9,
+        "requests": 21,
+        "tokens": 14169,
+        "model_run_ms": 215.88920685462654,
+        "initial_cached_tokens": 0,
+        "first_token_elapsed_ms": 2152.617861982435,
+        "cumulative_requests": 256
+      }
+    ],
+    "metrics": {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "auto",
+      "blocks": 701,
+      "requests": 256,
+      "seed": 0,
+      "input_tokens": 142827,
+      "output_tokens": 512,
+      "elapsed_s": 2.181,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 1177.0,
+          "p50": 1214.69,
+          "p95": 2152.62,
+          "p99": 2152.62
+        },
+        "TPOT": {
+          "mean": 1002.46,
+          "p50": 964.77,
+          "p95": 1944.99,
+          "p99": 1944.99
+        },
+        "ITL": {
+          "mean": 1002.46,
+          "p50": 964.77,
+          "p95": 1944.99,
+          "p99": 1944.99
+        },
+        "End-to-end latency": {
+          "mean": 2179.46,
+          "p50": 2179.46,
+          "p95": 2179.46,
+          "p99": 2179.46
+        }
+      },
+      "requests_per_s": 117.35,
+      "input_tokens_per_s": 65473.67,
+      "output_tokens_per_s": 234.71,
+      "total_tokens_per_s": 65708.37,
+      "peak_allocated_gib": 20.75,
+      "peak_reserved_gib": 21.05,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 66669.74,
+          "tokens": 142827,
+          "seconds": 2.142
+        },
+        "decode": {
+          "tokens_per_s": 9789.95,
+          "tokens": 256,
+          "seconds": 0.026
+        }
+      }
+    },
+    "command": [
+      "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+      "/home/xgd/yyy/nano-vllm/profiling/ttft_prefill_breakdown_2026-10-05/trace_trial.py",
+      "--model",
+      "/home/xgd/huggingface/Qwen3-0.6B",
+      "--kv-cache-dtype",
+      "auto",
+      "--min-output",
+      "2",
+      "--max-output",
+      "2"
+    ]
+  }
+]

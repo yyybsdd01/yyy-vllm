@@ -1,0 +1,479 @@
+{
+  "token_head_write": {
+    "total": 62,
+    "static_sass_opcodes": {
+      "IMAD.MOV.U32": 1,
+      "ULDC.64": 1,
+      "IMAD": 2,
+      "IMAD.SHL.U32": 1,
+      "LDG.E.128": 2,
+      "IMAD.WIDE.U32": 1,
+      "PRMT": 7,
+      "FSEL": 6,
+      "IMAD.U32": 2,
+      "FMNMX": 7,
+      "SHFL.BFLY": 6,
+      "FSETP.GT.AND": 2,
+      "FSETP.GEU.AND": 2,
+      "MUFU.RCP": 1,
+      "FMUL": 7,
+      "F2I.S16.NTZ": 6,
+      "LOP3.LUT": 2,
+      "IADD3": 1,
+      "STG.E.64": 1,
+      "IADD3.X": 1,
+      "IMAD.WIDE": 1,
+      "LDS": 4,
+      "STG.E": 4,
+      "BAR.SYNC.DEFER_BLOCKING": 4,
+      "STS": 3,
+      "EXIT": 1,
+      "BRA": 1
+    },
+    "by_source": [
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/attention.py",
+        "line": 61,
+        "samples": 54
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/attention.py",
+        "line": 62,
+        "samples": 8
+      }
+    ],
+    "pcs": [
+      {
+        "pc": 140641365896064,
+        "samples": 54,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/attention.py",
+        "line": 61,
+        "sass": "      PRMT R22, R4, 0x7632, R22 "
+      },
+      {
+        "pc": 140641365896720,
+        "samples": 8,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/attention.py",
+        "line": 62,
+        "sass": "      PRMT R13, R8, 0x7632, R13 "
+      }
+    ]
+  },
+  "head_token_write": {
+    "total": 93,
+    "static_sass_opcodes": {
+      "IMAD.MOV.U32": 1,
+      "ULDC.64": 1,
+      "IMAD.WIDE": 2,
+      "ISETP.NE.AND": 1,
+      "S2R": 1,
+      "IMAD": 1,
+      "IMAD.SHL.U32": 1,
+      "PRMT": 4,
+      "LOP3.LUT": 4,
+      "FSEL": 12,
+      "FMNMX": 18,
+      "SHFL.BFLY": 2,
+      "FSETP.GT.AND": 2,
+      "FSETP.GEU.AND": 1,
+      "FMUL": 3,
+      "F2I.S16.NTZ": 6,
+      "LEA.HI": 1,
+      "IADD3.X": 1,
+      "IADD3": 1,
+      "LDS": 4,
+      "STG.E": 4,
+      "BAR.SYNC.DEFER_BLOCKING": 3,
+      "STS": 3,
+      "EXIT": 1,
+      "BRA": 1
+    },
+    "by_source": [
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 22,
+        "samples": 45
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 28,
+        "samples": 35
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 29,
+        "samples": 13
+      }
+    ],
+    "pcs": [
+      {
+        "pc": 140641365924192,
+        "samples": 45,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 22,
+        "sass": "      ISETP.NE.AND P0, PT, R0, -0x1, PT "
+      },
+      {
+        "pc": 140641365924480,
+        "samples": 35,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 28,
+        "sass": "      PRMT R22, R4, 0x7632, R22 "
+      },
+      {
+        "pc": 140641365925136,
+        "samples": 13,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 29,
+        "sass": "      PRMT R13, R8, 0x7632, R13 "
+      }
+    ]
+  },
+  "token_head_attention": {
+    "total": 51106,
+    "static_sass_opcodes": {
+      "IMAD.MOV.U32": 9,
+      "S2R": 4,
+      "ULDC.64": 1,
+      "SHF.R.U32.HI": 15,
+      "IMAD.WIDE": 7,
+      "SGXT.U32": 6,
+      "IMAD.SHL.U32": 54,
+      "LDG.E": 4,
+      "IMAD.IADD": 11,
+      "ISETP.GE.U32.AND": 4,
+      "LOP3.LUT": 73,
+      "CS2R": 12,
+      "IMAD.WIDE.U32": 2,
+      "LDG.E.128": 1,
+      "P2R": 2,
+      "IMAD": 38,
+      "IADD3": 42,
+      "ISETP.GT.AND": 6,
+      "ISETP.GE.AND": 18,
+      "SEL": 25,
+      "ISETP.NE.U32.AND": 11,
+      "STS.128": 18,
+      "LDS": 44,
+      "LDGSTS.E": 3,
+      "LDGDEPBAR": 7,
+      "DEPBAR.LE": 5,
+      "BAR.SYNC.DEFER_BLOCKING": 29,
+      "SHF.R.S32.HI": 12,
+      "IADD3.X": 16,
+      "LDGSTS.E.BYPASS.128": 16,
+      "BRA": 3,
+      "LEA.HI": 2,
+      "ISETP.LT.AND": 1,
+      "LEA": 3,
+      "UMOV": 1,
+      "STS": 24,
+      "LDS.64": 2,
+      "LDS.128": 8,
+      "I2F.S8": 128,
+      "FMUL": 212,
+      "F2FP.BF16.PACK_AB": 75,
+      "LDSM.16.M88.4": 20,
+      "HMMA.16816.F32.BF16": 32,
+      "NOP": 1,
+      "FSEL": 27,
+      "FMNMX": 9,
+      "SHFL.BFLY": 10,
+      "FADD": 19,
+      "FSETP.GEU.AND": 9,
+      "MUFU.EX2": 7,
+      "ISETP.LE.AND": 3,
+      "FFMA": 2,
+      "LDSM.16.MT88.4": 8,
+      "UIADD3": 2,
+      "CALL.REL.NOINC": 1,
+      "FSETP.GT.AND": 3,
+      "MUFU.RCP": 2,
+      "EXIT": 1,
+      "LEA.HI.X": 2,
+      "IMAD.X": 1,
+      "STG.E.128": 1
+    },
+    "by_source": [
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "samples": 24669
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "samples": 21436
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 92,
+        "samples": 2726
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "samples": 1561
+      },
+      {
+        "file": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "samples": 467
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "samples": 200
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 101,
+        "samples": 47
+      }
+    ],
+    "pcs": [
+      {
+        "pc": 140641365908448,
+        "samples": 24669,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 91,
+        "sass": "      SEL R41, R38, RZ, !P3 "
+      },
+      {
+        "pc": 140641365919536,
+        "samples": 19416,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 140641365908480,
+        "samples": 2726,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 92,
+        "sass": "      SEL R39, R39, RZ, !P3 "
+      },
+      {
+        "pc": 140641365905296,
+        "samples": 2020,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 100,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 140641365908320,
+        "samples": 983,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "sass": "      SEL R30, R30, RZ, !P3 "
+      },
+      {
+        "pc": 140641365903984,
+        "samples": 578,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 77,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 140641365903696,
+        "samples": 467,
+        "file": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "sass": "      IADD3 R123, R135, 0x3f, RZ "
+      },
+      {
+        "pc": 140641365903792,
+        "samples": 200,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 58,
+        "sass": "      SEL R8, R8, RZ, !P3 "
+      },
+      {
+        "pc": 140641365918592,
+        "samples": 47,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/quantized_attention.py",
+        "line": 101,
+        "sass": "      IADD3 R146, P5, R145, c[0x0][0x170], RZ "
+      }
+    ]
+  },
+  "head_token_attention": {
+    "total": 59585,
+    "static_sass_opcodes": {
+      "IMAD.MOV.U32": 11,
+      "S2R": 4,
+      "ULDC.64": 1,
+      "SHF.R.U32.HI": 13,
+      "IMAD.WIDE": 6,
+      "SGXT.U32": 8,
+      "IMAD.SHL.U32": 54,
+      "LDG.E": 4,
+      "IMAD": 44,
+      "LOP3.LUT": 75,
+      "CS2R": 11,
+      "IMAD.WIDE.U32": 2,
+      "LDG.E.128": 1,
+      "P2R": 2,
+      "IADD3": 42,
+      "ISETP.GT.AND": 6,
+      "ISETP.GE.AND": 17,
+      "SEL": 26,
+      "ISETP.NE.U32.AND": 11,
+      "STS.128": 18,
+      "LDS": 45,
+      "LDGSTS.E": 2,
+      "LDGDEPBAR": 7,
+      "DEPBAR.LE": 5,
+      "BAR.SYNC.DEFER_BLOCKING": 29,
+      "IMAD.IADD": 12,
+      "SHF.R.S32.HI": 14,
+      "IADD3.X": 16,
+      "LDGSTS.E.BYPASS.128": 16,
+      "BRA": 3,
+      "LEA.HI": 2,
+      "ISETP.LT.AND": 1,
+      "LEA": 4,
+      "UMOV": 1,
+      "STS": 24,
+      "ISETP.GE.U32.AND": 3,
+      "LDS.64": 2,
+      "LDS.128": 8,
+      "I2F.S8": 128,
+      "FMUL": 215,
+      "F2FP.BF16.PACK_AB": 76,
+      "LDSM.16.M88.4": 20,
+      "HMMA.16816.F32.BF16": 32,
+      "FSEL": 27,
+      "FMNMX": 9,
+      "SHFL.BFLY": 10,
+      "FADD": 19,
+      "FSETP.GEU.AND": 9,
+      "MUFU.EX2": 7,
+      "ISETP.LE.AND": 3,
+      "FFMA": 2,
+      "LDSM.16.MT88.4": 8,
+      "UIADD3": 2,
+      "CALL.REL.NOINC": 1,
+      "FSETP.GT.AND": 4,
+      "MUFU.RCP": 2,
+      "EXIT": 2,
+      "LEA.HI.X": 2,
+      "IMAD.X": 1,
+      "STG.E.128": 1
+    },
+    "by_source": [
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 165,
+        "samples": 32215
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 156,
+        "samples": 22782
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 157,
+        "samples": 2245
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 135,
+        "samples": 1582
+      },
+      {
+        "file": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "samples": 492
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 116,
+        "samples": 213
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 166,
+        "samples": 54
+      },
+      {
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 130,
+        "samples": 2
+      }
+    ],
+    "pcs": [
+      {
+        "pc": 140641365948208,
+        "samples": 29877,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 165,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 140641365937136,
+        "samples": 22782,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 156,
+        "sass": "      SEL R40, R38, RZ, !P3 "
+      },
+      {
+        "pc": 140641365933952,
+        "samples": 2338,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 165,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 140641365937168,
+        "samples": 2245,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 157,
+        "sass": "      SEL R38, R39, RZ, !P3 "
+      },
+      {
+        "pc": 140641365936992,
+        "samples": 981,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 135,
+        "sass": "      SEL R30, R30, RZ, !P3 "
+      },
+      {
+        "pc": 140641365932592,
+        "samples": 601,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 135,
+        "sass": "      BAR.SYNC.DEFER_BLOCKING 0x0 "
+      },
+      {
+        "pc": 140641365932304,
+        "samples": 492,
+        "file": "/home/xgd/anaconda3/envs/nanovllm/lib/python3.11/site-packages/triton/language/standard.py",
+        "line": 44,
+        "sass": "      IADD3 R13, R135, 0x3f, RZ "
+      },
+      {
+        "pc": 140641365932400,
+        "samples": 213,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 116,
+        "sass": "      SEL R8, R8, RZ, !P3 "
+      },
+      {
+        "pc": 140641365947264,
+        "samples": 54,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 166,
+        "sass": "      IADD3 R146, P5, R158, c[0x0][0x170], RZ "
+      },
+      {
+        "pc": 140641365933552,
+        "samples": 2,
+        "file": "/home/xgd/yyy/nano-vllm/nanovllm/layers/head_major_scale_attention.py",
+        "line": 130,
+        "sass": "      LOP3.LUT R6, R138, 0x40, RZ, 0xfc, !PT "
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "decode_lengths_1_249_2048",
+      "status": "PASS",
+      "max_abs_8_vs_4": 0.0,
+      "max_abs_4_vs_flash": 0.0009765625,
+      "max_abs_8_vs_flash": 0.0009765625
+    },
+    {
+      "case": "decode_padded_zero_lengths",
+      "status": "PASS"
+    },
+    {
+      "case": "mixed_short_cached_prefill",
+      "status": "PASS",
+      "max_abs_8_vs_4": 0.0,
+      "max_abs_4_vs_flash": 0.0009765625,
+      "max_abs_8_vs_flash": 0.0009765625
+    },
+    {
+      "case": "fresh_prefill_256_768_1024",
+      "status": "PASS",
+      "max_abs_8_vs_4": 0.00048828125,
+      "max_abs_4_vs_flash": 0.00390625,
+      "max_abs_8_vs_flash": 0.00390625
+    },
+    {
+      "case": "cached_prefill_up_to_2048",
+      "status": "PASS",
+      "max_abs_8_vs_4": 0.00048828125,
+      "max_abs_4_vs_flash": 0.0009765625,
+      "max_abs_8_vs_flash": 0.0009765625
+    }
+  ],
+  "heads": {
+    "query": 16,
+    "kv": 8,
+    "head_dim": 128
+  },
+  "scale_groups": 2,
+  "rtol": 0.02,
+  "atol": 0.005
+}

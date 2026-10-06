@@ -1,0 +1,11 @@
+Recorded command from /home/xgd/yyy/nano-vllm:
+
+sudo -n /usr/local/cuda-12.4/bin/ncu \
+  --profile-from-start off --clock-control none --cache-control none \
+  --metrics gpu__time_duration.sum,dram__bytes_read.sum,dram__bytes_write.sum,dram__cycles_active.avg,dram__cycles_active_read.avg,dram__cycles_active_write.avg,dram__cycles_elapsed.avg,smsp__warps_issue_stalled_long_scoreboard.sum,smsp__inst_issued.sum,smsp__cycles_elapsed.avg,smsp__cycles_elapsed.avg.per_second \
+  --export /tmp/attention_kernel_formats_20261004_memory_cycles \
+  /home/xgd/anaconda3/envs/nanovllm/bin/python \
+  profiling/compare_attention_kernel_formats.py --profile \
+  --outdir /tmp/attention_kernel_formats_20261004_memory_sources
+
+Report copied to ncu_memory_cycles.ncu-rep. Choose fresh output paths to rerun.

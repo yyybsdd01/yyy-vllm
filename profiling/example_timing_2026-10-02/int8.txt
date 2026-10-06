@@ -1,0 +1,15 @@
+
+
+Prompt: '<|im_start|>user\nintroduce yourself<|im_end|>\n<|im_start|>assistant\n'
+Completion: "<think>\nOkay, the user wants me to introduce myself. Let me start by recalling my name and role. I'm an AI assistant, so I should mention that. Then, I need to highlight my capabilities. Maybe talk about helping with tasks like writing, answering questions, or providing information. It's important to keep it friendly and open-ended to encourage interaction. I should also mention that I'm designed to be helpful and flexible. Let me check if I'm using the right tone and if the information flows naturally.\n</think>\n\nHello! I'm an AI assistant designed to help with a wide range of tasks. I can assist with writing, answering questions, providing information, and even offering recommendations. My goal is to be helpful and flexible, so I'm happy to assist you in whatever way you need. How can I assist you today?<|im_end|>"
+
+
+Prompt: '<|im_start|>user\nlist all prime numbers within 100<|im_end|>\n<|im_start|>assistant\n'
+Completion: "<think>\nOkay, so I need to list all the prime numbers that are within the range of 100. Let me start by recalling what a prime number is. A prime number is a number greater than 1 that has no positive divisors other than 1 and itself. So, the first thing I need to do is check numbers starting from 100 upwards to see if they are prime.\n\nBut wait, let me make sure I remember the definition correctly. Yeah, that's right. So, starting from 100, I need to check each number to see if it's prime. Let me think about the process. For each number, I need to check if it's divisible by any number from 2 up to its square root. If it's divisible by any number in that range, it's not prime. If it's only divisible by 1 and itself, then it's prime.\n\nSo, starting from 100, let's go one by one. Let me write them down:\n\n100: Is this prime? Let's check. Dividing 100 by 2 gives 50, so it's even, so not prime.\n\n101: Let's check. Divisible by"
+
+KV cache: int8 | CUDA Graph: False | seed: 0
+Tokenizer load: 0.313 s
+Model init + warmup: 3.877 s
+Generate (2 requests): 8.841 s
+Prompt tokens: 28 | output tokens: 426 | output throughput: 48.18 token/s
+Startup through generation: 13.046 s

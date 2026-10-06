@@ -1,0 +1,44 @@
+{
+  "layout": "head_token",
+  "package": "/home/xgd/yyy/nano-vllm/profiling/prefill_kernel_inference_2026-10-04/int8/variants/head_token/nanovllm/layers/attention.py",
+  "cases": [
+    {
+      "prefixes": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "query_lengths": [
+        1,
+        17,
+        255,
+        257
+      ],
+      "max_abs_error": 0.00390625,
+      "finite": true,
+      "allocated_cache_flash_calls": 0
+    },
+    {
+      "prefixes": [
+        256,
+        0,
+        13,
+        17
+      ],
+      "query_lengths": [
+        1,
+        17,
+        255,
+        257
+      ],
+      "max_abs_error": 0.00390625,
+      "finite": true,
+      "allocated_cache_flash_calls": 0
+    }
+  ],
+  "warmup_without_cache": "PASS",
+  "correctness": "PASS",
+  "rtol": 0.02,
+  "atol": 0.005
+}
