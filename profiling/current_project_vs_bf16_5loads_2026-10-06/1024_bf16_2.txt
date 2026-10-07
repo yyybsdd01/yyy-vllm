@@ -1,0 +1,32 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/__init__.py
+Workload SHA256: 1f115a1999c351bf63693f15708ff228d827b7709d0c970c4d4b8431d4854d89
+BENCH PROGRESS tokens=152580/583802 finished=190/1024
+BENCH PROGRESS tokens=299463/583802 finished=459/1024
+BENCH PROGRESS tokens=448149/583802 finished=725/1024
+Output token SHA256: b5ed461817b00f2a4283139062e09b2b52b890d305ae9730ce88fa9d45792fff
+Preemption lock enabled: False
+Preemptions: 769
+Restore progress statistics: {"restore_events": 0, "preemptions_without_token_progress": 0, "same_schedule_preemptions": 0}
+Per-request preemptions: {"preempted_requests": 427, "repeatedly_preempted_requests": 178, "maximum_per_request": 10, "histogram": {"0": 597, "1": 249, "2": 103, "3": 42, "4": 16, "5": 3, "6": 4, "7": 1, "8": 4, "9": 4, "10": 1}}
+Lock statistics: {"decode_batches": 0, "prefill_fallback_batches": 0, "completion_unlocks": 0}
+Actual decode batch sizes: {"mean": 147.71802030456854, "p50": 167.0, "p95": 203.0, "maximum": 265, "steps": 3940}
+Prefill attention dispatch: {"flash": 20300, "int8": 0}
+Prefill batches: {"fresh": 406, "cached": 319}
+Actual KV dtype: torch.bfloat16
+KV tensor bytes: 20581449728
+Scale tensor bytes: 0
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: auto | blocks: 701 | requests: 1024 | seed: 0
+Input: 580663 tokens | Output: 583802 tokens | elapsed: 117.843 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                           46267.11   48066.95  101022.45  104570.96 ms/request
+TPOT                              34.98      34.74      39.97      71.02 ms/request/token
+ITL                               34.26      27.30      56.72      69.04 ms/token
+End-to-end latency             65765.30   66090.03  114066.66  117131.95 ms/request
+Requests/s: 8.69
+Input tokens/s: 4927.43
+Output tokens/s: 4954.07
+Total tokens/s: 9881.51
+Prefill model-run tokens/s: 37725.80 (871974 tokens / 23.113 s)
+Decode model-run tokens/s: 6241.70 (582009 tokens / 93.245 s)
+Peak PyTorch allocated: 20.75 GiB
+Peak PyTorch reserved: 21.05 GiB

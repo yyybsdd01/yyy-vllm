@@ -1,0 +1,17 @@
+{
+  "pressure_off_vs_on": {
+    "max_abs_logit_diff": 3.84375,
+    "mean_abs_logit_diff": 0.10254596918821335,
+    "argmax_agreement": 0.9921875
+  },
+  "pressure_off_vs_no_preemption": {
+    "max_abs_logit_diff": 3.84375,
+    "mean_abs_logit_diff": 0.14510862529277802,
+    "argmax_agreement": 0.9895833134651184
+  },
+  "pressure_on_vs_no_preemption": {
+    "max_abs_logit_diff": 3.0859375,
+    "mean_abs_logit_diff": 0.12759949266910553,
+    "argmax_agreement": 0.9817708134651184
+  }
+}

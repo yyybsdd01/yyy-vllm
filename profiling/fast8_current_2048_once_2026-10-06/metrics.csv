@@ -1,0 +1,43 @@
+metric,bf16,root_int8,fast8
+output_tokens_per_s,4980.22,5428.8,6968.84
+requests_per_s,9.03,9.85,12.64
+input_tokens_per_s,5074.48,5531.56,7100.74
+total_tokens_per_s,10054.7,10960.36,14069.58
+elapsed_s,226.678,207.947,161.993
+preemptions,1566,900,900
+blocks,701,1318,1318
+peak_allocated_gib,20.75,20.76,20.76
+peak_reserved_gib,21.05,21.06,21.06
+TTFT mean ms,102081.99,83134.26,65368.79
+TTFT p50 ms,102963.68,86490.78,67796.21
+TTFT p95 ms,202223.59,175117.05,137060.65
+TTFT p99 ms,210774.88,184270.85,144162.65
+TPOT mean ms,35.14,60.99,47.61
+TPOT p50 ms,35.14,60.44,47.12
+TPOT p95 ms,37.64,72.59,60.4
+TPOT p99 ms,52.49,112.28,86.76
+ITL mean ms,34.78,59.59,46.34
+ITL p50 ms,27.29,51.42,37.73
+ITL p95 ms,57.38,82.32,71.55
+ITL p99 ms,69.25,101.22,94.32
+End-to-end latency mean ms,121218.09,115920.58,90866.09
+End-to-end latency p50 ms,121917.57,116677.6,91490.38
+End-to-end latency p95 ms,220055.46,202655.48,157761.22
+End-to-end latency p99 ms,225092.84,206688.54,160831.55
+prefill tokens,1758555,1150273,1150273
+prefill seconds,48.272,27.785,29.351
+prefill tokens_per_s,36430.31,41399.66,39189.7
+decode tokens,1125292,1126858,1126858
+decode seconds,175.536,174.569,127.041
+decode tokens_per_s,6410.62,6455.09,8870.0
+request_preemption_stats.preempted_requests,923,527,527
+request_preemption_stats.repeatedly_preempted_requests,360,220,220
+request_preemption_stats.maximum_per_request,9,8,8
+decode_batch_stats.mean,161.07815631262525,285.0640020237794,285.0640020237794
+decode_batch_stats.p50,173.0,322.0,322.0
+decode_batch_stats.p95,190.0,385.0,385.0
+decode_batch_stats.maximum,265,489,489
+decode_batch_stats.steps,6986,3953,3953
+restore_progress.restore_events,0,900,900
+restore_progress.preemptions_without_token_progress,0,124,124
+restore_progress.same_schedule_preemptions,0,124,124

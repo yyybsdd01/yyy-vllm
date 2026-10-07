@@ -1,0 +1,6 @@
+[rank0]:W1006 15:09:33.333000 758767 site-packages/torch/_dynamo/convert_frame.py:844] [0/8] torch._dynamo hit config.cache_size_limit (8)
+[rank0]:W1006 15:09:33.333000 758767 site-packages/torch/_dynamo/convert_frame.py:844] [0/8]    function: 'rms_forward' (/home/xgd/yyy/nano-vllm/profiling/async_kv_offload_2026-10-06/metrics/variant/nanovllm/layers/layernorm.py:17)
+[rank0]:W1006 15:09:33.333000 758767 site-packages/torch/_dynamo/convert_frame.py:844] [0/8]    last reason: 0/0: utils_device.CURRENT_DEVICE == device(type='cuda')            # _dynamo/output_graph.py:471 in init_ambient_guards
+[rank0]:W1006 15:09:33.333000 758767 site-packages/torch/_dynamo/convert_frame.py:844] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank0]:W1006 15:09:33.333000 758767 site-packages/torch/_dynamo/convert_frame.py:844] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+PASS int8_half False preemptions 9 output_sha256 0d11a76fa4829ac3c526a57042dd829730347b09e50c9075608076dc51e70a56

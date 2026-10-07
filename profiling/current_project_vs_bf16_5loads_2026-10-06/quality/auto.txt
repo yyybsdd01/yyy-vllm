@@ -1,0 +1,11 @@
+QUALITY START auto targets=298938 package=/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/__init__.py
+QUALITY PROGRESS auto chunks=128
+QUALITY PROGRESS auto chunks=256
+QUALITY PROGRESS auto chunks=384
+QUALITY PROGRESS auto chunks=512
+QUALITY PROGRESS auto chunks=640
+QUALITY PROGRESS auto chunks=768
+QUALITY PROGRESS auto chunks=896
+QUALITY PROGRESS auto chunks=1024
+QUALITY PROGRESS auto chunks=1152
+QUALITY COMPLETE auto PPL=18.810820 dispatch={'flash': 32704, 'int8': 0}

@@ -1,0 +1,25 @@
+{
+  "scope": "profiled 16-request shared-prefix pressure test; GPU DMA intersects actual kernels",
+  "copy_streams": [
+    14,
+    18
+  ],
+  "model_kernel_events": 41570,
+  "decode_kernel_events": 40457,
+  "HtoD": {
+    "copy_events": 14,
+    "bytes": 109182976,
+    "dma_ms": 8.987653991699219,
+    "overlap_model_kernel_ms": 4.298176086425781,
+    "overlap_decode_kernel_ms": 4.298176086425781,
+    "overlap_decode_fraction": 0.4782311480165429
+  },
+  "DtoH": {
+    "copy_events": 18,
+    "bytes": 140378112,
+    "dma_ms": 10.800144958496094,
+    "overlap_model_kernel_ms": 0.777201171875,
+    "overlap_decode_kernel_ms": 0.777201171875,
+    "overlap_decode_fraction": 0.07196210558855538
+  }
+}

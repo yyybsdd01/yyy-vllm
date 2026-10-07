@@ -1,0 +1,16 @@
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8_half_dequant | blocks: 12 | requests: 24 | seed: 0
+Input: 4266 tokens | Output: 438 tokens | elapsed: 0.864 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                             416.77     336.81     703.79     734.91 ms/request
+TPOT                              12.16      11.01      19.63      19.70 ms/request/token
+ITL                               12.36       5.53      34.63      35.42 ms/token
+End-to-end latency               630.07     697.50     851.13     862.04 ms/request
+Requests/s: 27.77
+Input tokens/s: 4935.86
+Output tokens/s: 506.78
+Total tokens/s: 5442.64
+Prefill model-run tokens/s: 7396.25 (4266 tokens / 0.577 s)
+Decode model-run tokens/s: 1488.46 (414 tokens / 0.278 s)
+Peak PyTorch allocated: 1.42 GiB
+Peak PyTorch reserved: 1.52 GiB
+KV offload statistics: {"fallback_preemptions": 0, "shared_snapshot_references": 0, "offloaded_sequences": 3, "restored_sequences": 3, "gpu_reused_blocks": 0, "peak_cpu_buffers": 1, "peak_restoring_sequences": 1, "idle_copy_waits": 0, "idle_copy_wait_ms": 0, "cpu_budget_bytes": 4289331200, "cpu_pool_bytes": 15597568, "active_handles": 0, "restoring": 0, "transport": {"write_lock_waits": 0, "d2h_blocks": 3, "h2d_blocks": 3, "d2h_bytes": 46792704, "h2d_bytes": 46792704, "d2h_enqueue_ms": 0.6158500909805298, "h2d_enqueue_ms": 0.4613390192389488, "d2h_completed_events": 3, "h2d_completed_events": 3, "d2h_stream_ms": 4.019935965538025, "h2d_stream_ms": 4.077567934989929, "d2h_first_phase_ms": 0.42134400457143784, "h2d_first_phase_ms": 3.880959987640381, "d2h_second_phase_ms": 3.5985920429229736, "h2d_second_phase_ms": 0.19660799950361252}}

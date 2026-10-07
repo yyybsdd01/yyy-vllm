@@ -1,0 +1,308 @@
+{
+  "unit_tests": {
+    "status": "PASS",
+    "cpu_offload_methods": 8,
+    "cuda_offload_methods": 2,
+    "legacy_preemption_lock_methods": 7,
+    "total_methods": 17,
+    "commands": [
+      "/home/xgd/anaconda3/envs/nanovllm/bin/python -m unittest discover -s tests -p test_kv_offload*.py -v",
+      "/home/xgd/anaconda3/envs/nanovllm/bin/python -m unittest discover -s tests -p test_scheduler_preemption_lock.py -v"
+    ]
+  },
+  "model_kv_checks": {
+    "status": "PASS",
+    "restored_logical_blocks_by_mode": {
+      "int8_half": 16,
+      "auto": 16
+    },
+    "every_layer": true,
+    "every_valid_row": true,
+    "kv_and_scales_exact": true,
+    "valid_cached_length_preserved": true
+  },
+  "output_comparisons": [
+    {
+      "fixture": "random_int8_half",
+      "off": "correctness_int8_half_0.json",
+      "on": "correctness_int8_half_1.json",
+      "equal_requests": 9,
+      "requests": 16,
+      "exact_output_match": false
+    },
+    {
+      "fixture": "natural_int8_half",
+      "off": "correctness_natural_0.json",
+      "on": "correctness_natural_1.json",
+      "equal_requests": 15,
+      "requests": 16,
+      "exact_output_match": false
+    },
+    {
+      "fixture": "random_bf16",
+      "off": "correctness_auto_0.json",
+      "on": "correctness_auto_kv.json",
+      "equal_requests": 12,
+      "requests": 16,
+      "exact_output_match": false
+    }
+  ],
+  "teacher_forced_comparison": {
+    "pressure_off_vs_on": {
+      "max_abs_logit_diff": 3.84375,
+      "mean_abs_logit_diff": 0.10254596918821335,
+      "argmax_agreement": 0.9921875
+    },
+    "pressure_off_vs_no_preemption": {
+      "max_abs_logit_diff": 3.84375,
+      "mean_abs_logit_diff": 0.14510862529277802,
+      "argmax_agreement": 0.9895833134651184
+    },
+    "pressure_on_vs_no_preemption": {
+      "max_abs_logit_diff": 3.0859375,
+      "mean_abs_logit_diff": 0.12759949266910553,
+      "argmax_agreement": 0.9817708134651184
+    }
+  },
+  "whole_model_exact_outputs": false,
+  "formal_quality_eval": "not performed",
+  "additional_root_cuda_graph_smokes": [
+    {
+      "mode": "int8",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--requests",
+        "24",
+        "--min-input",
+        "100",
+        "--max-input",
+        "256",
+        "--min-output",
+        "8",
+        "--max-output",
+        "32",
+        "--max-model-len",
+        "512",
+        "--kv-cache-dtype",
+        "int8",
+        "--kv-blocks",
+        "12",
+        "--kv-cpu-offload"
+      ],
+      "log": "smoke_graph_int8.txt",
+      "status": "PASS",
+      "stats": {
+        "fallback_preemptions": 0,
+        "shared_snapshot_references": 0,
+        "offloaded_sequences": 3,
+        "restored_sequences": 3,
+        "gpu_reused_blocks": 0,
+        "peak_cpu_buffers": 1,
+        "peak_restoring_sequences": 1,
+        "idle_copy_waits": 0,
+        "idle_copy_wait_ms": 0,
+        "cpu_budget_bytes": 4284284928,
+        "cpu_pool_bytes": 15138816,
+        "active_handles": 0,
+        "restoring": 0,
+        "transport": {
+          "write_lock_waits": 0,
+          "d2h_blocks": 3,
+          "h2d_blocks": 3,
+          "d2h_bytes": 45416448,
+          "h2d_bytes": 45416448,
+          "d2h_enqueue_ms": 0.599144957959652,
+          "h2d_enqueue_ms": 0.4266789183020592,
+          "d2h_completed_events": 3,
+          "h2d_completed_events": 3,
+          "d2h_stream_ms": 3.9313279390335083,
+          "h2d_stream_ms": 4.007968068122864,
+          "d2h_first_phase_ms": 0.4280959963798523,
+          "h2d_first_phase_ms": 3.8093119859695435,
+          "d2h_second_phase_ms": 3.503232002258301,
+          "h2d_second_phase_ms": 0.19865600019693375
+        }
+      }
+    },
+    {
+      "mode": "int8_dequant",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--requests",
+        "24",
+        "--min-input",
+        "100",
+        "--max-input",
+        "256",
+        "--min-output",
+        "8",
+        "--max-output",
+        "32",
+        "--max-model-len",
+        "512",
+        "--kv-cache-dtype",
+        "int8_dequant",
+        "--kv-blocks",
+        "12",
+        "--kv-cpu-offload"
+      ],
+      "log": "smoke_graph_int8_dequant.txt",
+      "status": "PASS",
+      "stats": {
+        "fallback_preemptions": 0,
+        "shared_snapshot_references": 0,
+        "offloaded_sequences": 3,
+        "restored_sequences": 3,
+        "gpu_reused_blocks": 0,
+        "peak_cpu_buffers": 1,
+        "peak_restoring_sequences": 1,
+        "idle_copy_waits": 0,
+        "idle_copy_wait_ms": 0,
+        "cpu_budget_bytes": 4284284928,
+        "cpu_pool_bytes": 15138816,
+        "active_handles": 0,
+        "restoring": 0,
+        "transport": {
+          "write_lock_waits": 0,
+          "d2h_blocks": 3,
+          "h2d_blocks": 3,
+          "d2h_bytes": 45416448,
+          "h2d_bytes": 45416448,
+          "d2h_enqueue_ms": 0.6224969401955605,
+          "h2d_enqueue_ms": 0.4471559077501297,
+          "d2h_completed_events": 3,
+          "h2d_completed_events": 3,
+          "d2h_stream_ms": 3.974784016609192,
+          "h2d_stream_ms": 3.9516159296035767,
+          "d2h_first_phase_ms": 0.44572799652814865,
+          "h2d_first_phase_ms": 3.766047954559326,
+          "d2h_second_phase_ms": 3.529055953025818,
+          "h2d_second_phase_ms": 0.18556799739599228
+        }
+      }
+    },
+    {
+      "mode": "int8_half_dequant",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "benchmark_inference_metrics.py",
+        "--requests",
+        "24",
+        "--min-input",
+        "100",
+        "--max-input",
+        "256",
+        "--min-output",
+        "8",
+        "--max-output",
+        "32",
+        "--max-model-len",
+        "512",
+        "--kv-cache-dtype",
+        "int8_half_dequant",
+        "--kv-blocks",
+        "12",
+        "--kv-cpu-offload"
+      ],
+      "log": "smoke_graph_int8_half_dequant.txt",
+      "status": "PASS",
+      "stats": {
+        "fallback_preemptions": 0,
+        "shared_snapshot_references": 0,
+        "offloaded_sequences": 3,
+        "restored_sequences": 3,
+        "gpu_reused_blocks": 0,
+        "peak_cpu_buffers": 1,
+        "peak_restoring_sequences": 1,
+        "idle_copy_waits": 0,
+        "idle_copy_wait_ms": 0,
+        "cpu_budget_bytes": 4289331200,
+        "cpu_pool_bytes": 15597568,
+        "active_handles": 0,
+        "restoring": 0,
+        "transport": {
+          "write_lock_waits": 0,
+          "d2h_blocks": 3,
+          "h2d_blocks": 3,
+          "d2h_bytes": 46792704,
+          "h2d_bytes": 46792704,
+          "d2h_enqueue_ms": 0.6158500909805298,
+          "h2d_enqueue_ms": 0.4613390192389488,
+          "d2h_completed_events": 3,
+          "h2d_completed_events": 3,
+          "d2h_stream_ms": 4.019935965538025,
+          "h2d_stream_ms": 4.077567934989929,
+          "d2h_first_phase_ms": 0.42134400457143784,
+          "h2d_first_phase_ms": 3.880959987640381,
+          "d2h_second_phase_ms": 3.5985920429229736,
+          "h2d_second_phase_ms": 0.19660799950361252
+        }
+      }
+    }
+  ],
+  "overlap": {
+    "scope": "profiled 16-request shared-prefix pressure test; GPU DMA intersects actual kernels",
+    "copy_streams": [
+      14,
+      18
+    ],
+    "model_kernel_events": 41570,
+    "decode_kernel_events": 40457,
+    "HtoD": {
+      "copy_events": 14,
+      "bytes": 109182976,
+      "dma_ms": 8.987653991699219,
+      "overlap_model_kernel_ms": 4.298176086425781,
+      "overlap_decode_kernel_ms": 4.298176086425781,
+      "overlap_decode_fraction": 0.4782311480165429
+    },
+    "DtoH": {
+      "copy_events": 18,
+      "bytes": 140378112,
+      "dma_ms": 10.800144958496094,
+      "overlap_model_kernel_ms": 0.777201171875,
+      "overlap_decode_kernel_ms": 0.777201171875,
+      "overlap_decode_fraction": 0.07196210558855538
+    }
+  },
+  "benchmark": {
+    "status": "PASS",
+    "source_hashes": "PASS",
+    "same_workload": "PASS",
+    "unchanged_root_attention": "PASS",
+    "trials": [
+      {
+        "log": "offload0_1.txt",
+        "status": "PASS",
+        "histogram_sum": 657
+      },
+      {
+        "log": "offload1_1.txt",
+        "status": "PASS",
+        "histogram_sum": 728
+      },
+      {
+        "log": "offload1_2.txt",
+        "status": "PASS",
+        "histogram_sum": 716
+      },
+      {
+        "log": "offload0_2.txt",
+        "status": "PASS",
+        "histogram_sum": 657
+      },
+      {
+        "log": "offload0_3.txt",
+        "status": "PASS",
+        "histogram_sum": 657
+      },
+      {
+        "log": "offload1_3.txt",
+        "status": "PASS",
+        "histogram_sum": 758
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "mode": "auto",
+  "tokens": 298938,
+  "nll": 877213.2965698242,
+  "ppl": 18.810819543533302,
+  "fresh_tokens": 18688,
+  "fresh_nll": 66384.84826660156,
+  "fresh_ppl": 34.89248297158659,
+  "cached_tokens": 280250,
+  "cached_nll": 810828.4483032227,
+  "cached_ppl": 18.051569670738154,
+  "package": "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/__init__.py",
+  "dispatch": {
+    "flash": 32704,
+    "int8": 0
+  },
+  "chunks": 1168,
+  "fresh_chunks": 73,
+  "model_dtype": "torch.bfloat16",
+  "kv_dtype": "torch.bfloat16",
+  "first_chunk_route": "flash_original_bf16",
+  "window_size": 4096,
+  "chunk_size": 256,
+  "block_size": 256,
+  "text": "/home/xgd/.cache/nanovllm_eval/wikitext2_test.txt",
+  "text_sha256": "aca2f46735043bcfd0a44eca981d04627b9cdf74c4c9a04bf0856d04066f58fc",
+  "token_ids_sha256": "b2b9470325328ae9c7058152c56ae677f71f38b239afbd148f44f7193827f32c",
+  "model": "/home/xgd/huggingface/Qwen3-0.6B",
+  "model_config_sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+  "evaluation_wall_s": 34.81257969606668
+}

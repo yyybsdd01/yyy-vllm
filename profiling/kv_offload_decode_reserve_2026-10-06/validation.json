@@ -1,0 +1,51 @@
+{
+  "cpu_tests": {
+    "offload_methods": 11,
+    "legacy_preemption_methods": 7,
+    "status": "PASS"
+  },
+  "cuda_tests": {
+    "methods": 2,
+    "status": "PASS"
+  },
+  "model_kv_checks": {
+    "int8_half": {
+      "status": "PASS",
+      "logical_blocks_checked": 14,
+      "preemptions": 7,
+      "shared_snapshot_references": 7,
+      "every_valid_kv_row_and_scale_exact": true,
+      "output_lengths_passed": true,
+      "active_handles_at_end": 0,
+      "restoring_at_end": 0
+    },
+    "bf16": {
+      "status": "PASS",
+      "logical_blocks_checked": 14,
+      "preemptions": 7,
+      "shared_snapshot_references": 7,
+      "every_valid_kv_row_and_scale_exact": true,
+      "output_lengths_passed": true,
+      "active_handles_at_end": 0,
+      "restoring_at_end": 0
+    }
+  },
+  "formal_quality_eval": "not performed",
+  "benchmark": {
+    "status": "PASS",
+    "trials": 9,
+    "same_workload": "PASS",
+    "all_source_hashes": "PASS",
+    "reported_medians_recomputed": "PASS",
+    "per_request_lengths_and_timestamps": "PASS",
+    "preemption_histogram_totals": "PASS",
+    "no_unfinished_transfers": "PASS"
+  },
+  "inflight_boundary_reproduction": {
+    "scope": "CPU state-machine reproduction; no performance estimate",
+    "reserve_at_restore_submission": 0,
+    "reserve_after_intervening_decode": 1,
+    "restored_B_generated_new_tokens": false,
+    "B_preempted_again_before_model_step": true
+  }
+}

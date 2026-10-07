@@ -1,0 +1,44 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/__init__.py
+Workload SHA256: 63fcbb78fe519a1a7974b704526f76ddcf843b5d2a677a298930ae68b4d5ded4
+BENCH PROGRESS tokens=175768/2307852 finished=191/4096
+BENCH PROGRESS tokens=328378/2307852 finished=483/4096
+BENCH PROGRESS tokens=496686/2307852 finished=758/4096
+BENCH PROGRESS tokens=656641/2307852 finished=1060/4096
+BENCH PROGRESS tokens=818646/2307852 finished=1333/4096
+BENCH PROGRESS tokens=985640/2307852 finished=1640/4096
+BENCH PROGRESS tokens=1150966/2307852 finished=1922/4096
+BENCH PROGRESS tokens=1313704/2307852 finished=2206/4096
+BENCH PROGRESS tokens=1481329/2307852 finished=2485/4096
+BENCH PROGRESS tokens=1641039/2307852 finished=2787/4096
+BENCH PROGRESS tokens=1801048/2307852 finished=3040/4096
+BENCH PROGRESS tokens=1960033/2307852 finished=3358/4096
+BENCH PROGRESS tokens=2117304/2307852 finished=3625/4096
+BENCH PROGRESS tokens=2287000/2307852 finished=3979/4096
+Output token SHA256: fc952e98a2b7a12310b716a57f6eadccc4ae8b922a285f6b1e924be8aa378312
+Preemption lock enabled: False
+Preemptions: 1895
+Restore progress statistics: {"restore_events": 1895, "preemptions_without_token_progress": 228, "same_schedule_preemptions": 228}
+Per-request preemptions: {"preempted_requests": 1078, "repeatedly_preempted_requests": 459, "maximum_per_request": 9, "histogram": {"0": 3018, "1": 619, "2": 252, "3": 119, "4": 53, "5": 20, "6": 6, "7": 6, "8": 2, "9": 1}}
+Lock statistics: {"decode_batches": 0, "prefill_fallback_batches": 0, "completion_unlocks": 0}
+Actual decode batch sizes: {"mean": 301.1052150045746, "p50": 323.0, "p95": 350.0, "maximum": 489, "steps": 7651}
+Prefill attention dispatch: {"flash": 50568, "int8": 0}
+Prefill batches: {"fresh": 1806, "cached": 0}
+Actual KV dtype: torch.int8
+KV tensor bytes: 19348324352
+Scale tensor bytes: 1209270272
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8_half | blocks: 1318 | requests: 4096 | seed: 0
+Input: 2303424 tokens | Output: 2307852 tokens | elapsed: 426.803 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                          190206.63  188919.81  386023.25  400305.18 ms/request
+TPOT                              60.47      60.21      64.81      90.79 ms/request/token
+ITL                               59.62      51.49      82.65     100.74 ms/token
+End-to-end latency            223736.93  223841.81  413410.96  424106.31 ms/request
+Requests/s: 9.60
+Input tokens/s: 5396.92
+Output tokens/s: 5407.29
+Total tokens/s: 10804.21
+Prefill model-run tokens/s: 38788.56 (2303424 tokens / 59.384 s)
+Decode model-run tokens/s: 6451.69 (2303756 tokens / 357.078 s)
+Peak PyTorch allocated: 20.76 GiB
+Peak PyTorch reserved: 21.06 GiB
+KV offload statistics: {"fallback_preemptions": 0, "shared_snapshot_references": 0, "offloaded_sequences": 1895, "restored_sequences": 1895, "gpu_reused_blocks": 1118, "peak_cpu_buffers": 207, "peak_restoring_sequences": 6, "idle_copy_waits": 0, "idle_copy_wait_ms": 0, "cpu_budget_bytes": 4289331200, "cpu_pool_bytes": 3228696576, "active_handles": 0, "restoring": 0, "transport": {"write_lock_waits": 1124, "d2h_blocks": 5160, "h2d_blocks": 4042, "d2h_bytes": 80483450880, "h2d_bytes": 63045369856, "d2h_enqueue_ms": 756.0208928771317, "h2d_enqueue_ms": 581.957662012428, "d2h_completed_events": 5160, "h2d_completed_events": 4042, "d2h_stream_ms": 7586.980066180229, "h2d_stream_ms": 6440.415906906128, "d2h_first_phase_ms": 1256.488575682044, "h2d_first_phase_ms": 5199.390817642212, "d2h_second_phase_ms": 6330.491486907005, "h2d_second_phase_ms": 1241.0250886529684}}

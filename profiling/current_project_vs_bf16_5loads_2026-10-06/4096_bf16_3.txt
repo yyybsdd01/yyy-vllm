@@ -1,0 +1,49 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/__init__.py
+Workload SHA256: 63fcbb78fe519a1a7974b704526f76ddcf843b5d2a677a298930ae68b4d5ded4
+BENCH PROGRESS tokens=152924/2307852 finished=219/4096
+BENCH PROGRESS tokens=301372/2307852 finished=481/4096
+BENCH PROGRESS tokens=448744/2307852 finished=742/4096
+BENCH PROGRESS tokens=599995/2307852 finished=1013/4096
+[rank0]:W1006 20:53:26.646000 956705 site-packages/torch/_dynamo/convert_frame.py:844] [0/8] torch._dynamo hit config.cache_size_limit (8)
+[rank0]:W1006 20:53:26.646000 956705 site-packages/torch/_dynamo/convert_frame.py:844] [0/8]    function: 'rms_forward' (/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/layers/layernorm.py:17)
+[rank0]:W1006 20:53:26.646000 956705 site-packages/torch/_dynamo/convert_frame.py:844] [0/8]    last reason: 0/0: utils_device.CURRENT_DEVICE == device(type='cuda')            # _dynamo/output_graph.py:471 in init_ambient_guards
+[rank0]:W1006 20:53:26.646000 956705 site-packages/torch/_dynamo/convert_frame.py:844] [0/8] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+[rank0]:W1006 20:53:26.646000 956705 site-packages/torch/_dynamo/convert_frame.py:844] [0/8] To diagnose recompilation issues, see https://pytorch.org/docs/main/torch.compiler_troubleshooting.html.
+BENCH PROGRESS tokens=744248/2307852 finished=1264/4096
+BENCH PROGRESS tokens=889415/2307852 finished=1523/4096
+BENCH PROGRESS tokens=1036970/2307852 finished=1794/4096
+BENCH PROGRESS tokens=1184917/2307852 finished=2037/4096
+BENCH PROGRESS tokens=1331759/2307852 finished=2299/4096
+BENCH PROGRESS tokens=1478948/2307852 finished=2554/4096
+BENCH PROGRESS tokens=1627165/2307852 finished=2816/4096
+BENCH PROGRESS tokens=1768975/2307852 finished=3061/4096
+BENCH PROGRESS tokens=1912677/2307852 finished=3325/4096
+BENCH PROGRESS tokens=2055937/2307852 finished=3569/4096
+BENCH PROGRESS tokens=2200767/2307852 finished=3838/4096
+Output token SHA256: 172711a4a3d13ab932a9e8278512e2b51d3aa1382f4cace08ddb7cc102ae837b
+Preemption lock enabled: False
+Preemptions: 3271
+Restore progress statistics: {"restore_events": 0, "preemptions_without_token_progress": 0, "same_schedule_preemptions": 0}
+Per-request preemptions: {"preempted_requests": 1966, "repeatedly_preempted_requests": 792, "maximum_per_request": 8, "histogram": {"0": 2130, "1": 1174, "2": 491, "3": 177, "4": 80, "5": 17, "6": 15, "7": 7, "8": 5}}
+Lock statistics: {"decode_batches": 0, "prefill_fallback_batches": 0, "completion_unlocks": 0}
+Actual decode batch sizes: {"mean": 165.5859065716548, "p50": 172.0, "p95": 183.0, "maximum": 265, "steps": 13893}
+Prefill attention dispatch: {"flash": 92624, "int8": 0}
+Prefill batches: {"fresh": 1928, "cached": 1380}
+Actual KV dtype: torch.bfloat16
+KV tensor bytes: 20581449728
+Scale tensor bytes: 0
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: auto | blocks: 701 | requests: 4096 | seed: 0
+Input: 2303424 tokens | Output: 2307852 tokens | elapsed: 473.080 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                          221607.66  221371.04  437021.57  454916.66 ms/request
+TPOT                              35.62      35.65      37.42      41.59 ms/request/token
+ITL                               35.38      27.27      61.26      75.80 ms/token
+End-to-end latency            241508.53  241404.81  456791.52  469883.87 ms/request
+Requests/s: 8.66
+Input tokens/s: 4869.00
+Output tokens/s: 4878.36
+Total tokens/s: 9747.35
+Prefill model-run tokens/s: 32721.64 (3544801 tokens / 108.332 s)
+Decode model-run tokens/s: 6411.17 (2300485 tokens / 358.825 s)
+Peak PyTorch allocated: 20.75 GiB
+Peak PyTorch reserved: 21.05 GiB

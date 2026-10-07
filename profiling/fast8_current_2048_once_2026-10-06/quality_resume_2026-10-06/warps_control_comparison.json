@@ -1,0 +1,21 @@
+{
+  "old_fast4_ppl": 18.930554834032787,
+  "control_warps4_ppl": 18.930554834032787,
+  "fast8_ppl": 18.934116030607314,
+  "old_control_nll_exact_match": true,
+  "old_control_ppl_exact_match": true,
+  "only_control_change": "num_warps=8 to 4 in quantized_attention.py",
+  "command": [
+    "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+    "/home/xgd/yyy/nano-vllm/profiling/fast8_current_2048_once_2026-10-06/quality_resume_2026-10-06/control_warps4/eval_project_kv_quality.py",
+    "--model",
+    "/home/xgd/huggingface/Qwen3-0.6B",
+    "--text",
+    "/home/xgd/.cache/nanovllm_eval/wikitext2_test.txt",
+    "--mode",
+    "int8_half",
+    "--quantize-first",
+    "--output",
+    "/home/xgd/yyy/nano-vllm/profiling/fast8_current_2048_once_2026-10-06/quality_resume_2026-10-06/control_warps4.json"
+  ]
+}

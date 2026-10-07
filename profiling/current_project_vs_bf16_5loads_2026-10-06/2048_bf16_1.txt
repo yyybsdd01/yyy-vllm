@@ -1,0 +1,36 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/__init__.py
+Workload SHA256: 3d3ecee956c854e23ca7fabaaac0583bc1d64b97c25058e850362dacfefa54ad
+BENCH PROGRESS tokens=153374/1128906 finished=189/2048
+BENCH PROGRESS tokens=299244/1128906 finished=458/2048
+BENCH PROGRESS tokens=448594/1128906 finished=730/2048
+BENCH PROGRESS tokens=598424/1128906 finished=1014/2048
+BENCH PROGRESS tokens=747130/1128906 finished=1281/2048
+BENCH PROGRESS tokens=898854/1128906 finished=1562/2048
+BENCH PROGRESS tokens=1050078/1128906 finished=1838/2048
+Output token SHA256: 5c1dc2a740ee4061b061400641a19b76c6452fab7ab9c27f2dfb98c5a265041e
+Preemption lock enabled: False
+Preemptions: 1566
+Restore progress statistics: {"restore_events": 0, "preemptions_without_token_progress": 0, "same_schedule_preemptions": 0}
+Per-request preemptions: {"preempted_requests": 923, "repeatedly_preempted_requests": 360, "maximum_per_request": 9, "histogram": {"0": 1125, "1": 563, "2": 216, "3": 76, "4": 34, "5": 14, "6": 11, "7": 4, "8": 2, "9": 3}}
+Lock statistics: {"decode_batches": 0, "prefill_fallback_batches": 0, "completion_unlocks": 0}
+Actual decode batch sizes: {"mean": 161.07815631262525, "p50": 173.0, "p95": 190.0, "maximum": 265, "steps": 6986}
+Prefill attention dispatch: {"flash": 44492, "int8": 0}
+Prefill batches: {"fresh": 896, "cached": 693}
+Actual KV dtype: torch.bfloat16
+KV tensor bytes: 20581449728
+Scale tensor bytes: 0
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: auto | blocks: 701 | requests: 2048 | seed: 0
+Input: 1150273 tokens | Output: 1128906 tokens | elapsed: 226.678 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                          102081.99  102963.68  202223.59  210774.88 ms/request
+TPOT                              35.14      35.14      37.64      52.49 ms/request/token
+ITL                               34.78      27.29      57.38      69.25 ms/token
+End-to-end latency            121218.09  121917.57  220055.46  225092.84 ms/request
+Requests/s: 9.03
+Input tokens/s: 5074.48
+Output tokens/s: 4980.22
+Total tokens/s: 10054.70
+Prefill model-run tokens/s: 36430.31 (1758555 tokens / 48.272 s)
+Decode model-run tokens/s: 6410.59 (1125292 tokens / 175.536 s)
+Peak PyTorch allocated: 20.75 GiB
+Peak PyTorch reserved: 21.05 GiB

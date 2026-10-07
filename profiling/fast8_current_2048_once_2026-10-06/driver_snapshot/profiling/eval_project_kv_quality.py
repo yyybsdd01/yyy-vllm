@@ -1,0 +1,101 @@
+"""Matched WikiText-2 PPL, preserving the measured implementation's routing."""
+
+import argparse
+from array import array
+import hashlib
+import json
+import math
+from pathlib import Path
+from time import perf_counter
+
+import torch
+import torch.distributed as dist
+from transformers import AutoConfig, AutoTokenizer
+import nanovllm
+import nanovllm.layers.attention as attention_module
+from nanovllm.models.qwen3 import Qwen3ForCausalLM
+from nanovllm.utils.context import reset_context
+from nanovllm.utils.loader import load_model
+import kv_cache_perplexity as protocol
+
+
+@torch.inference_mode()
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--model", required=True)
+    parser.add_argument("--text", required=True, type=Path)
+    parser.add_argument("--mode", required=True, choices=("auto", "int8_half"))
+    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--max-tokens", type=int, default=298938)
+    parser.add_argument("--quantize-first", action="store_true")
+    args = parser.parse_args()
+    config = AutoConfig.from_pretrained(args.model)
+    tokenizer = AutoTokenizer.from_pretrained(args.model)
+    tokenizer.model_max_length = 1000000
+    ids = tokenizer.encode(args.text.read_text(), add_special_tokens=False)[:args.max_tokens + 1]
+    print(f"QUALITY START {args.mode} targets={len(ids)-1} package={nanovllm.__file__}", flush=True)
+    dist.init_process_group("nccl", init_method="tcp://127.0.0.1:29571", rank=0, world_size=1)
+    torch.cuda.set_device(0)
+    default_dtype = torch.get_default_dtype()
+    torch.set_default_dtype(config.dtype)
+    torch.set_default_device("cuda")
+    try:
+        model = Qwen3ForCausalLM(config)
+        load_model(model, args.model)
+    finally:
+        torch.set_default_device("cpu")
+        torch.set_default_dtype(default_dtype)
+    model.eval()
+    dim = getattr(config, "head_dim", config.hidden_size // config.num_attention_heads)
+    cache, scales, scratch = protocol.bind_cache(model, args.mode, config.num_hidden_layers,
+                                                256, 16, config.num_key_value_heads, dim)
+    dispatch = {"flash": 0, "int8": 0}
+    original_flash = attention_module.flash_attn_varlen_func
+    original_int8 = attention_module.int8_paged_attention
+    def counted_flash(*a, **kw):
+        dispatch["flash"] += 1
+        return original_flash(*a, **kw)
+    def counted_int8(*a, **kw):
+        dispatch["int8"] += 1
+        return original_int8(*a, **kw)
+    attention_module.flash_attn_varlen_func = counted_flash
+    attention_module.int8_paged_attention = counted_int8
+    original_context = protocol.set_context
+    chunks = fresh_chunks = 0
+    def selected_context(is_prefill, **kwargs):
+        nonlocal chunks, fresh_chunks
+        if kwargs["block_tables"] is None:
+            fresh_chunks += 1
+            if args.mode == "int8_half" and args.quantize_first:
+                kwargs["block_tables"] = torch.arange(math.ceil(kwargs["max_seqlen_k"] / 256), device="cuda", dtype=torch.int32)[None, :]
+        original_context(is_prefill, **kwargs)
+        chunks += 1
+        if chunks % 128 == 0:
+            print(f"QUALITY PROGRESS {args.mode} chunks={chunks}", flush=True)
+    protocol.set_context = selected_context
+    started = perf_counter()
+    try:
+        result = protocol.evaluate(model, ids, args.mode, 4096, 256, 256)
+    finally:
+        reset_context()
+        dist.destroy_process_group()
+    layers = config.num_hidden_layers
+    assert sum(dispatch.values()) == chunks * layers
+    if args.mode == "auto":
+        assert dispatch["int8"] == 0
+    else:
+        assert dispatch["flash"] == (0 if args.quantize_first else fresh_chunks * layers)
+    result.update(package=nanovllm.__file__, dispatch=dispatch, chunks=chunks, fresh_chunks=fresh_chunks,
+                  model_dtype=str(next(model.parameters()).dtype), kv_dtype=str(cache.dtype),
+                  first_chunk_route="quantized_int8" if args.quantize_first and args.mode == "int8_half" else "flash_original_bf16",
+                  window_size=4096, chunk_size=256, block_size=256,
+                  text=str(args.text), text_sha256=hashlib.sha256(args.text.read_bytes()).hexdigest(),
+                  token_ids_sha256=hashlib.sha256(array("I", ids).tobytes()).hexdigest(),
+                  model=args.model, model_config_sha256=hashlib.sha256((Path(args.model) / "config.json").read_bytes()).hexdigest(),
+                  evaluation_wall_s=perf_counter() - started)
+    args.output.write_text(json.dumps(result, indent=2) + "\n")
+    print(f"QUALITY COMPLETE {args.mode} PPL={result['ppl']:.6f} dispatch={dispatch}", flush=True)
+
+
+if __name__ == "__main__":
+    main()

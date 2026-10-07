@@ -1,0 +1,34 @@
+{
+  "changes_vs_original_percent": {
+    "preemptions": -36.452513966480446,
+    "output_tokens_per_s": 0.8659967705108684,
+    "elapsed_s": -0.8580388682280837,
+    "TTFT_p50_pct": 71.27084345697676,
+    "TPOT_p99_pct": -21.763417305585975,
+    "no_progress_pct": -63.934426229508205
+  },
+  "offload_medians": {
+    "original": {
+      "cpu_pool_bytes": 4273733632,
+      "fallback_preemptions": 8,
+      "peak_restoring_sequences": 5,
+      "transport": {
+        "d2h_blocks": 2038,
+        "h2d_blocks": 1574,
+        "d2h_bytes": 31787843584,
+        "h2d_bytes": 24550572032
+      }
+    },
+    "reserved": {
+      "cpu_pool_bytes": 3837001728,
+      "fallback_preemptions": 0,
+      "peak_restoring_sequences": 5,
+      "transport": {
+        "d2h_blocks": 1327,
+        "h2d_blocks": 1032,
+        "d2h_bytes": 20697972736,
+        "h2d_bytes": 16096690176
+      }
+    }
+  }
+}

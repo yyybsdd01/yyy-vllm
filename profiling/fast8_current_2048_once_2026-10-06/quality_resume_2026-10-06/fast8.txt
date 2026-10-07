@@ -1,0 +1,11 @@
+QUALITY START int8_half targets=298938 package=/home/xgd/yyy/nano-vllm/profiling/fast8_current_2048_once_2026-10-06/checkout/nanovllm/__init__.py
+QUALITY PROGRESS int8_half chunks=128
+QUALITY PROGRESS int8_half chunks=256
+QUALITY PROGRESS int8_half chunks=384
+QUALITY PROGRESS int8_half chunks=512
+QUALITY PROGRESS int8_half chunks=640
+QUALITY PROGRESS int8_half chunks=768
+QUALITY PROGRESS int8_half chunks=896
+QUALITY PROGRESS int8_half chunks=1024
+QUALITY PROGRESS int8_half chunks=1152
+QUALITY COMPLETE int8_half PPL=18.934116 dispatch={'flash': 0, 'int8': 32704}

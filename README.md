@@ -81,6 +81,46 @@ llm = LLM("/YOUR/MODEL/PATH", preemption_lock=True)
 python benchmark_inference_metrics.py --requests 1024 --preemption-lock
 ```
 
+Set `kv_cpu_offload=True` to preserve preempted KV instead of recomputing it.
+Restore admission precedes waiting-prefill admission; normal prefill still
+precedes decode. Both restore and waiting-prefill admission leave enough free
+blocks for the next decode batch's current block-growth requirements. This
+reservation is recomputed each round; requests can still need additional blocks
+while an asynchronous restore is in flight.
+Requests in `OFFLOADING`, `WAITING_RESTORE`, or `RESTORING`
+cannot decode. CUDA events promote restored requests to `RUNNING` and prevent
+prefill, decode, or restore from overwriting a block before its pending KV read.
+Shared prefix blocks stay on GPU until their GPU reference count reaches zero;
+pending restore dependencies are tracked separately and share CPU snapshots.
+
+```python
+llm = LLM("/YOUR/MODEL/PATH", kv_cache_dtype="int8_half",
+          kv_cpu_offload=True, offload_cpu_gb=4.0, offload_max_inflight=8)
+```
+
+```bash
+python benchmark_inference_metrics.py --requests 1024 --kv-cache-dtype int8_half --kv-cpu-offload
+python -m unittest discover -s tests -p 'test_kv_offload*.py' -v
+```
+
+Offload defaults to disabled and currently supports one GPU. It is mutually
+exclusive with `preemption_lock`, which changes phase priority. BF16 and all
+INT8 cache formats include every layer's K/V and their scales. The pinned CPU
+pool is bounded by `offload_cpu_gb`; exhaustion falls back to recomputation and
+is reported in offload statistics. Each copy direction reserves one GPU block
+for staging, accounted for before KV cache allocation. A positive
+`num_kvcache_blocks` caps cache capacity; the benchmark exposes it as `--kv-blocks`.
+The existing attention kernel and its default warp count are unchanged.
+
+Implementation tests and limitations are recorded in
+[the offload validation report](profiling/async_kv_offload_2026-10-06/validation.md).
+The original admission comparison uses the archived fast 8-warp kernel in an
+isolated copy: throughput improves by 4.78%, while preemption count and TPOT
+P95/P99 increase. Whole-model outputs are not token-for-token identical.
+The matched three-trial comparison of original admission, decode-block
+reservation, and offload disabled is recorded in
+[the decode reservation report](profiling/kv_offload_decode_reserve_2026-10-06/report.md).
+
 **Test Configuration:**
 - Hardware: RTX 4070 Laptop (8GB)
 - Model: Qwen3-0.6B

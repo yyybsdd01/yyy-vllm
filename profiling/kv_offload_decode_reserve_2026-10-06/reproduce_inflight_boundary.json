@@ -1,0 +1,7 @@
+{
+  "scope": "CPU state-machine reproduction; no performance estimate",
+  "reserve_at_restore_submission": 0,
+  "reserve_after_intervening_decode": 1,
+  "restored_B_generated_new_tokens": false,
+  "B_preempted_again_before_model_step": true
+}

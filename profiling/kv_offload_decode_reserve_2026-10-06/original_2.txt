@@ -1,0 +1,30 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/kv_offload_decode_reserve_2026-10-06/variants/original/nanovllm/__init__.py
+Generated workload SHA256: 7f119f75ff2f87ca4443970941ae427ed766950770e46797a02d93b90933d0ae
+Output token SHA256: 3567ecd2697306d956205037858d9d718ea0398cdcfd07fecd6a6a2c96b2d9b6
+Preemption lock enabled: False
+Preemptions: 716
+Restore progress statistics: {"restore_events": 708, "preemptions_without_token_progress": 183, "same_schedule_preemptions": 182}
+Per-request preemptions: {"preempted_requests": 282, "repeatedly_preempted_requests": 163, "maximum_per_request": 14, "histogram": {"0": 742, "1": 119, "2": 65, "3": 41, "4": 23, "5": 9, "6": 12, "7": 4, "8": 1, "11": 3, "12": 2, "14": 3}}
+Lock statistics: {"decode_batches": 0, "prefill_fallback_batches": 0, "completion_unlocks": 0}
+Actual decode batch sizes: {"mean": 243.023352793995, "p50": 302.0, "p95": 415.1500000000001, "maximum": 489, "steps": 2398}
+Prefill attention dispatch: {"flash": 0, "int8": 8428}
+Prefill batches: {"fresh": 301, "cached": 0}
+Actual KV dtype: torch.int8
+KV tensor bytes: 19348324352
+Scale tensor bytes: 1209270272
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: int8_half | blocks: 1318 | requests: 1024 | seed: 0
+Input: 580663 tokens | Output: 583802 tokens | elapsed: 85.777 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                           25084.98   17780.16   64388.91   70162.11 ms/request
+TPOT                              50.97      47.38      81.86     182.60 ms/request/token
+ITL                               47.16      37.79      70.11      95.21 ms/token
+End-to-end latency             51926.71   51888.27   82820.09   84916.30 ms/request
+Requests/s: 11.94
+Input tokens/s: 6769.43
+Output tokens/s: 6806.03
+Total tokens/s: 13575.46
+Prefill model-run tokens/s: 42047.91 (586886 tokens / 13.958 s)
+Decode model-run tokens/s: 8506.75 (582770 tokens / 68.507 s)
+Peak PyTorch allocated: 20.76 GiB
+Peak PyTorch reserved: 21.06 GiB
+KV offload statistics: {"fallback_preemptions": 8, "shared_snapshot_references": 0, "offloaded_sequences": 708, "restored_sequences": 708, "gpu_reused_blocks": 464, "peak_cpu_buffers": 274, "peak_restoring_sequences": 5, "idle_copy_waits": 0, "idle_copy_wait_ms": 0, "cpu_budget_bytes": 4289331200, "cpu_pool_bytes": 4273733632, "active_handles": 0, "restoring": 0, "transport": {"write_lock_waits": 398, "d2h_blocks": 2038, "h2d_blocks": 1574, "d2h_bytes": 31787843584, "h2d_bytes": 24550572032, "d2h_enqueue_ms": 284.52036064118147, "h2d_enqueue_ms": 209.9266336299479, "d2h_completed_events": 2038, "h2d_completed_events": 1574, "d2h_stream_ms": 3164.4983670711517, "h2d_stream_ms": 2617.66992020607, "d2h_first_phase_ms": 615.7125428318977, "h2d_first_phase_ms": 2108.0988169908524, "d2h_second_phase_ms": 2548.7858229875565, "h2d_second_phase_ms": 509.57110400497913}}

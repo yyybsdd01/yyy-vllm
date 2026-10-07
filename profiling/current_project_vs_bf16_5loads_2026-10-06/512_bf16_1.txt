@@ -1,0 +1,30 @@
+Package: /home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/nanovllm/__init__.py
+Workload SHA256: 1cac170ef2f4bde66311b40470e65bcb2cbe21af7de8f465ad790f27d04b4be4
+BENCH PROGRESS tokens=153785/284413 finished=212/512
+Output token SHA256: 778d68d0bd3fc0d3ad87607e4855b182b2886c946a39e1c5c9eb9a40fd908642
+Preemption lock enabled: False
+Preemptions: 322
+Restore progress statistics: {"restore_events": 0, "preemptions_without_token_progress": 0, "same_schedule_preemptions": 0}
+Per-request preemptions: {"preempted_requests": 152, "repeatedly_preempted_requests": 66, "maximum_per_request": 10, "histogram": {"0": 360, "1": 86, "2": 26, "3": 14, "4": 11, "5": 3, "6": 6, "7": 3, "8": 2, "10": 1}}
+Lock statistics: {"decode_batches": 0, "prefill_fallback_batches": 0, "completion_unlocks": 0}
+Actual decode batch sizes: {"mean": 130.74181650530198, "p50": 161.0, "p95": 228.0, "maximum": 265, "steps": 2169}
+Prefill attention dispatch: {"flash": 8484, "int8": 0}
+Prefill batches: {"fresh": 169, "cached": 134}
+Actual KV dtype: torch.bfloat16
+KV tensor bytes: 20581449728
+Scale tensor bytes: 0
+GPU: NVIDIA GeForce RTX 3090 Ti | graph: True | KV: auto | blocks: 701 | requests: 512 | seed: 0
+Input: 291939 tokens | Output: 284413 tokens | elapsed: 57.348 s | length check: PASS
+Metric                             Mean        P50        P95        P99 Unit
+TTFT                           15137.07    2186.90   39684.85   43660.03 ms/request
+TPOT                              35.07      34.87      45.98      73.58 ms/request/token
+ITL                               33.49      27.29      55.36      68.59 ms/token
+End-to-end latency             33708.70   33957.63   55532.24   56471.82 ms/request
+Requests/s: 8.93
+Input tokens/s: 5090.68
+Output tokens/s: 4959.45
+Total tokens/s: 10050.13
+Prefill model-run tokens/s: 39618.38 (426682 tokens / 10.770 s)
+Decode model-run tokens/s: 6184.28 (283579 tokens / 45.855 s)
+Peak PyTorch allocated: 20.75 GiB
+Peak PyTorch reserved: 21.05 GiB

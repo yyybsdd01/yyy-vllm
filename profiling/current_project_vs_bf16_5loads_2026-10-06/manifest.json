@@ -1,0 +1,635 @@
+{
+  "started_utc": "2026-10-06T11:25:11.763476+00:00",
+  "runs": 3,
+  "request_counts": [
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "gpu": "0",
+  "model": "/home/xgd/huggingface/Qwen3-0.6B",
+  "python": "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+  "kernel": "current",
+  "root_source_hashes": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "28eae344978b9d0a50927652621de23d75d5890cbb96afecd54bd161c32f3da0",
+    "nanovllm/engine/block_manager.py": "40f9552d8695b7e1324294bde58cbc1d48de15500301156c6bf6395b61bc1bc8",
+    "nanovllm/engine/kv_offload.py": "1a83d9278abf9d0be271ede0a4ec1c0c6a2a0ea30b581e91f393aad86071e3e4",
+    "nanovllm/engine/llm_engine.py": "ee2c5946d8172b06764ee9cc65e154fe6ca6de1ec19ba6d0963fef65e9f1e8cb",
+    "nanovllm/engine/model_runner.py": "59d8e07233fd053f2c31ff54cc3a573a318e624f64a20cc7dfef6874c80a8e4e",
+    "nanovllm/engine/scheduler.py": "d986ae0cbfe6888caac0b1735514a76dc4d7c42a0e78589cf3e765268fde9bb9",
+    "nanovllm/engine/sequence.py": "777d5ba325818457c92042389f7fba690e9fe8e3f7a9ea992b1b8d858717cef0",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "a8d3e7364081606e29f05d2cb2876ebe9e87e7e504688c901b4d114cbbcbf007"
+  },
+  "inference_source_hashes": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "28eae344978b9d0a50927652621de23d75d5890cbb96afecd54bd161c32f3da0",
+    "nanovllm/engine/block_manager.py": "40f9552d8695b7e1324294bde58cbc1d48de15500301156c6bf6395b61bc1bc8",
+    "nanovllm/engine/kv_offload.py": "1a83d9278abf9d0be271ede0a4ec1c0c6a2a0ea30b581e91f393aad86071e3e4",
+    "nanovllm/engine/llm_engine.py": "ee2c5946d8172b06764ee9cc65e154fe6ca6de1ec19ba6d0963fef65e9f1e8cb",
+    "nanovllm/engine/model_runner.py": "59d8e07233fd053f2c31ff54cc3a573a318e624f64a20cc7dfef6874c80a8e4e",
+    "nanovllm/engine/scheduler.py": "d986ae0cbfe6888caac0b1735514a76dc4d7c42a0e78589cf3e765268fde9bb9",
+    "nanovllm/engine/sequence.py": "777d5ba325818457c92042389f7fba690e9fe8e3f7a9ea992b1b8d858717cef0",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "a8d3e7364081606e29f05d2cb2876ebe9e87e7e504688c901b4d114cbbcbf007"
+  },
+  "measured_source_hashes": {
+    "nanovllm/__init__.py": "42996c92a5c18d1e333eb57c7d670b2eac53b132df81d53cc6286a89125c9d77",
+    "nanovllm/config.py": "28eae344978b9d0a50927652621de23d75d5890cbb96afecd54bd161c32f3da0",
+    "nanovllm/engine/block_manager.py": "40f9552d8695b7e1324294bde58cbc1d48de15500301156c6bf6395b61bc1bc8",
+    "nanovllm/engine/kv_offload.py": "1a83d9278abf9d0be271ede0a4ec1c0c6a2a0ea30b581e91f393aad86071e3e4",
+    "nanovllm/engine/llm_engine.py": "ee2c5946d8172b06764ee9cc65e154fe6ca6de1ec19ba6d0963fef65e9f1e8cb",
+    "nanovllm/engine/model_runner.py": "59d8e07233fd053f2c31ff54cc3a573a318e624f64a20cc7dfef6874c80a8e4e",
+    "nanovllm/engine/scheduler.py": "d986ae0cbfe6888caac0b1735514a76dc4d7c42a0e78589cf3e765268fde9bb9",
+    "nanovllm/engine/sequence.py": "777d5ba325818457c92042389f7fba690e9fe8e3f7a9ea992b1b8d858717cef0",
+    "nanovllm/layers/activation.py": "a6add2df4c4da78cd776e0ebf01daf1c04237e4a7113171757a75584ff752b22",
+    "nanovllm/layers/attention.py": "e6793ef58534ca9d7d7cb1115d8db652f25eb09b72691f2498216919696d9e07",
+    "nanovllm/layers/embed_head.py": "459f242b0b8cf47faf5b965bec63eec07ab0d14c3d5747963132ae41c599124b",
+    "nanovllm/layers/head_major_scale_attention.py": "11bbd0e74017b6c3892f0f0f148dec3df9b43f563187a31e8ef48aea57ee6e00",
+    "nanovllm/layers/layernorm.py": "59396eb83a3c0f524187dd2fdd75b5f6539fad5984d9d8b0817f74979a77c2ab",
+    "nanovllm/layers/linear.py": "7e63cf673748f3abbd5ffb39c37358eea0ac00f1f420559541afe7c8d4f5b445",
+    "nanovllm/layers/quantized_attention.py": "310be258172cfcadc8ca728f3c0ea0de0427c7569ce59f35e308bbd20e3dff2a",
+    "nanovllm/layers/rotary_embedding.py": "ef527a25b0dd8786c6c25cdb0faa5c74f5914208c74aad4852f69c59cd081f03",
+    "nanovllm/layers/sampler.py": "c1576a353df9abd03d7285294b2541940bde049aeb4681059f7c610db9391701",
+    "nanovllm/llm.py": "ffe74fe7f64ba5169471a17596757b8d8f309e75f4db7040ac41b84db2e38179",
+    "nanovllm/models/qwen3.py": "9461662e380038b7bcf8a311fb4dc6ea34c9ca25f8dddcbff276186d57da1fb6",
+    "nanovllm/sampling_params.py": "1b0c3930e18fa733d4989104d13a6a84d58c85d0103dba763e86b43f11305d99",
+    "nanovllm/utils/context.py": "2f777280510bc46b2d32a60cc3306a1d31f6538fcb68e58cce4c9f54343217ea",
+    "nanovllm/utils/loader.py": "9ee89efe8ddf5cc71e95af90f41cf9c25b2df2fa8fe0bda4b56588e29f7117ef",
+    "benchmark_inference_metrics.py": "020f23ef8923f949b01597e959bdb57c98056f2d32e08dad55fcc1a2e84abfd2"
+  },
+  "checkout": "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout",
+  "workloads": {
+    "256": {
+      "file": "workload_256.json",
+      "sha256": "6a9f3f574a64791d50bda0e87d5574dee923511e16f1be221bb6652e7b1230d5",
+      "requests": 256,
+      "input_tokens": 142827,
+      "output_tokens": 133966
+    },
+    "512": {
+      "file": "workload_512.json",
+      "sha256": "1cac170ef2f4bde66311b40470e65bcb2cbe21af7de8f465ad790f27d04b4be4",
+      "requests": 512,
+      "input_tokens": 291939,
+      "output_tokens": 284413
+    },
+    "1024": {
+      "file": "workload_1024.json",
+      "sha256": "1f115a1999c351bf63693f15708ff228d827b7709d0c970c4d4b8431d4854d89",
+      "requests": 1024,
+      "input_tokens": 580663,
+      "output_tokens": 583802
+    },
+    "2048": {
+      "file": "workload_2048.json",
+      "sha256": "3d3ecee956c854e23ca7fabaaac0583bc1d64b97c25058e850362dacfefa54ad",
+      "requests": 2048,
+      "input_tokens": 1150273,
+      "output_tokens": 1128906
+    },
+    "4096": {
+      "file": "workload_4096.json",
+      "sha256": "63fcbb78fe519a1a7974b704526f76ddcf843b5d2a677a298930ae68b4d5ded4",
+      "requests": 4096,
+      "input_tokens": 2303424,
+      "output_tokens": 2307852
+    }
+  },
+  "model_config_sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+  "weight_files": [
+    {
+      "name": "model.safetensors",
+      "size": 1503300328,
+      "mtime_ns": 1790061211487904598
+    }
+  ],
+  "config": {
+    "max_num_seqs": 512,
+    "max_num_batched_tokens": 16384,
+    "max_model_len": 4096,
+    "block_size": 256,
+    "gpu_memory_utilization": 0.9,
+    "preemption_lock": false,
+    "offload_cpu_gb": 4,
+    "offload_max_inflight": 8,
+    "cuda_graph": true,
+    "seed": 0,
+    "min_input": 100,
+    "max_input": 1024,
+    "min_output": 100,
+    "max_output": 1024
+  },
+  "variants": {
+    "bf16": {
+      "mode": "auto",
+      "offload": false
+    },
+    "project": {
+      "mode": "int8_half",
+      "offload": true
+    }
+  },
+  "commands": [
+    {
+      "requests": 256,
+      "trial": 1,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "256",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 256,
+      "trial": 1,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "256",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 256,
+      "trial": 2,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "256",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 256,
+      "trial": 2,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "256",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 256,
+      "trial": 3,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "256",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 256,
+      "trial": 3,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "256",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 512,
+      "trial": 1,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "512",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 512,
+      "trial": 1,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "512",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 512,
+      "trial": 2,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "512",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 512,
+      "trial": 2,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "512",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 512,
+      "trial": 3,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "512",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 512,
+      "trial": 3,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "512",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 1024,
+      "trial": 1,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "1024",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 1024,
+      "trial": 1,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "1024",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 1024,
+      "trial": 2,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "1024",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 1024,
+      "trial": 2,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "1024",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 1024,
+      "trial": 3,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "1024",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 1024,
+      "trial": 3,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "1024",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 2048,
+      "trial": 1,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "2048",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 2048,
+      "trial": 1,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "2048",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 2048,
+      "trial": 2,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "2048",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 2048,
+      "trial": 2,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "2048",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 2048,
+      "trial": 3,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "2048",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 2048,
+      "trial": 3,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "2048",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 4096,
+      "trial": 1,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "4096",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 4096,
+      "trial": 1,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "4096",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 4096,
+      "trial": 2,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "4096",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    },
+    {
+      "requests": 4096,
+      "trial": 2,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "4096",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 4096,
+      "trial": 3,
+      "variant": "bf16",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "4096",
+        "--kv-cache-dtype",
+        "auto"
+      ]
+    },
+    {
+      "requests": 4096,
+      "trial": 3,
+      "variant": "project",
+      "command": [
+        "/home/xgd/anaconda3/envs/nanovllm/bin/python",
+        "/home/xgd/yyy/nano-vllm/profiling/current_project_vs_bf16_5loads_2026-10-06/checkout/benchmark_inference_metrics.py",
+        "--model",
+        "/home/xgd/huggingface/Qwen3-0.6B",
+        "--requests",
+        "4096",
+        "--kv-cache-dtype",
+        "int8_half",
+        "--kv-cpu-offload"
+      ]
+    }
+  ],
+  "packages": {
+    "torch": "2.5.1+cu121",
+    "triton": "3.1.0",
+    "flash-attn": "2.7.4.post1",
+    "transformers": "4.57.3"
+  }
+}

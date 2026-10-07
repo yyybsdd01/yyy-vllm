@@ -1,0 +1,148 @@
+--- before/nanovllm/engine/scheduler.py
++++ after/nanovllm/engine/scheduler.py
+@@ -1,4 +1,5 @@
+ from collections import deque
++from itertools import islice
+ 
+ from nanovllm.config import Config
+ from nanovllm.engine.sequence import Sequence, SequenceStatus
+@@ -30,6 +31,13 @@
+         """将新序列加入等待队列。"""
+         self.waiting.append(seq)
+ 
++    def _decode_block_reserve(self) -> int:
++        """卸载模式下，给下一批 decode 当前需要新增的 KV 块留出空间。"""
++        if self.offload is None:
++            return 0
++        return sum(max(0, seq.num_blocks - len(seq.block_table))
++                   for seq in islice(self.running, self.max_num_seqs))
++
+     def schedule(self) -> tuple[list[Sequence], bool]:
+         """默认优先 prefill；启用抢占锁后，锁住期间优先推进运行中的 decode。"""
+         scheduled_seqs = []
+@@ -39,7 +47,8 @@
+             # Restore admission precedes normal prefill, without changing phase priority.
+             while self.offload_queue and len(self.offload.restoring) < self.offload.max_inflight:
+                 seq = self.offload_queue[0]
+-                if not self.offload.offload_ready(seq) or not self.offload.can_restore(seq):
++                if (not self.offload.offload_ready(seq)
++                        or not self.offload.can_restore(seq, self._decode_block_reserve())):
+                     break
+                 self.offload_queue.popleft()
+                 self.offload.restore(seq)
+@@ -55,7 +64,7 @@
+             if remaining == 0:
+                 break
+             if not seq.block_table:
+-                num_cached_blocks = self.block_manager.can_allocate(seq)
++                num_cached_blocks = self.block_manager.can_allocate(seq, self._decode_block_reserve())
+                 if num_cached_blocks == -1:
+                     break
+                 num_tokens = seq.num_tokens - num_cached_blocks * self.block_size
+--- before/nanovllm/engine/block_manager.py
++++ after/nanovllm/engine/block_manager.py
+@@ -71,7 +71,7 @@
+         self.used_block_ids.remove(block_id)
+         self.free_block_ids.append(block_id)
+ 
+-    def can_allocate(self, seq: Sequence) -> int:
++    def can_allocate(self, seq: Sequence, reserve_blocks: int = 0) -> int:
+         """检查序列可复用的完整前缀块和所需空闲块；空间不足时返回 -1。"""
+         h = -1
+         num_cached_blocks = 0
+@@ -85,7 +85,7 @@
+             num_cached_blocks += 1
+             if block_id in self.used_block_ids:
+                 num_new_blocks -= 1
+-        if len(self.free_block_ids) < num_new_blocks:
++        if len(self.free_block_ids) < num_new_blocks + reserve_blocks:
+             return -1
+         return num_cached_blocks
+ 
+--- before/nanovllm/engine/kv_offload.py
++++ after/nanovllm/engine/kv_offload.py
+@@ -260,10 +260,10 @@
+         seq.status = SequenceStatus.WAITING_RESTORE if ready else SequenceStatus.OFFLOADING
+         return ready
+ 
+-    def can_restore(self, seq):
++    def can_restore(self, seq, reserve_blocks=0):
+         handle = self.handles[seq.seq_id]
+         resident_used = sum(self._gpu_valid(s) and self.bm.blocks[s.gpu_id].ref_count > 0 for s in handle.blocks)
+-        return len(self.bm.free_block_ids) >= seq.num_blocks - resident_used
++        return len(self.bm.free_block_ids) >= seq.num_blocks - resident_used + reserve_blocks
+ 
+     def restore(self, seq):
+         handle = self.handles[seq.seq_id]
+--- before/tests/test_kv_offload.py
++++ after/tests/test_kv_offload.py
+@@ -187,6 +187,69 @@
+         self.assertEqual(batch, [b])
+         self.assertEqual(a.status, SequenceStatus.RESTORING)
+         self.assertNotIn(a, scheduler.running)
++        self.compute(scheduler, transport, batch, phase)
++
++    def test_restore_leaves_blocks_for_running_decode(self):
++        scheduler, transport = self.scheduler(blocks=4)
++        a = self.sequence([1] * 256)
++        c = self.sequence([2])
++        b = self.sequence([3] * 300)
++        self.prefill(scheduler, transport, [a, c, b])
++        self.preempt(scheduler, b)
++        transport.advance()
++        # B fits alone in the two free blocks; A needs one of them to decode.
++        self.assertTrue(scheduler.offload.can_restore(b))
++        batch, phase = scheduler.schedule()
++        self.assertFalse(phase)
++        self.assertEqual(batch, [a, c])
++        self.assertEqual(b.status, SequenceStatus.WAITING_RESTORE)
++        self.assertEqual(scheduler.offload.stats["restored_sequences"], 0)
++        self.assertEqual(scheduler.offload.stats["offloaded_sequences"], 1)
++        self.compute(scheduler, transport, batch, phase)
++        # Once A finishes and releases its pages, B can resume normally.
++        a.max_tokens = a.num_completion_tokens + 1
++        batch, phase = scheduler.schedule()
++        self.compute(scheduler, transport, batch, phase)
++        self.assertTrue(a.is_finished)
++        for _ in range(3):
++            transport.advance()
++            batch, phase = scheduler.schedule()
++            self.assertFalse(phase)
++            self.compute(scheduler, transport, batch, phase)
++            if b in batch:
++                break
++        self.assertIn(b, batch)
++
++    def test_waiting_prefill_cannot_consume_decode_reserve(self):
++        scheduler, transport = self.scheduler(blocks=3)
++        a, c = self.sequence([1] * 256), self.sequence([2])
++        self.prefill(scheduler, transport, [a, c])
++        waiting = self.sequence([3])
++        scheduler.add(waiting)
++        batch, phase = scheduler.schedule()
++        self.assertFalse(phase)
++        self.assertEqual(batch, [a, c])
++        self.assertEqual(waiting.block_table, [])
++        self.assertEqual(list(scheduler.waiting), [waiting])
++        self.assertEqual(scheduler.offload.stats["offloaded_sequences"], 0)
++        self.compute(scheduler, transport, batch, phase)
++
++    def test_prefill_reserve_counts_only_new_shared_prefix_blocks(self):
++        scheduler, transport = self.scheduler(blocks=4)
++        a, c = self.sequence([1] * 256), self.sequence([2])
++        self.prefill(scheduler, transport, [a, c])
++        waiting = self.sequence([1] * 256 + [3])
++        scheduler.add(waiting)
++        batch, phase = scheduler.schedule()
++        self.assertTrue(phase)
++        self.assertEqual(batch, [waiting])
++        self.assertEqual(waiting.block_table[0], a.block_table[0])
++        self.assertEqual(len(scheduler.block_manager.free_block_ids), 1)
++        self.compute(scheduler, transport, batch, phase)
++        batch, phase = scheduler.schedule()
++        self.assertFalse(phase)
++        self.assertIn(a, batch)
++        self.assertEqual(scheduler.offload.stats["offloaded_sequences"], 0)
+         self.compute(scheduler, transport, batch, phase)
+ 
+     def test_cpu_budget_falls_back_without_leaking_snapshots(self):

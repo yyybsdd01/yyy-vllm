@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "source_hashes": "PASS",
+  "same_workload": "PASS",
+  "unchanged_root_attention": "PASS",
+  "trials": [
+    {
+      "log": "offload0_1.txt",
+      "status": "PASS",
+      "histogram_sum": 657
+    },
+    {
+      "log": "offload1_1.txt",
+      "status": "PASS",
+      "histogram_sum": 728
+    },
+    {
+      "log": "offload1_2.txt",
+      "status": "PASS",
+      "histogram_sum": 716
+    },
+    {
+      "log": "offload0_2.txt",
+      "status": "PASS",
+      "histogram_sum": 657
+    },
+    {
+      "log": "offload0_3.txt",
+      "status": "PASS",
+      "histogram_sum": 657
+    },
+    {
+      "log": "offload1_3.txt",
+      "status": "PASS",
+      "histogram_sum": 758
+    }
+  ]
+}

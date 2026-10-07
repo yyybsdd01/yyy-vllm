@@ -1,0 +1,310 @@
+{
+  "trials": [
+    {
+      "gpu": "NVIDIA GeForce RTX 3090 Ti",
+      "graph": true,
+      "mode": "int8_half",
+      "blocks": 1318,
+      "requests": 2048,
+      "seed": 0,
+      "input_tokens": 1150273,
+      "output_tokens": 1128906,
+      "elapsed_s": 161.993,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 65368.79,
+          "p50": 67796.21,
+          "p95": 137060.65,
+          "p99": 144162.65
+        },
+        "TPOT": {
+          "mean": 47.61,
+          "p50": 47.12,
+          "p95": 60.4,
+          "p99": 86.76
+        },
+        "ITL": {
+          "mean": 46.34,
+          "p50": 37.73,
+          "p95": 71.55,
+          "p99": 94.32
+        },
+        "End-to-end latency": {
+          "mean": 90866.09,
+          "p50": 91490.38,
+          "p95": 157761.22,
+          "p99": 160831.55
+        }
+      },
+      "requests_per_s": 12.64,
+      "input_tokens_per_s": 7100.74,
+      "output_tokens_per_s": 6968.84,
+      "total_tokens_per_s": 14069.58,
+      "peak_allocated_gib": 20.76,
+      "peak_reserved_gib": 21.06,
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 39189.7,
+          "tokens": 1150273,
+          "seconds": 29.351
+        },
+        "decode": {
+          "tokens_per_s": 8870.0,
+          "tokens": 1126858,
+          "seconds": 127.041
+        }
+      },
+      "variant": "fast8",
+      "trial": 1,
+      "raw_log": "2048_fast8_1.txt",
+      "gpu_before": "0, GPU-28871cd0-921c-81ff-fbeb-7a3013196ba8, NVIDIA GeForce RTX 3090 Ti, 175, 24070, 0, 51, 210\n1, GPU-a8d5de07-33e9-6ac7-522d-bc6c6a921781, NVIDIA GeForce RTX 3090 Ti, 10, 24237, 0, 54, 210\n",
+      "process_wall_s": 184.7620519180782,
+      "preemptions": 900,
+      "prefill_batches": {
+        "fresh": 778,
+        "cached": 0
+      },
+      "kv_tensor_bytes": 19348324352,
+      "scale_tensor_bytes": 1209270272,
+      "package": "/home/xgd/yyy/nano-vllm/profiling/fast8_current_2048_once_2026-10-06/checkout/nanovllm/__init__.py",
+      "actual_kv_dtype": "torch.int8",
+      "output_sha256": "c88b76108d46d2047244b4a77d861386f14096b04417013dbd1a5a3a9df5c2ae",
+      "workload_sha256": "3d3ecee956c854e23ca7fabaaac0583bc1d64b97c25058e850362dacfefa54ad",
+      "attention_dispatch": {
+        "flash": 0,
+        "int8": 21784
+      },
+      "request_preemption_stats": {
+        "preempted_requests": 527,
+        "repeatedly_preempted_requests": 220,
+        "maximum_per_request": 8,
+        "histogram": {
+          "0": 1521,
+          "1": 307,
+          "2": 132,
+          "3": 54,
+          "4": 17,
+          "5": 9,
+          "6": 4,
+          "7": 2,
+          "8": 2
+        }
+      },
+      "decode_batch_stats": {
+        "mean": 285.0640020237794,
+        "p50": 322.0,
+        "p95": 385.0,
+        "maximum": 489,
+        "steps": 3953
+      },
+      "restore_progress": {
+        "restore_events": 900,
+        "preemptions_without_token_progress": 124,
+        "same_schedule_preemptions": 124
+      },
+      "offload_stats": {
+        "fallback_preemptions": 0,
+        "shared_snapshot_references": 0,
+        "offloaded_sequences": 900,
+        "restored_sequences": 900,
+        "gpu_reused_blocks": 521,
+        "peak_cpu_buffers": 262,
+        "peak_restoring_sequences": 7,
+        "idle_copy_waits": 0,
+        "idle_copy_wait_ms": 0,
+        "cpu_budget_bytes": 4289331200,
+        "cpu_pool_bytes": 4086562816,
+        "active_handles": 0,
+        "restoring": 0,
+        "transport": {
+          "write_lock_waits": 506,
+          "d2h_blocks": 2415,
+          "h2d_blocks": 1894,
+          "d2h_bytes": 37668126720,
+          "h2d_bytes": 29541793792,
+          "d2h_enqueue_ms": 343.22794014588,
+          "h2d_enqueue_ms": 261.11447997391224,
+          "d2h_completed_events": 2415,
+          "h2d_completed_events": 1894,
+          "d2h_stream_ms": 3637.107965826988,
+          "h2d_stream_ms": 2962.5816383361816,
+          "d2h_first_phase_ms": 675.244576588273,
+          "h2d_first_phase_ms": 2438.686624646187,
+          "d2h_second_phase_ms": 2961.8633881807327,
+          "h2d_second_phase_ms": 523.8950085192919
+        }
+      }
+    }
+  ],
+  "reference_medians": {
+    "auto": {
+      "blocks": 701,
+      "elapsed_s": 226.678,
+      "requests_per_s": 9.03,
+      "input_tokens_per_s": 5074.48,
+      "output_tokens_per_s": 4980.22,
+      "total_tokens_per_s": 10054.7,
+      "peak_allocated_gib": 20.75,
+      "peak_reserved_gib": 21.05,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 102081.99,
+          "p50": 102963.68,
+          "p95": 202223.59,
+          "p99": 210774.88
+        },
+        "TPOT": {
+          "mean": 35.14,
+          "p50": 35.14,
+          "p95": 37.64,
+          "p99": 52.49
+        },
+        "ITL": {
+          "mean": 34.78,
+          "p50": 27.29,
+          "p95": 57.38,
+          "p99": 69.25
+        },
+        "End-to-end latency": {
+          "mean": 121218.09,
+          "p50": 121917.57,
+          "p95": 220055.46,
+          "p99": 225092.84
+        }
+      },
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 36430.31,
+          "tokens": 1758555,
+          "seconds": 48.272
+        },
+        "decode": {
+          "tokens_per_s": 6410.62,
+          "tokens": 1125292,
+          "seconds": 175.536
+        }
+      },
+      "preemptions": 1566,
+      "prefill_batches": {
+        "fresh": 896,
+        "cached": 693
+      },
+      "kv_tensor_bytes": 20581449728,
+      "scale_tensor_bytes": 0,
+      "runs": 3,
+      "request_preemption_stats": {
+        "preempted_requests": 923,
+        "repeatedly_preempted_requests": 360,
+        "maximum_per_request": 9
+      },
+      "decode_batch_stats": {
+        "mean": 161.07815631262525,
+        "p50": 173.0,
+        "p95": 190.0,
+        "maximum": 265,
+        "steps": 6986
+      },
+      "restore_progress": {
+        "restore_events": 0,
+        "preemptions_without_token_progress": 0,
+        "same_schedule_preemptions": 0
+      },
+      "offload_stats": {},
+      "output_tokens_per_s_min": 4976.56,
+      "output_tokens_per_s_max": 4982.71
+    },
+    "int8_half": {
+      "blocks": 1318,
+      "elapsed_s": 207.947,
+      "requests_per_s": 9.85,
+      "input_tokens_per_s": 5531.56,
+      "output_tokens_per_s": 5428.8,
+      "total_tokens_per_s": 10960.36,
+      "peak_allocated_gib": 20.76,
+      "peak_reserved_gib": 21.06,
+      "latency_ms": {
+        "TTFT": {
+          "mean": 83134.26,
+          "p50": 86490.78,
+          "p95": 175117.05,
+          "p99": 184270.85
+        },
+        "TPOT": {
+          "mean": 60.99,
+          "p50": 60.44,
+          "p95": 72.59,
+          "p99": 112.28
+        },
+        "ITL": {
+          "mean": 59.59,
+          "p50": 51.42,
+          "p95": 82.32,
+          "p99": 101.22
+        },
+        "End-to-end latency": {
+          "mean": 115920.58,
+          "p50": 116677.6,
+          "p95": 202655.48,
+          "p99": 206688.54
+        }
+      },
+      "stages": {
+        "prefill": {
+          "tokens_per_s": 41399.66,
+          "tokens": 1150273,
+          "seconds": 27.785
+        },
+        "decode": {
+          "tokens_per_s": 6455.09,
+          "tokens": 1126858,
+          "seconds": 174.569
+        }
+      },
+      "preemptions": 900,
+      "prefill_batches": {
+        "fresh": 778,
+        "cached": 0
+      },
+      "kv_tensor_bytes": 19348324352,
+      "scale_tensor_bytes": 1209270272,
+      "runs": 3,
+      "request_preemption_stats": {
+        "preempted_requests": 527,
+        "repeatedly_preempted_requests": 220,
+        "maximum_per_request": 8
+      },
+      "decode_batch_stats": {
+        "mean": 285.0640020237794,
+        "p50": 322.0,
+        "p95": 385.0,
+        "maximum": 489,
+        "steps": 3953
+      },
+      "restore_progress": {
+        "restore_events": 900,
+        "preemptions_without_token_progress": 124,
+        "same_schedule_preemptions": 124
+      },
+      "offload_stats": {
+        "fallback_preemptions": 0,
+        "shared_snapshot_references": 0,
+        "offloaded_sequences": 900,
+        "restored_sequences": 900,
+        "gpu_reused_blocks": 521,
+        "peak_cpu_buffers": 262,
+        "peak_restoring_sequences": 7,
+        "idle_copy_waits": 0,
+        "idle_copy_wait_ms": 0,
+        "cpu_budget_bytes": 4289331200,
+        "cpu_pool_bytes": 4086562816,
+        "active_handles": 0,
+        "restoring": 0
+      },
+      "output_tokens_per_s_min": 5427.41,
+      "output_tokens_per_s_max": 5447.6
+    }
+  },
+  "source_unchanged": true,
+  "completed_utc": "2026-10-06T13:21:48.308389+00:00",
+  "validation": "PASS"
+}
